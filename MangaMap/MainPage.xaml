@@ -3,70 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MangaMap.MainPage">
 
-    <ScrollView
-        BackgroundColor="Black">
+    <ScrollView>
         <VerticalStackLayout
-            Spacing="70"
+            Spacing="25"
+            Padding="30,0"
             VerticalOptions="Center">
 
-            <SearchBar Placeholder="Recherche"
-                       CancelButtonColor="Orange"
-                       TextColor="Purple"
-                       HorizontalTextAlignment="Center"
-                       Margin="30"
-                       />
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
 
-            <HorizontalStackLayout
-                Spacing="100"
-                HorizontalOptions="Center">
-
-                <Rectangle
-                        WidthRequest="150"
-                        HeightRequest="150"
-                        Fill="Red"
-                        />
-
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Orange"/>
-
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Blue"/>
-
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Purple"/>
-            </HorizontalStackLayout>
-
-            <HorizontalStackLayout
-                Spacing="100"
-                HorizontalOptions="Center">
-
-                <Rectangle
-                        WidthRequest="150"
-                        HeightRequest="150"
-                        Fill="Purple"
-                        />
-
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Green"/>
-
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Gray"/>
-
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Yellow"/>
-            </HorizontalStackLayout>
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
 
             <Label
                 Text="Welcome to .NET Multi-platform App UI"
@@ -84,5 +37,6 @@
 
         </VerticalStackLayout>
     </ScrollView>
+
 
 </ContentPage>

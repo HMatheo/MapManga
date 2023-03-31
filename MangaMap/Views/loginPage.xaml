@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MangaMap.Views.loginPage"
+             Title="loginPage">
+
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+        <Label Text="S'inscrire a MapManga" FontSize="Large" Margin="0,0,0,20"/>
+
+        <Entry Placeholder="Email" Margin="0,0,0,10" />
+
+        <Entry Placeholder="Nom d'utilisateur" Margin="0,0,0,10" />
+
+        <Entry Placeholder="Mot de passe" IsPassword="True" Margin="0,0,0,10" />
+
+        <Entry Placeholder="Confirmer le mot de passe" IsPassword="True" Margin="0,0,0,20" />
+
+        <Button Text="S'inscire" Clicked="OnLoginClicked" BackgroundColor="MediumPurple"/>
+
+    </StackLayout>
+
+
+
+</ContentPage>

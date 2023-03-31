@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MangaMap.Views.homePage"
+             Title="homePage">
+    <ScrollView
+        BackgroundColor="Black">
+        <VerticalStackLayout
+            Spacing="70"
+            VerticalOptions="Center">
+
+            <SearchBar Placeholder="Recherche"
+                       CancelButtonColor="Orange"
+                       TextColor="Purple"
+                       HorizontalTextAlignment="Center"
+                       Margin="30"
+                       />
+
+            <HorizontalStackLayout
+                Spacing="100"
+                HorizontalOptions="Center">
+
+                <Rectangle
+                        WidthRequest="150"
+                        HeightRequest="150"
+                        Fill="Red"
+                        />
+
+                <Rectangle
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Fill="Orange"/>
+
+                <Rectangle
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Fill="Blue"/>
+
+                <Rectangle
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Fill="Purple"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout
+                Spacing="100"
+                HorizontalOptions="Center">
+
+                <Rectangle
+                        WidthRequest="150"
+                        HeightRequest="150"
+                        Fill="Purple"
+                        />
+
+                <Rectangle
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Fill="Green"/>
+
+                <Rectangle
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Fill="Gray"/>
+
+                <Rectangle
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Fill="Yellow"/>
+            </HorizontalStackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
