@@ -10,6 +10,7 @@
             VerticalOptions="Center">
 
             <SearchBar Placeholder="Recherche"
+                       BackgroundColor="White"
                        CancelButtonColor="Orange"
                        TextColor="Purple"
                        HorizontalTextAlignment="Center"
@@ -67,7 +68,6 @@
                     HeightRequest="150"
                     Fill="Yellow"/>
             </HorizontalStackLayout>
-
 
         </VerticalStackLayout>
     </ScrollView>
