@@ -13,7 +13,7 @@
             <SearchBar Placeholder="Recherche"
                        BackgroundColor="White"
                        CancelButtonColor="Orange"
-                       TextColor="Purple"
+                       TextColor="Black"
                        HorizontalTextAlignment="Center"
                        Margin="30"
                        />
