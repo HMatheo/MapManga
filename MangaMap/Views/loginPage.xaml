@@ -3,21 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MangaMap.Views.loginPage"
              Title="loginPage">
+    
 
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
 
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="{StaticResource BackgroundColor}">
+        <Label Text="Se connecter à MapManga" FontSize="Large" Margin="0,0,0,20"/>
 
-        <Label Text="Se connecter a MapManga" FontSize="Large" Margin="0,0,0,20" TextColor="{StaticResource TextColor}" />
+        <Entry Placeholder="Email" Margin="0,0,0,10" />
 
-        <Entry Placeholder="Email" Margin="0,0,0,10" TextColor="{StaticResource TextColor}" PlaceholderColor="{StaticResource PlaceholderColor}" />
+        <Entry Placeholder="Mot de passe" IsPassword="True" Margin="0,0,0,20" />
 
-        <Entry Placeholder="Mot de passe" IsPassword="True" Margin="0,0,0,20" TextColor="{StaticResource TextColor}" PlaceholderColor="{StaticResource PlaceholderColor}" />
+        <Button Text="Se connecter" Clicked="OnLoginClicked" BackgroundColor="MediumPurple" />
 
-        <Button Text="Se connecter" Clicked="OnLoginClicked" BackgroundColor="{StaticResource ButtonBackgroundColor}" TextColor="{StaticResource ButtonTextColor}" />
-
-        <StackLayout VerticalOptions="End" HorizontalOptions="Center" Orientation="Horizontal">
-            <Label Text="Pas de compte ? " TextColor="{StaticResource TextColor}" />
-            <Label Text="S'inscrire" TextColor="{StaticResource ButtonBackgroundColor}" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Pas de compte ? " />
+            <Label Text="S'inscrire" TextColor="MediumPurple">
+            </Label>
         </StackLayout>
 
     </StackLayout>

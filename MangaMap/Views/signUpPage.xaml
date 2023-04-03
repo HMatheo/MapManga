@@ -9,7 +9,7 @@
 
     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
 
-        <Label Text="S'inscrire a MapManga" FontSize="Large" Margin="0,0,0,20"/>
+        <Label Text="S'inscrire a MapManga" FontSize="Large" Margin="0,0,0,20" TextColor="#ffffff"/>
 
         <Entry Placeholder="Email" Margin="0,0,0,10" />
 
@@ -22,7 +22,7 @@
         <Button Text="S'inscire" Clicked="OnLoginClicked" BackgroundColor="MediumPurple"/>
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Text="Pas de compte ? " />
+            <Label Text="Pas de compte ? " TextColor="#FFFFFF"/>
             <Label Text="S'inscrire" TextColor="MediumPurple">
             </Label>
         </StackLayout>
