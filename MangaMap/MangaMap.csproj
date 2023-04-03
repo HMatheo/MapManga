@@ -53,16 +53,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\loginPage.xaml.cs">
-	    <DependentUpon>loginPage.xaml</DependentUpon>
+	  <Compile Update="Views\signUpPage.xaml.cs">
+	    <DependentUpon>signUpPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Resources\Theme\DarkTheme.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\homePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\loginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\signUpPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -1,10 +1,10 @@
 namespace MangaMap.Views;
 
-public partial class loginPage : ContentPage
+public partial class signUpPage : ContentPage
 {
-	public loginPage()
+	public signUpPage()
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
 
     private void OnLoginClicked(object sender, EventArgs e)
