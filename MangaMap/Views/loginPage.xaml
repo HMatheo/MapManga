@@ -2,21 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MangaMap.Views.loginPage"
-             Title="loginPage">
+             Title="loginPage"
+             Background="#1E1E1E">
     
 
     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
 
-        <Label Text="Se connecter à MapManga" FontSize="Large" Margin="0,0,0,20"/>
+        <Label Text="Se connecter à MapManga" FontSize="Large" Margin="0,0,0,20" TextColor="#FFFFFF"/>
 
-        <Entry Placeholder="Email" Margin="0,0,0,10" />
+        <Entry Placeholder="Email" Margin="0,0,0,10" BackgroundColor="#EFF0F2" />
 
-        <Entry Placeholder="Mot de passe" IsPassword="True" Margin="0,0,0,20" />
+        <Entry Placeholder="Mot de passe" IsPassword="True" Margin="0,0,0,20" BackgroundColor="#EFF0F2"/>
 
-        <Button Text="Se connecter" Clicked="OnLoginClicked" BackgroundColor="MediumPurple" />
+        <Button Text="Se connecter" Clicked="OnLoginClicked" BackgroundColor="MediumPurple"/>
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Text="Pas de compte ? " />
+            <Label Text="Pas de compte ? " TextColor="#FFFFFF"/>
             <Label Text="S'inscrire" TextColor="MediumPurple">
             </Label>
         </StackLayout>

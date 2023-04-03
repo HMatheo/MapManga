@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MangaMap.Views.homePage"
              Title="homePage">
+
     <ScrollView
-        BackgroundColor="Black">
+        BackgroundColor="#1E1E1E">
         <VerticalStackLayout
             Spacing="70"
             VerticalOptions="Center">
