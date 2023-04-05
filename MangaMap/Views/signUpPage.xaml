@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MangaMap.Views.signUpPage"
              Title="loginPage"
-             Background="#1E1E1E">
+             Background="{StaticResource Secondary}">
 
 
 
@@ -19,11 +19,11 @@
 
         <Entry Placeholder="Confirmer le mot de passe" IsPassword="True" Margin="0,0,0,20" BackgroundColor="#EFF0F2"/>
 
-        <Button Text="S'inscire" Clicked="OnLoginClicked" BackgroundColor="MediumPurple"/>
+        <Button Text="S'inscire" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary}"/>
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Label Text="Pas de compte ? " TextColor="#FFFFFF"/>
-            <Label Text="S'inscrire" TextColor="MediumPurple">
+            <Label Text="S'inscrire" TextColor="{StaticResource Primary}">
             </Label>
         </StackLayout>
         

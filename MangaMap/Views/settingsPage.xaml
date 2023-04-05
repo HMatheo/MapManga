@@ -2,13 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MangaMap.Views.settingsPage"
-             Title="settingsPage">
+             Title="settingsPage"
+             BackgroundColor="{StaticResource Secondary}">
 
     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
 
-        <Button Text="Deconnexion" Clicked="OnLoginClicked" BackgroundColor="MediumPurple" Margin="30"/>
+        <Button Text="Deconnexion" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary}" Margin="0,0,0,30"/>
 
-        <Button Text="Connexion/Inscription" Clicked="OnLoginClicked" BackgroundColor="MediumPurple" />
+        <Button Text="Connexion/Inscription" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary}"/>
 
     </StackLayout>
 </ContentPage>
