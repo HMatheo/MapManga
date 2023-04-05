@@ -23,6 +23,10 @@
             <ShellContent 
                           ContentTemplate="{DataTemplate Views:settingsPage}" />
         </Tab>
+        <Tab Title="listPage">
+            <ShellContent 
+                          ContentTemplate="{DataTemplate Views:listPage}" />
+        </Tab>
     </TabBar>
 
 </Shell>
