@@ -19,6 +19,10 @@
             <ShellContent 
                           ContentTemplate="{DataTemplate Views:loginPage}" />
         </Tab>
+        <Tab Title="settingsPage">
+            <ShellContent 
+                          ContentTemplate="{DataTemplate Views:settingsPage}" />
+        </Tab>
     </TabBar>
 
 </Shell>

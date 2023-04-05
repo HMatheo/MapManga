@@ -43,7 +43,7 @@
                     HeightRequest="150"
                     Fill="Purple"/>
             </HorizontalStackLayout>
-
+            
             <HorizontalStackLayout
                 Spacing="100"
                 HorizontalOptions="Center">
@@ -71,5 +71,6 @@
             </HorizontalStackLayout>
 
         </VerticalStackLayout>
+        
     </ScrollView>
 </ContentPage>
