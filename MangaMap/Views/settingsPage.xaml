@@ -11,4 +11,5 @@
         <Button Text="Connexion/Inscription" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary}"/>
 
     </StackLayout>
+    
 </ContentPage>

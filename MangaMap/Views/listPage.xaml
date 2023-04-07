@@ -2,15 +2,32 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MangaMap.Views.listPage"
-             BackgroundColor="{StaticResource Secondary}">
-    <ScrollView>
-        <Grid>
-            <Grid.Background>
-                <SolidColorBrush Color="#1E1E1E" />
-            </Grid.Background>
-            <Label Text="Watching" TextColor="white "/>
-            <Rectangle WidthRequest="1300" HeightRequest="550" Fill="#333333" Margin="20" RadiusX="15" />
+             BackgroundColor="{StaticResource Secondary}"
+             NavigationPage.HasNavigationBar="False">
+
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="Watching" TextColor="White" FontSize="Title" Margin="20" />
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Row="0" Grid.Column="0" Fill="#333333" Margin="20" RadiusX="15" RadiusY="15"/>
         </Grid>
-    </ScrollView>
-    
+
+        <BoxView Grid.Row="2" HeightRequest="30" BackgroundColor="#333333" />
+    </Grid>
+
+
+
 </ContentPage>
