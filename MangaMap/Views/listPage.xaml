@@ -2,11 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MangaMap.Views.listPage"
-             BackgroundColor="{StaticResource Secondary}"
-             NavigationPage.HasNavigationBar="False">
+             BackgroundColor="{StaticResource Secondary}">
 
 
-    <Grid >
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -22,12 +21,15 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.Row="0" Grid.Column="0" Fill="#333333" Margin="20" RadiusX="15" RadiusY="15"/>
+            <Frame BackgroundColor="#333333" BorderColor="#333333" Margin="20,0,20,0" >
+                <Grid>
+                    <Label Text="test"/>
+                    <Label Text="test"/>
+                </Grid>
+            </Frame>
         </Grid>
 
         <BoxView Grid.Row="2" HeightRequest="30" BackgroundColor="#333333" />
     </Grid>
-
-
 
 </ContentPage>
