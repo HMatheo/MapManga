@@ -5,31 +5,35 @@
              BackgroundColor="{StaticResource Secondary}">
 
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Text="Watching" TextColor="White" FontSize="Title" Margin="20" />
-
-        <Grid Grid.Row="1">
+    <ScrollView>
+        <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Frame BackgroundColor="#333333" BorderColor="#333333" Margin="20,0,20,0" >
-                <Grid>
-                    <Label Text="test"/>
-                    <Label Text="test"/>
-                </Grid>
-            </Frame>
-        </Grid>
 
-        <BoxView Grid.Row="2" HeightRequest="30" BackgroundColor="#333333" />
+            <Label Grid.Row="0" Text="Watching" TextColor="White" FontSize="Title" Margin="20" />
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Frame BackgroundColor="#333333" BorderColor="#333333" Margin="20,0,20,20" >
+                    <Grid Grid.Row="1">
+                        <Label Text="test"/>
+                        <Label Text="test"/>
+                    </Grid>
+                </Frame>
+            </Grid>
+
     </Grid>
+
+    </ScrollView>
+
 
 </ContentPage>
