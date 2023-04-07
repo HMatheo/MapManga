@@ -1,39 +1,35 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MangaMap.Views.listPage"
-             BackgroundColor="{StaticResource Secondary}">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MangaMap.Views.listPage"
+    BackgroundColor="Black">
 
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-    <ScrollView>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" BackgroundColor="Black" Margin="20" BorderColor="Black">
+                <Label Text="Watching" TextColor="White" FontSize="Title" />
+            </Frame>
 
-            <Label Grid.Row="0" Text="Watching" TextColor="White" FontSize="Title" Margin="20" />
-
-            <Grid Grid.Row="1">
+        <Frame Grid.Row="1" BackgroundColor="Black" Margin="20" BorderColor="Black">
+            <Grid BackgroundColor="#333333" >
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Frame BackgroundColor="#333333" BorderColor="#333333" Margin="20,0,20,20" >
-                    <Grid Grid.Row="1">
-                        <Label Text="test"/>
-                        <Label Text="test"/>
-                    </Grid>
+
+                <Frame Grid.Row="1" BackgroundColor="#333333" Margin="20" BorderColor="#333333">
+                    <StackLayout Orientation="Horizontal" Spacing="20">
+                        <Label Text="Titre" TextColor="White"/>
+                        <Label Text="Score" TextColor="White"/>
+                        <Label Text="Progression" TextColor="White"/>
+                    </StackLayout>
                 </Frame>
             </Grid>
-
+        </Frame>
     </Grid>
-
-    </ScrollView>
-
 
 </ContentPage>
