@@ -3,14 +3,13 @@
     x:Class="MangaMap.Views.listPage"
     BackgroundColor="Black">
 
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Text="Watching" TextColor="White" FontSize="Title" Margin="50,0,0,0" Grid.Row="0"/>
+        <Label Text="Watching" TextColor="White" FontSize="Title" Margin="50,10,0,0" Grid.Row="0"/>
 
         <Frame Grid.Row="1" BackgroundColor="Black" Margin="20" BorderColor="Black">
             <Grid BackgroundColor="#333333" >
@@ -19,49 +18,98 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <HorizontalStackLayout Spacing="300" Margin="20" Grid.Row="0">
-                        <Label Text="Titre" TextColor="White"  HorizontalOptions="Start"/>
-                        <Label Text="Score" TextColor="White" HorizontalOptions="Center"/>
-                        <Label Text="Progression" TextColor="White" HorizontalOptions="End"/>
-                </HorizontalStackLayout>
+                <Grid Margin="20" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Grid.Column="0"
+                           Text="Titre" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Column="1"
+                           Text="Score" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Column="10"
+                           Text="Progression" FontSize="Large" TextColor="White"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
                         
                 <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
                     <VerticalStackLayout Spacing="10">
-                        <HorizontalStackLayout HorizontalOptions="Fill">
-                            <Rectangle Fill="#FFFFFF" WidthRequest="100" HeightRequest="100"/>
-                            <Label Text="Test" VerticalOptions="Center" Margin="15" FontSize="Large"/>
-                            <Label Text="10/85" HorizontalOptions="End" VerticalOptions="Center"/>
-                        </HorizontalStackLayout>
+                        
+                        <Grid Margin="20,0,20,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <HorizontalStackLayout>
-                            <Rectangle Fill="blue" WidthRequest="100" HeightRequest="100"/>
-                            <Label Text="Test-test" VerticalOptions="Center" Margin="15" FontSize="Large"/>
-                            <Label Text="100/100" HorizontalOptions="End" VerticalOptions="Center"/>
-                        </HorizontalStackLayout>
+                            <Rectangle Grid.Column="0" Fill="#FFFFFF" WidthRequest="100" HeightRequest="100"/>
+                            <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                            <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </Grid>
 
-                        <HorizontalStackLayout>
-                            <Rectangle Fill="Red" WidthRequest="100" HeightRequest="100"/>
-                            <Label Text="Test-test-tests" VerticalOptions="Center" Margin="15" FontSize="Large"/>
-                            <Label Text="12/24" HorizontalOptions="End" VerticalOptions="Center"/>
-                        </HorizontalStackLayout>
+                        <Grid Margin="20,0,20,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <HorizontalStackLayout HorizontalOptions="Fill">
-                            <Rectangle Fill="#FFFFFF" WidthRequest="100" HeightRequest="100"/>
-                            <Label Text="Test" VerticalOptions="Center" Margin="15" FontSize="Large"/>
-                            <Label Text="10/85" HorizontalOptions="End" VerticalOptions="Center"/>
-                        </HorizontalStackLayout>
+                            <Rectangle Grid.Column="0" Fill="Blue" WidthRequest="100" HeightRequest="100"/>
+                            <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                            <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </Grid>
 
-                        <HorizontalStackLayout>
-                            <Rectangle Fill="blue" WidthRequest="100" HeightRequest="100"/>
-                            <Label Text="Test-test" VerticalOptions="Center" Margin="15" FontSize="Large"/>
-                            <Label Text="100/100" HorizontalOptions="End" VerticalOptions="Center"/>
-                        </HorizontalStackLayout>
+                        <Grid Margin="20,0,20,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-                        <HorizontalStackLayout>
-                            <Rectangle Fill="Red" WidthRequest="100" HeightRequest="100"/>
-                            <Label Text="Test-test-tests" VerticalOptions="Center" Margin="15" FontSize="Large"/>
-                            <Label Text="12/24" HorizontalOptions="End" VerticalOptions="Center"/>
-                        </HorizontalStackLayout>
+                            <Rectangle Grid.Column="0" Fill="Red" WidthRequest="100" HeightRequest="100"/>
+                            <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                            <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </Grid>
+
+                        <Grid Margin="20,0,20,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Rectangle Grid.Column="0" Fill="#FFFFFF" WidthRequest="100" HeightRequest="100"/>
+                            <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                            <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </Grid>
+
+                        <Grid Margin="20,0,20,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Rectangle Grid.Column="0" Fill="Blue" WidthRequest="100" HeightRequest="100"/>
+                            <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                            <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </Grid>
+
+                        <Grid Margin="20,0,20,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Rectangle Grid.Column="0" Fill="Red" WidthRequest="100" HeightRequest="100"/>
+                            <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                            <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </Grid>
+                        
                     </VerticalStackLayout>
                 </ScrollView>
             </Grid>
