@@ -27,6 +27,10 @@
             <ShellContent 
                           ContentTemplate="{DataTemplate Views:listPage}" />
         </Tab>
+        <Tab Title="ficheAnime">
+            <ShellContent 
+                          ContentTemplate="{DataTemplate Views:ficheAnime}" />
+        </Tab>
     </TabBar>
 
 </Shell>
