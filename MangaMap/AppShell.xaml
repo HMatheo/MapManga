@@ -4,33 +4,33 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MangaMap"
-    xmlns:Views="clr-namespace:MangaMap.Views">
+    xmlns:Views="clr-namespace:MangaMap.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.NavBarIsVisible="False">
 
-    <TabBar>
-        <Tab Title="HomePage">
-            <ShellContent 
-                          ContentTemplate="{DataTemplate Views:homePage}" />
-        </Tab>
-        <Tab Title="signUpPage">
-            <ShellContent 
-                          ContentTemplate="{DataTemplate Views:signUpPage}" />
-        </Tab>
-        <Tab Title="loginPage">
-            <ShellContent 
-                          ContentTemplate="{DataTemplate Views:loginPage}" />
-        </Tab>
-        <Tab Title="settingsPage">
-            <ShellContent 
-                          ContentTemplate="{DataTemplate Views:settingsPage}" />
-        </Tab>
-        <Tab Title="listPage">
-            <ShellContent 
-                          ContentTemplate="{DataTemplate Views:listPage}" />
-        </Tab>
-        <Tab Title="ficheAnime">
-            <ShellContent 
-                          ContentTemplate="{DataTemplate Views:ficheAnime}" />
-        </Tab>
-    </TabBar>
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate Views:homePage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Inscription"
+        ContentTemplate="{DataTemplate Views:signUpPage}" />
+
+    <ShellContent
+        Title="Connection"
+        ContentTemplate="{DataTemplate Views:loginPage}" />
+
+    <ShellContent
+        Title="Paramètres"
+        ContentTemplate="{DataTemplate Views:settingsPage}" />
+
+    <ShellContent
+        Title="Liste"
+        ContentTemplate="{DataTemplate Views:listPage}" />
+
+    <ShellContent
+        Title="Fiche Exemple"
+        ContentTemplate="{DataTemplate Views:ficheAnime}" />
 
 </Shell>

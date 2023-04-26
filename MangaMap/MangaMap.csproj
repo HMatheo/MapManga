@@ -49,20 +49,27 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="CustomHeader.xaml.cs">
+	    <DependentUpon>CustomHeader.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\signUpPage.xaml.cs">
 	    <DependentUpon>signUpPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Resources\Theme\DarkTheme.xaml">
+	  <MauiXaml Update="CustomHeader.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\CustomHeader.xaml">
+	  <MauiXaml Update="Resources\Theme\DarkTheme.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\homePage.xaml">
