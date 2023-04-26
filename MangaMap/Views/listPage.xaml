@@ -29,7 +29,7 @@
                            Text="Progression" FontSize="Large" TextColor="White"
                            HorizontalOptions="End" VerticalOptions="Center"/>
                 </Grid>
-                        
+
                 <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
                     <VerticalStackLayout Spacing="10">
 
@@ -42,7 +42,6 @@
                         </Grid>
 
                         <Grid Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">
-
                             <Rectangle Grid.Column="0" Fill="Blue" WidthRequest="100" HeightRequest="100" HorizontalOptions="Start"/>
                             <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
                             <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
@@ -80,12 +79,12 @@
                             <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
                             <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
                         </Grid>
-                        
+
                     </VerticalStackLayout>
                 </ScrollView>
             </Grid>
-
         </Frame>
+        
     </Grid>
 
 </ContentPage>
