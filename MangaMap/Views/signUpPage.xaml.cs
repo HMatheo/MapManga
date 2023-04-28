@@ -1,8 +1,13 @@
 namespace MangaMap.Views;
+
+using MangaMap.Model;
 using System.Text.RegularExpressions;
 
 public partial class signUpPage : ContentPage
 {
+
+    public Manager my_manager => (App.Current as App).MyManager;
+
 	public signUpPage()
 	{
         InitializeComponent();
@@ -46,6 +51,9 @@ public partial class signUpPage : ContentPage
         {
             await Navigation.PushAsync(new homePage());
         }
+
+        Utilisateur util = new Utilisateur("Ryan", "Garcia", 12);
+        my_manager.ajouterUtilisateur(util);
 
     }
 
