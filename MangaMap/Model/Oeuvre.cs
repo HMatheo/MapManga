@@ -9,13 +9,13 @@ namespace MangaMap.Model
     class Oeuvre
     {
         public string Nom { get; private set; }
-        public string[] Genre { get; private set; }
+        public List <string> Genre { get; private set; }
         public string Type { get; private set; }
         public string Description { get; private set; }
         public int Note { get; private set; }
         public int NbEpisodes { get; private set; }
 
-        public Oeuvre(string nom, string[] genre, string type, string description, int note, int nbEpisode)
+        public Oeuvre(string nom, List<string> genre, string type, string description, int note, int nbEpisode)
         {
             Nom = nom;
             Genre = genre;

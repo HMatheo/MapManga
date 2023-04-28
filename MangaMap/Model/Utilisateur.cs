@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MangaMap.Model
 {
-    class Utilisateur
+    public class Utilisateur
     {
         public string nom { get; private set; }
         public string prenom { get; private set; }

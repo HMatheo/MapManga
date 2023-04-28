@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MangaMap.Model
 {
-    class Personne
+    public class Personne
     {
         public string MotDePasse { get; private set; }
         public string Email { get; private set; }
@@ -62,5 +62,9 @@ namespace MangaMap.Model
 
             return false;
         }
+
+       
+
+
     }
 }
