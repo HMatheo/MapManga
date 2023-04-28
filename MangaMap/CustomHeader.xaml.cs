@@ -1,3 +1,4 @@
+using MangaMap.Views;
 namespace MangaMap;
 
 public partial class NewContent1 : ContentView
@@ -6,4 +7,9 @@ public partial class NewContent1 : ContentView
 	{
 		InitializeComponent();
 	}
+
+	void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+	{
+        Navigation.PushAsync(new homePage());
+    }
 }

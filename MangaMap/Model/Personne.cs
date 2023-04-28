@@ -8,18 +8,9 @@ namespace MangaMap.Model
 {
     public class Personne
     {
-        public string MotDePasse { get; private set; }
-        public string Email { get; private set; }
-        public string Pseudo { get; private set; }
-
-        /*public Liste[] Listes { get; private set; }*/
-
-        public Personne(string mdp, string email, string pseudo)
-        {
-            Email = email;
-            Pseudo = pseudo;
-            MotDePasse = mdp;
-        }
+        public string MotDePasse { get;  set; }
+        public string Email { get;  set; }
+        public string Pseudo { get;  set; }
 
         public bool MofifierMotDePasse(string MotDePasse)
         {
