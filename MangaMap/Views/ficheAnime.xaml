@@ -1,46 +1,52 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MangaMap"
              x:Class="MangaMap.Views.ficheAnime"
              Title="ficheAnime"
              BackgroundColor="{StaticResource Secondary}">
 
-    <VerticalStackLayout>
-        
-        <HorizontalStackLayout>
-            <Rectangle
+    <Grid RowDefinitions="40, *">
+        <local:NewContent1 HeightRequest="40" VerticalOptions="Start" Padding="10, 0"/>
+
+        <VerticalStackLayout Grid.Row="1">
+
+            <HorizontalStackLayout>
+                <Rectangle
                 WidthRequest="150"
                 HeightRequest="150"
                 Fill="Red"
                 HorizontalOptions="Start"
                 Margin="50"/>
 
-            <Label Text="Titre" FontSize="Header" VerticalOptions="Center"/>
-        </HorizontalStackLayout>
+                <Label Text="Titre" FontSize="Header" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
 
-        <Grid>
-            <Label Text="test"/>
-            <Label Text="test"/>
-            <Label Text="test" BackgroundColor="{StaticResource Primary}"/>
-        </Grid>
+            <Grid>
+                <Label Text="test"/>
+                <Label Text="test"/>
+                <Label Text="test" BackgroundColor="{StaticResource Primary}"/>
+            </Grid>
 
-        <HorizontalStackLayout>
-            <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
-            <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
-            <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
-            <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
-            <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
+            <HorizontalStackLayout>
+                <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
 
-            <Button Text="Ajouter à la liste"
+                <Button Text="Ajouter à la liste"
                     TextColor="#FFFFFF"
                 HorizontalOptions="Start"
                 Margin="20"
                 BackgroundColor="{StaticResource Primary}"/>
-        </HorizontalStackLayout>
+            </HorizontalStackLayout>
 
-        <Label
+            <Label
             Text="Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description."
             Margin="20"/>
 
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+
 </ContentPage>

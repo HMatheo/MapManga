@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MangaMap"
              x:Class="MangaMap.Views.settingsPage"
              BackgroundColor="{StaticResource Secondary}">
 
-    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+    <Grid RowDefinitions="40, *">
+        <local:NewContent1 HeightRequest="40" VerticalOptions="Start" Padding="10, 0"/>
 
-        <Button Text="Deconnexion" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary}" Margin="0,0,0,30" TextColor="#FFFFFF"/>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1">
 
-        <Button Text="Connexion/Inscription" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary}" TextColor="#FFFFFF"/>
+            <Button Text="Deconnexion" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary}" Margin="0,0,0,30" TextColor="#FFFFFF"/>
 
-    </StackLayout>
-    
+            <Button Text="Connexion/Inscription" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary}" TextColor="#FFFFFF"/>
+
+        </StackLayout>
+    </Grid>
+
 </ContentPage>
