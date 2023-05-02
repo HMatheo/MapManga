@@ -9,9 +9,9 @@
 
         <Label Text="Se connecter à MapManga" FontSize="Large" Margin="0,0,0,20" TextColor="#FFFFFF"/>
 
-        <Entry Placeholder="Email" Margin="0,0,0,10" BackgroundColor="#EFF0F2" TextColor="{StaticResource Black}"/>
+        <Entry x:Name="emailEntry" Placeholder="Email" Margin="0,0,0,10" BackgroundColor="#EFF0F2" TextColor="{StaticResource Black}"/>
 
-        <Entry Placeholder="Mot de passe" IsPassword="True" Margin="0,0,0,20" BackgroundColor="#EFF0F2" TextColor="{StaticResource Black}"/>
+        <Entry x:Name="passwordEntry" Placeholder="Mot de passe" IsPassword="True" Margin="0,0,0,20" BackgroundColor="#EFF0F2" TextColor="{StaticResource Black}"/>
 
         <Button Text="Se connecter" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary }" TextColor="#FFFFFF"/>
 
