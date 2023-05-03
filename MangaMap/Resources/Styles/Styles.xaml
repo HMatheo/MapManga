@@ -403,9 +403,10 @@
     </Style>
 
     <Style TargetType="ImageButton" x:Key="ImageAnime">
-        <Setter Property="HeightRequest" Value="150" />
+        <Setter Property="HeightRequest" Value="170" />
         <Setter Property="WidthRequest" Value="150" />
         <Setter Property="CornerRadius" Value="15" />
+        <Setter Property="Aspect" Value="Fill" />
     </Style>
 
     <Style TargetType="Button" x:Key="Bouton">

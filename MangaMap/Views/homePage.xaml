@@ -35,11 +35,13 @@
                     <ImageButton
                     Style="{StaticResource ImageAnime}"
                     BackgroundColor="Red"
+                    Source="test2.png"
                     />
 
                     <ImageButton
                 Style="{StaticResource ImageAnime}"
                 BackgroundColor="Orange"
+                        Source="test.jpg"
                     />
 
                     <ImageButton
