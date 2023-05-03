@@ -24,6 +24,12 @@ public partial class signUpPage : ContentPage
         string password = passwordEntry.Text;
         string confirmPassword = confirmPasswordEntry.Text;
 
+        if (age < 5)
+        {
+            await DisplayAlert("Erreur", "Il faut avoir au minimum 5 ans pour utiliser l'application.", "OK");
+            return;
+        }
+
         if (string.IsNullOrWhiteSpace(email) ||
         string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
         {
@@ -54,11 +60,10 @@ public partial class signUpPage : ContentPage
         if (password == confirmPassword)
         {
             await Navigation.PushAsync(new homePage());
+            Utilisateur util = new Utilisateur(email, pseudo, password, nom, prénom, age);
+            my_manager.ajouterUtilisateur(util);
+            return;
         }
-
-        Utilisateur util = new Utilisateur(email, pseudo, password, nom, prénom, age);
-        my_manager.ajouterUtilisateur(util);
-
     }
 
     bool IsPasswordStrong(string password)

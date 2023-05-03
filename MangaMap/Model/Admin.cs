@@ -16,10 +16,6 @@ namespace MangaMap.Model
             Pseudo = pseudo;
         }
 
-        public int Id { get; private set; }
-
-
-
         public void ajouterAnime() { }
 
         public void supprimerAnime() { }
