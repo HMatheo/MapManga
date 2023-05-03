@@ -9,8 +9,11 @@ namespace MangaMap.Model
 {
     public class Admin : Personne
     {
-        public Admin(string mdp, string email, string pseudo) : base(mdp, email, pseudo)
+        public Admin(string motDePasse, string email, string pseudo)
         {
+            MotDePasse = motDePasse;
+            Email = email;
+            Pseudo = pseudo;
         }
 
         public int Id { get; private set; }

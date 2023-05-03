@@ -10,6 +10,12 @@
 
         <Label Text="S'inscrire a MapManga" FontSize="Large" Margin="0,0,0,20" TextColor="#ffffff"/>
 
+        <Entry x:Name="nameEntry" Placeholder="Nom" Margin="0,0,0,10" Background="#EFF0F2" TextColor="{StaticResource Black}"/>
+
+        <Entry x:Name="firstNameEntry" Placeholder="Prénom" Margin="0,0,0,10" Background="#EFF0F2" TextColor="{StaticResource Black}"/>
+
+        <Entry x:Name="ageEntry" Placeholder="Âge" Margin="0,0,0,10" Background="#EFF0F2" TextColor="{StaticResource Black}"/>
+
         <Entry x:Name="emailEntry" Placeholder="Email" Margin="0,0,0,10" BackgroundColor="#EFF0F2" TextColor="{StaticResource Black}"/>
 
         <Entry x:Name="usernameEntry" Placeholder="Nom d'utilisateur" Margin="0,0,0,10" BackgroundColor="#EFF0F2" TextColor="{StaticResource Black}"/>
