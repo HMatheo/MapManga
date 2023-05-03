@@ -53,9 +53,5 @@ namespace MangaMap.Model
 
             return false;
         }
-
-       
-
-
     }
 }

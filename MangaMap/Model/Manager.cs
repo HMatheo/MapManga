@@ -11,11 +11,7 @@ namespace MangaMap.Model
 
         public List<Admin> Admins { get; private set; }
         public List<Utilisateur> Utilisateurs { get; private set; }
-
         public List<Oeuvre> Oeuvres { get; private set; }
-
-
-
 
         public Manager() { 
             Admins = new List<Admin>();
@@ -27,8 +23,5 @@ namespace MangaMap.Model
         {
             Utilisateurs.Add(u);
         }
-
-
-
     }
 }

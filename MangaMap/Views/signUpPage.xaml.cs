@@ -16,7 +16,11 @@ public partial class signUpPage : ContentPage
     async void OnSignUpClicked(object sender, System.EventArgs e)
     {
         // Récupérer les valeurs des entrées
+        string nom = nameEntry.Text;
+        string prénom = firstNameEntry.Text;
+        int age = Convert.ToInt32(ageEntry.Text);
         string email = emailEntry.Text;
+        string pseudo = usernameEntry.Text;
         string password = passwordEntry.Text;
         string confirmPassword = confirmPasswordEntry.Text;
 
@@ -52,7 +56,7 @@ public partial class signUpPage : ContentPage
             await Navigation.PushAsync(new homePage());
         }
 
-        Utilisateur util = new Utilisateur("Ryan", "Garcia", 12);
+        Utilisateur util = new Utilisateur(email, pseudo, password, nom, prénom, age);
         my_manager.ajouterUtilisateur(util);
 
     }

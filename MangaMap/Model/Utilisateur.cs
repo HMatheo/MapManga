@@ -16,11 +16,11 @@ namespace MangaMap.Model
         public List<Oeuvre> ListeOeuvrePourPlusTard { get; private set; }
         public List<Oeuvre> ListeOeuvreFavorites { get; private set; }
 
-        public Utilisateur(string nom, string prenom, int age)
+        public Utilisateur(string email, string pseudo, string mdp, string nom, string prenom, int age)
         {
-            this.Email = "rr";
-            this.Pseudo = "55";
-            this.MotDePasse = "45";
+            Email = email;
+            Pseudo = pseudo;
+            MotDePasse = mdp;
             this.nom = nom;
             this.prenom = prenom;
             this.age = age;
