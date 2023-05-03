@@ -24,16 +24,17 @@ public partial class signUpPage : ContentPage
         string password = passwordEntry.Text;
         string confirmPassword = confirmPasswordEntry.Text;
 
-        if (age < 5)
-        {
-            await DisplayAlert("Erreur", "Il faut avoir au minimum 5 ans pour utiliser l'application.", "OK");
-            return;
-        }
 
         if (string.IsNullOrWhiteSpace(email) ||
         string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
         {
             await DisplayAlert("Erreur", "Veuillez remplir tous les champs.", "OK");
+            return;
+        }
+
+        if (age < 5)
+        {
+            await DisplayAlert("Erreur", "Il faut avoir au minimum 5 ans pour utiliser l'application.", "OK");
             return;
         }
 

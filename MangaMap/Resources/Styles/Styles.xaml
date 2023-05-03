@@ -405,6 +405,22 @@
     <Style TargetType="ImageButton" x:Key="ImageAnime">
         <Setter Property="HeightRequest" Value="150" />
         <Setter Property="WidthRequest" Value="150" />
+        <Setter Property="CornerRadius" Value="15" />
     </Style>
 
+    <Style TargetType="Button" x:Key="Bouton">
+        <Setter Property="BackgroundColor" Value="#bd93f9" />
+        <Setter Property="TextColor" Value="#FFFFFF" />
+    </Style>
+
+    <Style TargetType="Entry" x:Key="Champs">
+        <Setter Property="Background" Value="#EFF0F2"/>
+        <Setter Property="TextColor" Value="Black"/>
+    </Style>
+
+    <Style TargetType="Entry" x:Key="ChampsMdp" BasedOn="{StaticResource Champs}">
+        <Setter Property="IsPassword" Value="True" />
+    </Style>
+
+    
 </ResourceDictionary>

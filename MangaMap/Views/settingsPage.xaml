@@ -10,9 +10,9 @@
 
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1">
 
-            <Button Text="Deconnexion" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary}" Margin="0,0,0,30" TextColor="#FFFFFF"/>
+            <Button Text="Deconnexion" Clicked="OnLoginClicked" Margin="0,0,0,30" Style="{StaticResource Bouton}"/>
 
-            <Button Text="Connexion/Inscription" Clicked="OnLoginClicked" BackgroundColor="{StaticResource Primary}" TextColor="#FFFFFF"/>
+            <Button Text="Connexion/Inscription" Clicked="OnLoginClicked" Style="{StaticResource Bouton}"/>
 
         </StackLayout>
     </Grid>
