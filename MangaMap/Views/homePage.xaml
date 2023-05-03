@@ -26,104 +26,96 @@
                 Spacing="100"
                 HorizontalOptions="Center">
 
-                <Rectangle
-                        WidthRequest="150"
-                        HeightRequest="150"
-                        Fill="Red"
-                        />
 
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Orange"/>
+                <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                    BackgroundColor="Red"
+                    />
 
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Blue"/>
+                <ImageButton
+                Style="{StaticResource ImageAnime}"
+                BackgroundColor="Orange"
+                    />
 
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Purple"/>
+                <ImageButton
+                Style="{StaticResource ImageAnime}"
+                BackgroundColor="Blue"/>
+
+                <ImageButton
+                Style="{StaticResource ImageAnime}"
+                BackgroundColor="Purple"/>
+                
             </HorizontalStackLayout>
             
             <HorizontalStackLayout
                 Spacing="100"
                 HorizontalOptions="Center">
 
-                <Rectangle
-                        WidthRequest="150"
-                        HeightRequest="150"
-                        Fill="Purple"
+                    <ImageButton
+                        Style="{StaticResource ImageAnime}"
+                        BackgroundColor="Purple"
                         />
 
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Green"/>
+                    <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                    BackgroundColor="Green"/>
 
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Gray"/>
+                    <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                    BackgroundColor="Gray"/>
 
-                <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Yellow"/>
+                    <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                    BackgroundColor="Yellow"/>
+                
             </HorizontalStackLayout>
 
                 <HorizontalStackLayout
                 Spacing="100"
                 HorizontalOptions="Center">
 
-                    <Rectangle
-                        WidthRequest="150"
-                        HeightRequest="150"
-                        Fill="Red"
+                    <ImageButton
+                        Style="{StaticResource ImageAnime}"
+                        BackgroundColor="Red"
                         />
 
-                    <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Orange"/>
+                    <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                    BackgroundColor="Orange"/>
 
-                    <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Blue"/>
+                    <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                    BackgroundColor="Blue"/>
 
-                    <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Purple"/>
+                    <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                    BackgroundColor="Purple"/>
+                    
+                    
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout
                 Spacing="100"
                 HorizontalOptions="Center">
 
-                    <Rectangle
-                        WidthRequest="150"
-                        HeightRequest="150"
-                        Fill="Purple"
+                    <ImageButton
+                        Style="{StaticResource ImageAnime}"
+                        BackgroundColor="Purple"
                         />
 
-                    <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Green"/>
+                    <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                        BackgroundColor="Red"
+                        />
 
-                    <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Gray"/>
+                    <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                    BackgroundColor="Gray"/>
 
-                    <Rectangle
-                    WidthRequest="150"
-                    HeightRequest="150"
-                    Fill="Yellow"/>
+                    <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                    BackgroundColor="Yellow"/>
+
                 </HorizontalStackLayout>
             
             </VerticalStackLayout>

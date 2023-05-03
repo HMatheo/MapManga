@@ -402,4 +402,9 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
+    <Style TargetType="ImageButton" x:Key="ImageAnime">
+        <Setter Property="HeightRequest" Value="150" />
+        <Setter Property="WidthRequest" Value="150" />
+    </Style>
+
 </ResourceDictionary>
