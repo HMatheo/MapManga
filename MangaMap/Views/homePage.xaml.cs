@@ -10,6 +10,5 @@ public partial class homePage : ContentPage
 	{
 		InitializeComponent();
 		a1.BindingContext = my_manager;
-
     }
 }
