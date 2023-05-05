@@ -73,6 +73,9 @@
 	  <MauiXaml Update="Resources\Theme\DarkTheme.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Composants\StyleBouton.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\homePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

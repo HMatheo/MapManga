@@ -5,32 +5,39 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MangaMap"
     xmlns:Views="clr-namespace:MangaMap.Views"
-    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate Views:homePage}"
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate Views:homePage}"
         Route="MainPage" />
 
-    <ShellContent
-        Title="Inscription"
-        ContentTemplate="{DataTemplate Views:signUpPage}" />
+        <ShellContent
+            Title="Inscription"
+            ContentTemplate="{DataTemplate Views:signUpPage}" />
 
-    <ShellContent
-        Title="Connection"
-        ContentTemplate="{DataTemplate Views:loginPage}" />
+        <ShellContent
+            Title="Connection"
+            ContentTemplate="{DataTemplate Views:loginPage}" />
 
-    <ShellContent
-        Title="Paramètres"
-        ContentTemplate="{DataTemplate Views:settingsPage}" />
+        <ShellContent
+            Title="Paramètres"
+            ContentTemplate="{DataTemplate Views:settingsPage}" />
 
-    <ShellContent
-        Title="Liste"
-        ContentTemplate="{DataTemplate Views:listPage}" />
+        <ShellContent
+            Title="Liste"
+            ContentTemplate="{DataTemplate Views:listPage}" />
 
-    <ShellContent
-        Title="Fiche Exemple"
-        ContentTemplate="{DataTemplate Views:ficheAnime}" />
+    </TabBar>
 
+    <FlyoutItem>
+
+        <ShellContent
+            Title="Fiche Exemple"
+            ContentTemplate="{DataTemplate Views:ficheAnime}" />
+
+    </FlyoutItem>
+    
 </Shell>
