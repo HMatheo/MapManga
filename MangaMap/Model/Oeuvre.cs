@@ -14,8 +14,9 @@ namespace MangaMap.Model
         public string Description { get; private set; }
         public int Note { get; private set; }
         public int NbEpisodes { get; private set; }
+        public string Affiche { get; private set; }
 
-        public Oeuvre(string nom, List<string> genre, string type, string description, int note, int nbEpisode)
+        public Oeuvre(string nom, List<string> genre, string type, string description, int note, int nbEpisode, string affiche)
         {
             Nom = nom;
             Genre = genre;
@@ -23,6 +24,7 @@ namespace MangaMap.Model
             Description = description;
             Note = note;
             NbEpisodes = nbEpisode;
+            Affiche = affiche;
         }
 
         public void AjouterEpisode(int nb)

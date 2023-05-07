@@ -27,6 +27,20 @@
                        Margin="30"
                        />
 
+                <ListView x:Name="a2" ItemsSource="{Binding Oeuvres}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ImageButton
+                                    Style="{StaticResource ImageAnime}"
+                                    BackgroundColor="Red"
+                                    Source="{Binding Affiche}"
+                                />
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
                 <HorizontalStackLayout
                 Spacing="100"
                 HorizontalOptions="Center">

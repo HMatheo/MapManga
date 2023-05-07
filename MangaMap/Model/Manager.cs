@@ -43,6 +43,15 @@ namespace MangaMap.Model
             ajouterUtilisateur(u1);
             ajouterUtilisateur(u2);
             ajouterUtilisateur(u3);
+
+            List<string> genres = new List<string>();
+            genres.Add("Action");
+            genres.Add("Future");
+            Oeuvre o1 = new Oeuvre("test",genres, "TV", "C'est une bonne série", 4, 150, "test.jpg");
+            Oeuvre o2 = new Oeuvre("test2", genres, "DVD", "A la fin il meurt", 2, 24, "test2.png");
+
+            ajouterOeuvre(o1);
+            ajouterOeuvre(o2);
         }
     }
 }
