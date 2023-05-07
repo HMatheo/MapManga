@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MangaMap"
              xmlns:modeles="clr-namespace:MangaMap.Model"
-             x:Class="MangaMap.Views.homePage">
+             x:Class="MangaMap.Views.homePage"
+             xmlns:views="clr-namespace:MangaMap.Views.Composants">
+
 
     <ContentPage.BindingContext>
         <modeles:Manager/>
@@ -46,11 +48,7 @@
                 HorizontalOptions="Center">
 
 
-                    <ImageButton
-                    Style="{StaticResource ImageAnime}"
-                    BackgroundColor="Red"
-                    Source="test2.png"
-                    />
+                    <views:StyleBouton/>
 
                     <ImageButton
                 Style="{StaticResource ImageAnime}"
@@ -58,13 +56,9 @@
                         Source="test.jpg"
                     />
 
-                    <ImageButton
-                Style="{StaticResource ImageAnime}"
-                BackgroundColor="Blue"/>
+                    <views:StyleBouton/>
 
-                    <ImageButton
-                Style="{StaticResource ImageAnime}"
-                BackgroundColor="Purple"/>
+                    <views:StyleBouton/>
 
                 </HorizontalStackLayout>
 
@@ -72,22 +66,13 @@
                 Spacing="100"
                 HorizontalOptions="Center">
 
-                    <ImageButton
-                        Style="{StaticResource ImageAnime}"
-                        BackgroundColor="Purple"
-                        />
+                    <views:StyleBouton/>
 
-                    <ImageButton
-                    Style="{StaticResource ImageAnime}"
-                    BackgroundColor="Green"/>
+                    <views:StyleBouton/>
 
-                    <ImageButton
-                    Style="{StaticResource ImageAnime}"
-                    BackgroundColor="Gray"/>
+                    <views:StyleBouton/>
 
-                    <ImageButton
-                    Style="{StaticResource ImageAnime}"
-                    BackgroundColor="Yellow"/>
+                    <views:StyleBouton/>
 
                 </HorizontalStackLayout>
 
@@ -95,22 +80,12 @@
                 Spacing="100"
                 HorizontalOptions="Center">
 
-                    <ImageButton
-                        Style="{StaticResource ImageAnime}"
-                        BackgroundColor="Red"
-                        />
+                    <views:StyleBouton/>
 
-                    <ImageButton
-                    Style="{StaticResource ImageAnime}"
-                    BackgroundColor="Orange"/>
+                    <views:StyleBouton/>
+                    <views:StyleBouton/>
 
-                    <ImageButton
-                    Style="{StaticResource ImageAnime}"
-                    BackgroundColor="Blue"/>
-
-                    <ImageButton
-                    Style="{StaticResource ImageAnime}"
-                    BackgroundColor="Purple"/>
+                    <views:StyleBouton/>
 
 
                 </HorizontalStackLayout>
@@ -119,27 +94,18 @@
                 Spacing="100"
                 HorizontalOptions="Center">
 
-                    <ImageButton
-                        Style="{StaticResource ImageAnime}"
-                        BackgroundColor="Purple"
-                        />
+                    <views:StyleBouton/>
 
-                    <ImageButton
-                    Style="{StaticResource ImageAnime}"
-                        BackgroundColor="Red"
-                        />
+                    <views:StyleBouton/>
 
-                    <ImageButton
-                    Style="{StaticResource ImageAnime}"
-                    BackgroundColor="Gray"/>
+                    <views:StyleBouton/>
 
-                    <ImageButton
-                    Style="{StaticResource ImageAnime}"
-                    BackgroundColor="Yellow"/>
+                    <views:StyleBouton/>
 
                 </HorizontalStackLayout>
 
                 <ListView x:Name="a1" ItemsSource="{Binding Utilisateurs}">
+                    
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
