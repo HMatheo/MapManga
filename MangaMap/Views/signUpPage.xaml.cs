@@ -98,4 +98,22 @@ public partial class signUpPage : ContentPage
 
         return hasUppercase && hasLowercase && hasDigit;
     }
+
+    //  Verification de la force du mot de passe
+    void OnPasswordStrengthChanged(object sender, TextChangedEventArgs e)
+    {
+        string password = e.NewTextValue;
+        if (IsPasswordStrong(password))
+        {
+            passwordStrengthLabel.Text = "Fort";
+            passwordStrengthLabel.TextColor = Color.Green;
+        }
+        else
+        {
+            passwordStrengthLabel.Text = "Faible";
+            passwordStrengthLabel.TextColor = Color.Red;
+        }
+    }   
+
+
 }
