@@ -60,9 +60,9 @@ public partial class signUpPage : ContentPage
 
         if (password == confirmPassword)
         {
-            await Navigation.PushAsync(new homePage());
             Utilisateur util = new Utilisateur(email, pseudo, password, nom, prénom, age);
-            my_manager.ajouterUtilisateur(util);
+            my_manager.Utilisateurs.Add(util);
+            await Navigation.PushAsync(new homePage());
             return;
         }
     }
@@ -98,22 +98,4 @@ public partial class signUpPage : ContentPage
 
         return hasUppercase && hasLowercase && hasDigit;
     }
-
-    //  Verification de la force du mot de passe
-    void OnPasswordStrengthChanged(object sender, TextChangedEventArgs e)
-    {
-        string password = e.NewTextValue;
-        if (IsPasswordStrong(password))
-        {
-            passwordStrengthLabel.Text = "Fort";
-            passwordStrengthLabel.TextColor = Color.Green;
-        }
-        else
-        {
-            passwordStrengthLabel.Text = "Faible";
-            passwordStrengthLabel.TextColor = Color.Red;
-        }
-    }   
-
-
 }

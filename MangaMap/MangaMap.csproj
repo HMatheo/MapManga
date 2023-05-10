@@ -50,17 +50,11 @@
 
 	<ItemGroup>
 	  <AndroidResource Remove="Component\**" />
-	  <AndroidResource Remove="NewFolder\**" />
 	  <Compile Remove="Component\**" />
-	  <Compile Remove="NewFolder\**" />
 	  <EmbeddedResource Remove="Component\**" />
-	  <EmbeddedResource Remove="NewFolder\**" />
 	  <MauiCss Remove="Component\**" />
-	  <MauiCss Remove="NewFolder\**" />
 	  <MauiXaml Remove="Component\**" />
-	  <MauiXaml Remove="NewFolder\**" />
 	  <None Remove="Component\**" />
-	  <None Remove="NewFolder\**" />
 	</ItemGroup>
 
 	<ItemGroup>
