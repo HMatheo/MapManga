@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfOeuvre xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/MangaMap.Model">
   <Oeuvre>
+    <Affiche>test2.png</Affiche>
+    <Description>A la fin il meurt</Description>
+    <Genre xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <d3p1:string>Action</d3p1:string>
+      <d3p1:string>Future</d3p1:string>
+    </Genre>
+    <NbEpisodes>24</NbEpisodes>
+    <Nom>test2</Nom>
+    <Note>2</Note>
+    <Type>DVD</Type>
+  </Oeuvre>
+  <Oeuvre>
     <Affiche>test.jpg</Affiche>
     <Description>C'est une bonne série</Description>
     <Genre xmlns:d3p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">

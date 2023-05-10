@@ -51,8 +51,8 @@
                     <views:StyleBouton/>
 
                     <ImageButton
-                Style="{StaticResource ImageAnime}"
-                BackgroundColor="Orange"
+                        Style="{StaticResource ImageAnime}"
+                        BackgroundColor="Orange"
                         Source="test.jpg"
                     />
 

@@ -12,7 +12,7 @@ namespace MangaMap.Stub
 {
     public class DataContract : IPersistanceManager
     {
-        public string FilePath2 { get; set; } = Path.Combine(Directory.GetCurrentDirectory(),"//Dossier1_XML");
+        public string FilePath2 { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "\\..\\..\\Users");
         public string FilePath { get; set; } = "C:\\Users\\vjour\\UCA\\MapManga\\MangaMap";
         public string FileName { get; set; } = "Test1.xml";
 
@@ -41,7 +41,7 @@ namespace MangaMap.Stub
 
             /*using (Stream s = File.Create(Path.Combine(FilePath, FileName)))
             {
-                serializer.WriteObject(s, o);
+                serializer.WriteObject(s, o);                                           //Version d'enregistrement des données sans indentation.
             }*/
 
             var settings = new XmlWriterSettings() { Indent = true };
@@ -49,7 +49,7 @@ namespace MangaMap.Stub
             {
                 using (XmlWriter w = XmlWriter.Create(tw, settings))
                 {
-                    serializer.WriteObject(w, o); //data to persist
+                    serializer.WriteObject(w, o);                                       //Version d'enregistrement des données avec indentation.
                 }
             }
         }

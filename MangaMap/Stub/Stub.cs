@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 namespace MangaMap.Stub
 {
     public class Stub : IPersistanceManager
+
+        //Cette classe sert à faire charger des un jeu de données qui n'est pas celui enregistrer dans le fichier sur l'ordinateur.
     {
         public (List<Oeuvre>, List<Utilisateur>) chargeDonne()
         {

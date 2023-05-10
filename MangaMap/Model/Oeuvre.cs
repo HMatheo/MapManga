@@ -23,7 +23,7 @@ namespace MangaMap.Model
         [DataMember]
         public int NbEpisodes { get; private set; }
         [DataMember]
-        public string Affiche { get; private set; }         //Comment enregistrer l'image avec la persistance ?
+        public string Affiche { get; private set; }
 
         public Oeuvre(string nom, List<string> genre, string type, string description, int note, int nbEpisode, string affiche)
         {
