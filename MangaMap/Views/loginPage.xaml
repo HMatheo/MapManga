@@ -11,7 +11,7 @@
 
         <Entry x:Name="emailEntry" Placeholder="Email" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
 
-        <Entry x:Name="passwordEntry" Placeholder="Mot de passe" Margin="0,0,0,20" Style="{StaticResource Champs}"/>
+        <Entry x:Name="passwordEntry" Placeholder="Mot de passe" Margin="0,0,0,20" Style="{StaticResource ChampsMdp}"/>
 
         <Button Text="Se connecter" Clicked="OnLoginClicked" Style="{StaticResource Bouton}"/>
 
