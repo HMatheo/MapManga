@@ -1,4 +1,5 @@
 ﻿using MangaMap.Model;
+using MangaMap.Stub;
 using MangaMap.Views;
 
 namespace MangaMap;
@@ -11,6 +12,9 @@ public partial class App : Application
 
 	public App()
 	{
+		MyManager.charger();
+		MyManager.Persistance = new DataContract();
+		MyManager.sauvegarder();
 		InitializeComponent();
 		MyManager.Admins.Add(MyAdmin);
 
