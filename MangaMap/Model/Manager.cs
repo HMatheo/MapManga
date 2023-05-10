@@ -35,10 +35,7 @@ namespace MangaMap.Model
             {
                 Oeuvres.Add(item);
             }
-            foreach (var item in donne.Item2)
-            {
-                Utilisateurs.Add(item);
-            }
+            Utilisateurs.AddRange(donne.Item2);
         }
 
         public void sauvegarder()
