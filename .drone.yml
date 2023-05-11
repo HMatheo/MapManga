@@ -11,7 +11,7 @@ trigger:
 
 steps:
   - name: build
-    image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
+    image: mcr.microsoft.com/dotnet/sdk:7.0
     volumes:
       - name: Documentation
         path: /Documentation
@@ -22,7 +22,7 @@ steps:
       - dotnet publish SolutionTest.sln -c Release --no-restore -o $CI_PROJECT_DIR/build/release
 
   - name: tests
-    image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
+    image: mcr.microsoft.com/dotnet/sdk:7.0
     commands:
       - cd MangaMap/
       - dotnet restore MangaMap.sln
