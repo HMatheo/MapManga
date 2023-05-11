@@ -1,9 +1,63 @@
 kind: pipeline
 type: docker
-name: CI Workflow
+name: MangaMap
+
+trigger:
+  branch:
+    - master
+    - C#/model
+  event:
+    - push
+
 
 steps:
-  - name: Build
+  - name: build
+    image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
+    volumes:
+      - name: Documentation
+        path: /Documentation
+    commands:
+      - cd src/MapManga/
+      - dotnet restore MangaMap.sln
+      - dotnet build MangaMap.sln -c Release --no-restore /p:AndroidSdkDirectory=$ANDROID_SDK_ROOT -property:Aapt2ToolPath=$ANDROID_SDK_ROOT/build-tools/33.0.0
+  - name: tests
     image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
     commands:
-      - dotnet test --framework net7.0 'Tests\\\\Tests.csproj'
+      - cd src/MapManga/
+      - dotnet restore MangaMap.sln
+      - dotnet test MangaMap.sln --logger trx --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --collect "XPlat Code Coverage"
+    depends_on: [build]
+
+  - name: code-analysis
+    image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dronesonarplugin-dotnet7-maui
+    commands:
+      - cd src/MapManga/
+      - dotnet restore MangaMap.sln
+      - dotnet sonarscanner begin /k:TestCI /d:sonar.host.url=$${PLUGIN_SONAR_HOST} /d:sonar.coverageReportPaths="coveragereport/SonarQube.xml" /d:sonar.coverage.exclusions="Tests/**" /d:sonar.login=$${PLUGIN_SONAR_TOKEN} 
+      - reportgenerator -reports:"**/coverage.cobertura.xml" -reporttypes:SonarQube -targetdir:"coveragereport"
+      - dotnet publish MangaMap.sln -c Release --no-restore -o CI_PROJECT_DIR/build/release
+      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
+    secrets: [ SECRET_SONAR_LOGIN ]
+    settings:
+      # accessible en ligne de commande par ${PLUGIN_SONAR_HOST}
+      sonar_host: https://codefirst.iut.uca.fr/sonar/
+      # accessible en ligne de commande par ${PLUGIN_SONAR_TOKEN}
+      sonar_token:
+        from_secret: SECRET_SONAR_LOGIN
+    depends_on: [tests]
+
+  - name: generate-and-deploy-docs
+    image: hub.codefirst.iut.uca.fr/maxime.batista/codefirst-docdeployer
+    failure: ignore
+    commands:
+      - /entrypoint.sh -l Documentation/doxygen -t doxygen 
+    when:
+      branch:
+        - master
+      event:
+        - push
+    depends_on: [ build, tests ]
+
+volumes:
+- name: docs
+  temp: {}
