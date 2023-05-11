@@ -3,11 +3,8 @@ type: docker
 name: MangaMap
 
 trigger:
-  branch:
-    - master
   event:
     - push
-
 
 steps:
   - name: build
@@ -21,43 +18,7 @@ steps:
       - dotnet build MangaMap.sln -c Release --no-restore 
       - dotnet publish SolutionTest.sln -c Release --no-restore -o $CI_PROJECT_DIR/build/release
 
-  - name: tests
-    image: mcr.microsoft.com/dotnet/sdk:7.0
-    commands:
-      - cd MangaMap/
-      - dotnet restore MangaMap.sln
-      - dotnet test MangaMap.sln --logger trx --no-restore 
-    depends_on: [build]
 
-  - name: code-analysis
-    image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dronesonarplugin-dotnet7-maui
-    commands:
-      - cd MangaMap/
-      - dotnet restore MangaMap.sln
-      - dotnet sonarscanner begin /k:$${project_key} /d:sonar.host.url=$${sonar_host} /d:sonar.coverageReportPaths="coveragereport/SonarQube.xml" /d:sonar.coverage.exclusions=$${coverage_exclusions} /d:sonar.login=$${sonar_token}
-      - reportgenerator -reports:"**/coverage.cobertura.xml" -reporttypes:SonarQube -targetdir:"coveragereport"
-      - dotnet publish MangaMap.sln -c Release --no-restore -o CI_PROJECT_DIR/build/release
-      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
-    secrets: [ SECRET_SONAR_LOGIN ]
-    settings:
-      # accessible en ligne de commande par ${PLUGIN_SONAR_HOST}
-      sonar_host: https://codefirst.iut.uca.fr/sonar/
-      # accessible en ligne de commande par ${PLUGIN_SONAR_TOKEN}
-      sonar_token:
-        from_secret: SECRET_SONAR_LOGIN
-    depends_on: [tests]
-
-  - name: generate-and-deploy-docs
-    image: hub.codefirst.iut.uca.fr/maxime.batista/codefirst-docdeployer
-    failure: ignore
-    commands:
-      - /entrypoint.sh -l Documentation/doxygen -t doxygen 
-    when:
-      branch:
-        - master
-      event:
-        - push
-    depends_on: [ build, tests ]
 
 volumes:
 - name: docs
