@@ -19,7 +19,7 @@ steps:
     commands:
       - cd MangaMap/
       - dotnet restore MangaMap.sln
-      - dotnet build MangaMap.sln -c Release --no-restore /p:AndroidSdkDirectory=$ANDROID_SDK_ROOT -property:Aapt2ToolPath=$ANDROID_SDK_ROOT/build-tools/33.0.0
+      - dotnet build MangaMap.sln -c Release --no-restore 
   - name: tests
     image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
     commands:
