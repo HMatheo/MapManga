@@ -8,6 +8,12 @@ trigger:
 
 steps:
 
+  - name: use-dotnet-maui
+    image: mcr.microsoft.com/dotnet/sdk:7.0
+    commands:
+      - dotnet new maui -au $MAUI_AUTHOR -an $MAUI_APP_NAME --sdk $MAUI_SDK_VERSION
+      -  dotnet build
+
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:7.0
     volumes:
