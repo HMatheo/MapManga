@@ -7,11 +7,6 @@ trigger:
     - push
 
 steps:
-  - name: restore-workloads
-    image: mcr.microsoft.com/dotnet/sdk:7.0
-    commands:
-      - cd MangaMap/
-      - dotnet workload restore
 
   - name: build
     image: mcr.microsoft.com/dotnet/sdk:7.0
