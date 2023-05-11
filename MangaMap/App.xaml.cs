@@ -14,14 +14,11 @@ public partial class App : Application
 	public App()
 	{
         InitializeComponent();
-
-		// MyManager.Persistance = new DataContract();
         MyManager.charger();
-
 		MyManager.Admins.Add(MyAdmin);
 
 		MainPage = new AppShell();
-
+        //MyManager.Persistance = new DataContract();
         MyManager.sauvegarder();
     }
 }

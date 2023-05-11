@@ -12,9 +12,10 @@ namespace MangaMap.Stub
 {
     public class DataContract : IPersistanceManager
     {
-        public string FilePath2 { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "\\..\\..\\Users");
-        public string FilePath { get; set; } = "C:\\Users\\vjour\\UCA\\MapManga\\MangaMap";
-        public string FileName { get; set; } = "Test1.xml";
+        public string FileName { get; set; } = "SauvegardeDonnees.xml";
+        public string FilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
+        //public string FilePath2 { get; set; } = "C:\\Users\\vjour\\UCA\\MapManga\\MangaMap";
+        //public string FilePath2 { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "\\..\\..\\Users");
 
         public (List<Oeuvre>, List<Utilisateur>) chargeDonne()
         {
