@@ -9,5 +9,12 @@
                      MaximumWidthRequest="30"
                      VerticalOptions="Center"
                      Clicked="ImageButton_Clicked"/>
+
+        <ImageButton Grid.Column="2"
+                     Source="settings.png"
+                     MaximumHeightRequest="30"
+                     MaximumWidthRequest="30"
+                     VerticalOptions="Center"
+                     Clicked="SettingButton_Clicked"/>
     </Grid>
 </ContentView>
