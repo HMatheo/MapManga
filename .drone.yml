@@ -19,7 +19,7 @@ steps:
       - dotnet build MangaMap.sln -c Release --no-restore 
       - dotnet publish SolutionTest.sln -c Release --no-restore -o $CI_PROJECT_DIR/build/release
 
-        - name: tests
+  - name: tests
     image: mcr.microsoft.com/dotnet/sdk:7.0
     commands:
       - cd MangaMap/
