@@ -8,36 +8,40 @@
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False">
 
-    <TabBar>
+    <FlyoutItem Route="page">
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate Views:homePage}"
-        Route="MainPage" />
+            Route="homePage" />
 
-        <ShellContent
-            Title="Inscription"
-            ContentTemplate="{DataTemplate Views:signUpPage}" />
+        <Tab Route="secondaire">
+            <ShellContent
+                Title="Inscription"
+                ContentTemplate="{DataTemplate Views:signUpPage}"
+                Route="inscriptionPage"/>
 
-        <ShellContent
-            Title="Connection"
-            ContentTemplate="{DataTemplate Views:loginPage}" />
+            <ShellContent
+                Title="Connection"
+                ContentTemplate="{DataTemplate Views:loginPage}"
+                Route="connexionPage"/>
 
-        <ShellContent
-            Title="Paramètres"
-            ContentTemplate="{DataTemplate Views:settingsPage}" />
+            <ShellContent
+                Title="Paramètres"
+                ContentTemplate="{DataTemplate Views:settingsPage}"
+                Route="settingsPage"/>
 
-        <ShellContent
-            Title="Liste"
-            ContentTemplate="{DataTemplate Views:listPage}" />
+            <ShellContent
+                Title="Liste"
+                ContentTemplate="{DataTemplate Views:listPage}"
+                Route="listPage"/>
 
-    </TabBar>
-
-    <FlyoutItem>
-
-        <ShellContent
-            Title="Fiche Exemple"
-            ContentTemplate="{DataTemplate Views:ficheAnime}" />
-
+            <ShellContent
+                Title="Fiche Exemple"
+                ContentTemplate="{DataTemplate Views:ficheAnime}"
+                Route="fichePage"/>
+        </Tab>
     </FlyoutItem>
-    
+
+    <ShellContent Route="about"/>
+
 </Shell>
