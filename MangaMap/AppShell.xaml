@@ -6,9 +6,10 @@
     xmlns:local="clr-namespace:MangaMap"
     xmlns:Views="clr-namespace:MangaMap.Views"
     Shell.FlyoutBehavior="Disabled"
-    Shell.NavBarIsVisible="False">
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarIsVisible="False">
 
-    <FlyoutItem Route="page">
+    <TabBar Route="page">
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate Views:homePage}"
@@ -40,7 +41,7 @@
                 ContentTemplate="{DataTemplate Views:ficheAnime}"
                 Route="fichePage"/>
         </Tab>
-    </FlyoutItem>
+    </TabBar>
 
     <ShellContent Route="about"/>
 

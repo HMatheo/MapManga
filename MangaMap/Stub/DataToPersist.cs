@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace MangaMap.Stub
 {
+    //Cette classe permet de définir ce qui doit être enregistrer par la persistance.
     public class DataToPersist
     {
         public List<Oeuvre> Oeuvres { get; set; } = new List<Oeuvre>();
