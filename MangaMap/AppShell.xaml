@@ -7,9 +7,15 @@
     xmlns:Views="clr-namespace:MangaMap.Views"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False"
-    Shell.TabBarIsVisible="False">
+    Shell.TabBarIsVisible="True">
 
     <TabBar Route="page">
+
+        <ShellContent
+            Title="HomeDisconnect"
+            ContentTemplate="{DataTemplate Views:homePageDisconnect}"
+            Route="homePageDisconnect" />
+
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate Views:homePage}"

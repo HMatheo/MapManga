@@ -13,3 +13,4 @@ public partial class homePage : ContentPage
 		a2.BindingContext = my_manager;
 	}
 }
+

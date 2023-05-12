@@ -22,9 +22,18 @@ namespace MangaMap.Stub
             var serializer = new DataContractSerializer(typeof(DataToPersist));
             DataToPersist data;
 
-            using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
+            if (File.Exists(Path.Combine(FilePath, FileName))) // Vérifiez si le fichier existe
             {
-                data = serializer.ReadObject(s) as DataToPersist;
+
+                using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
+                {
+                    data = serializer.ReadObject(s) as DataToPersist;
+                }
+            }
+
+            else
+            {
+                data = new DataToPersist(); // Si le fichier n'existe pas, créez une nouvelle liste
             }
 
             return (data.Oeuvres, data.Utilisateurs);

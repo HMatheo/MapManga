@@ -89,6 +89,9 @@
 	  <MauiXaml Update="Views\homePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\homePageDisconnect.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\listPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
