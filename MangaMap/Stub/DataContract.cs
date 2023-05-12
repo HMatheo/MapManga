@@ -19,20 +19,20 @@ namespace MangaMap.Stub
 
         public (List<Oeuvre>, List<Utilisateur>) chargeDonne()
         {
-            var serializer = new DataContractSerializer(typeof(List<Oeuvre>));
-            List<Oeuvre> liste;
+            var serializer = new DataContractSerializer(typeof(DataToPersist));
+            DataToPersist data;
 
             using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
             {
-                liste = serializer.ReadObject(s) as List<Oeuvre>;
+                data = serializer.ReadObject(s) as DataToPersist;
             }
 
-            return (liste, new List<Utilisateur>());
+            return (data.Oeuvres, data.Utilisateurs);
         }
 
         public void sauvegarder(List<Oeuvre> o, List<Utilisateur> u)
         {
-            var serializer = new DataContractSerializer(typeof(List<Oeuvre>));
+            var serializer = new DataContractSerializer(typeof(DataToPersist));
 
             if(!Directory.Exists(FilePath))
             {
@@ -45,12 +45,16 @@ namespace MangaMap.Stub
                 serializer.WriteObject(s, o);                                           //Version d'enregistrement des données sans indentation.
             }*/
 
+            DataToPersist data = new DataToPersist();
+            data.Oeuvres = o;
+            data.Utilisateurs = u;
+
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(Path.Combine(FilePath, FileName)))
             {
                 using (XmlWriter w = XmlWriter.Create(tw, settings))
                 {
-                    serializer.WriteObject(w, o);                                       //Version d'enregistrement des données avec indentation.
+                    serializer.WriteObject(w, data);                                       //Version d'enregistrement des données avec indentation.
                 }
             }
         }
