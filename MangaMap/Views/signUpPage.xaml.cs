@@ -17,7 +17,7 @@ public partial class signUpPage : ContentPage
     {
         // Récupérer les valeurs des entrées
         string nom = nameEntry.Text;
-        string prénom = firstNameEntry.Text;
+        string prenom = firstNameEntry.Text;
         int age = Convert.ToInt32(ageEntry.Text);
         string email = emailEntry.Text;
         string pseudo = usernameEntry.Text;
