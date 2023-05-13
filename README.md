@@ -25,6 +25,7 @@ All the information about MapManga are [here](https://codefirst.iut.uca.fr/git/v
 ![signUpPage](/Documentation/Images/signUpPage.png)
 ![settingsPage](/Documentation/Images/settingsPage.png)
 ![listPage](/Documentation/Images/listPage.png)
+<img src="/Documentation/Images/listPage.png"  width="60%" height="30%">
 
 ## Made with 
 - [Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/ "IDE") -IDE
