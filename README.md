@@ -21,6 +21,11 @@ All the information about MapManga are [here](https://codefirst.iut.uca.fr/git/v
 
 ## Screen Capture 
 
+![loginPage](https://codefirst.iut.uca.fr/git/vianney.jourdy/MapManga/src/branch/master/Documentation/Images/connexionPage.png)
+![signUpPage](https://codefirst.iut.uca.fr/git/vianney.jourdy/MapManga/src/branch/master/Documentation/Images/signUpPage.png)
+![settingsPage](https://codefirst.iut.uca.fr/git/vianney.jourdy/MapManga/src/branch/master/Documentation/Images/settingsPage.png)
+![listPage](https://codefirst.iut.uca.fr/git/vianney.jourdy/MapManga/src/branch/master/Documentation/Images/listPage.png)
+
 ## Made with 
 - [Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/ "IDE") -IDE
 - [CodeFirst](https://codefirst.iut.uca.fr/) - Technology
