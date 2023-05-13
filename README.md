@@ -14,10 +14,10 @@ All the information about MapManga are [here](https://codefirst.iut.uca.fr/git/v
 - [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) - Framework
 
 ## Features
-    - Have a list of anime/manga with what you watch, what you have seen
-    - Consult its list 
-    - Add and remove anime and manga from your list 
-    - Give a review on an anime or manga and rate it
+    -Have a list of anime/manga with what you watch, what you have seen
+    -Consult its list 
+    -Add and remove anime and manga from your list 
+    -Give a review on an anime or manga and rate it
 
 ## Screen Capture 
 
