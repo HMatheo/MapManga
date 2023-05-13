@@ -32,11 +32,11 @@ public partial class loginPage : ContentPage
         // Vérification du mot de passe
         if (password != "monmotdepasse")
         {
-            DisplayAlert("Erreur", "Le mot de passe entré est incorrect.", "OK");
+            await DisplayAlert("Erreur", "Le mot de passe entré est incorrect.", "OK");
             return;
         }
 
         // Redirection vers la page suivante si le mot de passe est correct
-        Navigation.PushAsync(new homePage());
+        await Navigation.PushAsync(new homePage());
     }
 }
