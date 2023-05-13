@@ -10,6 +10,22 @@ All the information about MapManga are [here](https://codefirst.iut.uca.fr/git/v
 
 ### All the required
 
-    *.* Git - Versioning
-    *.* Visual Studio 2022
-    *.* .NET 7.0 - Framework
+    - Git - Versioning
+    - Visual Studio 2022
+    - .NET 7.0 - Framework
+
+## Features
+
+    - Have a list of anime/manga with what you watch, what you have seen
+    - Consult its list 
+    - Add and remove anime and manga from your list 
+    - Give a review on an anime or manga and rate it
+
+## Screen Capture 
+
+## Made with 
+
+
+
+
+    
