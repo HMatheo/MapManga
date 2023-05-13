@@ -60,7 +60,7 @@ public partial class signUpPage : ContentPage
 
         if (password == confirmPassword)
         {
-            Utilisateur util = new Utilisateur(email, pseudo, password, nom, prénom, age);
+            Utilisateur util = new Utilisateur(email, pseudo, password, nom, prenom, age);
             my_manager.Utilisateurs.Add(util);
             await Navigation.PushAsync(new homePage());
             return;
