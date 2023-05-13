@@ -10,9 +10,9 @@ All the information about MapManga are [here](https://codefirst.iut.uca.fr/git/v
 
 ### All the required
 
-    - Git - Versioning
-    - Visual Studio 2022
-    - .NET 7.0 - Framework
+    - [Git](https://git-scm.com/) - Versioning
+    - [Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/ "IDE") - IDE
+    - [.NET 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0) - Framework
 
 ## Features
 
@@ -24,6 +24,18 @@ All the information about MapManga are [here](https://codefirst.iut.uca.fr/git/v
 ## Screen Capture 
 
 ## Made with 
+
+    - [Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/ "IDE") -IDE
+    - [CodeFirst](https://codefirst.iut.uca.fr/) - Technology
+    - [.NET MAUI 7.0](https://learn.microsoft.com/fr-fr/dotnet/maui/whats-new/dotnet-7) - Framework
+        - [XAML](https://learn.microsoft.com/fr-fr/dotnet/desktop/wpf/xaml/?view=netdesktop-7.0) - declarative markup language
+        - [C#](https://learn.microsoft.com/fr-fr/dotnet/csharp/) - Language
+    - [Doxygen](https://www.doxygen.nl/) - Documentation
+
+## Contributors
+
+    - [JOURDY Vianney](https://codefirst.iut.uca.fr/git/vianney.jourdy)
+    - [HERSAN Mathéo](https://codefirst.iut.uca.fr/git/matheo.hersan)
 
 
 
