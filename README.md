@@ -22,12 +22,12 @@ All the information about MapManga are [here](https://codefirst.iut.uca.fr/git/v
 ## Screen Capture 
 
 ## Made with 
-    -[Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/ "IDE") -IDE
-    -[CodeFirst](https://codefirst.iut.uca.fr/) - Technology
-    -[.NET MAUI 7.0](https://learn.microsoft.com/fr-fr/dotnet/maui/whats-new/dotnet-7) - Framework
-        -[XAML](https://learn.microsoft.com/fr-fr/dotnet/desktop/wpf/xaml/?view=netdesktop-7.0) - declarative markup language
-        -[C#](https://learn.microsoft.com/fr-fr/dotnet/csharp/) - Language
-    -[Doxygen](https://www.doxygen.nl/) - Documentation
+- [Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/ "IDE") -IDE
+- [CodeFirst](https://codefirst.iut.uca.fr/) - Technology
+- [.NET MAUI 7.0](https://learn.microsoft.com/fr-fr/dotnet/maui/whats-new/dotnet-7) - Framework
+- [XAML](https://learn.microsoft.com/fr-fr/dotnet/desktop/wpf/xaml/?view=netdesktop-7.0) - declarative markup language
+- [C#](https://learn.microsoft.com/fr-fr/dotnet/csharp/) - Language
+- [Doxygen](https://www.doxygen.nl/) - Documentation
 
 ## Contributors
     -[JOURDY Vianney](https://codefirst.iut.uca.fr/git/vianney.jourdy)
