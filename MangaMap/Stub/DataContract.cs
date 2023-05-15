@@ -41,32 +41,17 @@ namespace MangaMap.Stub
             var serializer = new DataContractSerializer(typeof(DataToPersist));
 
             DataToPersist data;
-            if (File.Exists(Path.Combine(FilePath, FileName)))
-            {
+            /*if (File.Exists(Path.Combine(FilePath, FileName)))
+            {*/
                 using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
                 {
                     data = serializer.ReadObject(s) as DataToPersist;
-                }
+                }/*
             }
             else
             {
                 data = new DataToPersist();
-            }
-
-            // Vérifier si un utilisateur avec le même nom d'utilisateur existe déjà
-            var existingUser = data.Utilisateurs.FirstOrDefault(user => user.Pseudo == u.Last().Pseudo);
-            if (existingUser != null)
-            {
-                // Mettre à jour l'utilisateur existant
-                existingUser.MotDePasse = u.Last().MotDePasse;
-                existingUser.Email = u.Last().Email;
-
-            }
-            else
-            {
-                // Ajouter le nouvel utilisateur à la liste existante
-                data.Utilisateurs.Add(u.Last());
-            }
+            }*/
 
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(Path.Combine(FilePath, FileName)))

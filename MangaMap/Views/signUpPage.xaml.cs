@@ -2,6 +2,7 @@ namespace MangaMap.Views;
 
 using MangaMap.Model;
 using System.Text.RegularExpressions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 public partial class signUpPage : ContentPage
 {
@@ -24,6 +25,14 @@ public partial class signUpPage : ContentPage
         string password = passwordEntry.Text;
         string confirmPassword = confirmPasswordEntry.Text;
 
+        foreach (Utilisateur u in my_manager.Utilisateurs)
+        {
+            if (u.Email == email ||u.Pseudo==pseudo)
+            {
+                await DisplayAlert("Erreur", "L'utilisateur existe déjà.", "OK");
+                return;
+            }
+        }
 
         if (string.IsNullOrWhiteSpace(email) ||
         string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
@@ -66,8 +75,6 @@ public partial class signUpPage : ContentPage
             await Navigation.PushAsync(new homePage());
             return;
         }
-
-
     }
 
     bool IsPasswordStrong(string password)
