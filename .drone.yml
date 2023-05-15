@@ -12,7 +12,7 @@ steps:
     image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
     commands:
       - cd MangaMap/
-      - dotnet restore MangaMap.sln --framework net7.0
+      - dotnet restore MangaMap.sln 
       - dotnet build MangaMap.sln -c Debug --no-restore --framework net7.0
       - dotnet publish MangaMap.sln -c Release --no-restore -o $CI_PROJECT_DIR/build/release --framework net7.0
 
