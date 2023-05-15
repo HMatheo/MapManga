@@ -8,23 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
+
 namespace MangaMap.Stub
 {
     public class DataContract : IPersistanceManager
     {
         public string FileName { get; set; } = "SauvegardeDonnees.xml";
         public string FilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
-        //public string FilePath2 { get; set; } = "C:\\Users\\vjour\\UCA\\MapManga\\MangaMap";
-        //public string FilePath2 { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), "\\..\\..\\Users");
 
         public (List<Oeuvre>, List<Utilisateur>) chargeDonne()
         {
             var serializer = new DataContractSerializer(typeof(DataToPersist));
             DataToPersist data;
 
-            using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
+            if (File.Exists(Path.Combine(FilePath, FileName))) // Vérifiez si le fichier existe
             {
-                data = serializer.ReadObject(s) as DataToPersist;
+                using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
+                {
+                    data = serializer.ReadObject(s) as DataToPersist;
+                }
+            }
+            else
+            {
+                data = new DataToPersist(); // Si le fichier n'existe pas, créez une nouvelle liste
             }
 
             return (data.Oeuvres, data.Utilisateurs);
@@ -34,29 +40,43 @@ namespace MangaMap.Stub
         {
             var serializer = new DataContractSerializer(typeof(DataToPersist));
 
-            if(!Directory.Exists(FilePath))
+            DataToPersist data;
+            if (File.Exists(Path.Combine(FilePath, FileName)))
             {
-                Debug.WriteLine("Directory doesn't exist.");
-                Directory.CreateDirectory(FilePath);
+                using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
+                {
+                    data = serializer.ReadObject(s) as DataToPersist;
+                }
+            }
+            else
+            {
+                data = new DataToPersist();
             }
 
-            /*using (Stream s = File.Create(Path.Combine(FilePath, FileName)))
+            // Vérifier si un utilisateur avec le même nom d'utilisateur existe déjà
+            var existingUser = data.Utilisateurs.FirstOrDefault(user => user.Pseudo == u.Last().Pseudo);
+            if (existingUser != null)
             {
-                serializer.WriteObject(s, o);                                           //Version d'enregistrement des données sans indentation.
-            }*/
+                // Mettre à jour l'utilisateur existant
+                existingUser.MotDePasse = u.Last().MotDePasse;
+                existingUser.Email = u.Last().Email;
 
-            DataToPersist data = new DataToPersist();
-            data.Oeuvres = o;
-            data.Utilisateurs = u;
+            }
+            else
+            {
+                // Ajouter le nouvel utilisateur à la liste existante
+                data.Utilisateurs.Add(u.Last());
+            }
 
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(Path.Combine(FilePath, FileName)))
             {
                 using (XmlWriter w = XmlWriter.Create(tw, settings))
                 {
-                    serializer.WriteObject(w, data);                                       //Version d'enregistrement des données avec indentation.
+                    serializer.WriteObject(w, data);   // Enregistrer toutes les données dans le fichier
                 }
             }
         }
     }
+
 }

@@ -18,7 +18,7 @@ public partial class App : Application
 		MyManager.Admins.Add(MyAdmin);
 
 		MainPage = new AppShell();
-        //MyManager.Persistance = new DataContract();
+        MyManager.Persistance = new DataContract();
 
         MyManager.sauvegarder();
     }
