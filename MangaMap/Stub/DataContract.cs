@@ -39,8 +39,8 @@ namespace MangaMap.Stub
         public void sauvegarder(List<Oeuvre> o, List<Utilisateur> u)
         {
             var serializer = new DataContractSerializer(typeof(DataToPersist));
-
             DataToPersist data;
+
             if (File.Exists(Path.Combine(FilePath, FileName)))
             {
                 using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
@@ -53,19 +53,22 @@ namespace MangaMap.Stub
                 data = new DataToPersist();
             }
 
-            // Vérifier si un utilisateur avec le même nom d'utilisateur existe déjà
-            var existingUser = data.Utilisateurs.FirstOrDefault(user => user.Pseudo == u.Last().Pseudo);
-            if (existingUser != null)
+            // Parcourir les nouveaux utilisateurs
+            foreach (var newUser in u)
             {
-                // Mettre à jour l'utilisateur existant
-                existingUser.MotDePasse = u.Last().MotDePasse;
-                existingUser.Email = u.Last().Email;
-
-            }
-            else
-            {
-                // Ajouter le nouvel utilisateur à la liste existante
-                data.Utilisateurs.Add(u.Last());
+                // Vérifier si un utilisateur avec le même nom d'utilisateur existe déjà
+                var existingUser = data.Utilisateurs.FirstOrDefault(user => user.Pseudo == newUser.Pseudo);
+                if (existingUser != null)
+                {
+                    // Mettre à jour les informations de l'utilisateur existant
+                    existingUser.MotDePasse = newUser.MotDePasse;
+                    existingUser.Email = newUser.Email;
+                }
+                else
+                {
+                    // Ajouter le nouvel utilisateur à la liste existante
+                    data.Utilisateurs.Add(newUser);
+                }
             }
 
             var settings = new XmlWriterSettings() { Indent = true };
@@ -77,6 +80,7 @@ namespace MangaMap.Stub
                 }
             }
         }
+
     }
 
 }
