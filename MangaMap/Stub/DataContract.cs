@@ -40,25 +40,27 @@ namespace MangaMap.Stub
         {
             var serializer = new DataContractSerializer(typeof(DataToPersist));
 
-            DataToPersist data;
-            /*if (File.Exists(Path.Combine(FilePath, FileName)))
-            {*/
-                using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
-                {
-                    data = serializer.ReadObject(s) as DataToPersist;
-                }/*
-            }
-            else
+            if (!Directory.Exists(FilePath))
             {
-                data = new DataToPersist();
+                Debug.WriteLine("Directory doesn't exist.");
+                Directory.CreateDirectory(FilePath);
+            }
+
+            /*using (Stream s = File.Create(Path.Combine(FilePath, FileName)))
+            {
+                serializer.WriteObject(s, o);                                           //Version d'enregistrement des données sans indentation.
             }*/
+
+            DataToPersist data = new DataToPersist();
+            data.Oeuvres = o;
+            data.Utilisateurs = u;
 
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(Path.Combine(FilePath, FileName)))
             {
                 using (XmlWriter w = XmlWriter.Create(tw, settings))
                 {
-                    serializer.WriteObject(w, data);   // Enregistrer toutes les données dans le fichier
+                    serializer.WriteObject(w, data);                                       //Version d'enregistrement des données avec indentation.
                 }
             }
         }
