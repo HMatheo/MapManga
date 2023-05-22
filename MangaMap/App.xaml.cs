@@ -9,12 +9,12 @@ public partial class App : Application
     public string FileName { get; set; } = "SauvegardeDonnees.xml";
     public string FilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
 
-    public Manager MyManager { get; private set; } = new Manager(new Stub.Stub());		//pour utiliser le stub comme moyen de persistance.
+    public Manager MyManager { get; private set; } = new Manager(new Stub.Stub());      //pour utiliser le stub comme moyen de persistance.
 
-	public Admin MyAdmin { get; private set; } = new Admin("test", "test@test.ts", "Pseudo_test");
+    public Admin MyAdmin { get; private set; } = new Admin("test", "test@test.ts", "Pseudo_test");
 
-	public App()
-	{
+    public App()
+    {
         InitializeComponent();
 
         if (File.Exists(Path.Combine(FilePath, FileName)))
@@ -23,9 +23,9 @@ public partial class App : Application
         }
 
         MyManager.charger();
-		MyManager.Admins.Add(MyAdmin);
+        MyManager.Admins.Add(MyAdmin);
 
-		MainPage = new AppShell();
+        MainPage = new AppShell();
 
         if (!File.Exists(Path.Combine(FilePath, FileName)))
         {
