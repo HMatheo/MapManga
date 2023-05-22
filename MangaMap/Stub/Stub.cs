@@ -23,8 +23,8 @@ namespace MangaMap.Stub
             List<string> genres = new List<string>();
             genres.Add("Action");
             genres.Add("Future");
-            Oeuvre o1 = new Oeuvre("test", genres, "TV", "C'est une bonne série", 4, 150, "test.jpg");
-            Oeuvre o2 = new Oeuvre("test2", genres, "DVD", "A la fin il meurt", 2, 24, "test2.png");
+            Oeuvre o1 = new Oeuvre("Evangelion", genres, "TV", "C'est une bonne série", 4, 150, "evangelion.jpg");
+            Oeuvre o2 = new Oeuvre("[Oshi No Ko]", genres, "DVD", "A la fin il meurt", 2, 24, "oshinoko.png");
 
             l1.Add(o1); l1.Add(o2);
             l2.Add(u1); l2.Add(u2); l2.Add(u3);
