@@ -33,5 +33,6 @@ public partial class App : Application
         }
 
         MyManager.sauvegarder();
+        Console.WriteLine("sauvegarde faite");
     }
 }
