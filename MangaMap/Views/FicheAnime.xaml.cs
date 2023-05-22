@@ -1,25 +1,17 @@
 namespace MangaMap.Views;
 using Model;
 using System.ComponentModel;
+using System.Xml.Linq;
 
 public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 {
-    private Oeuvre animeModel;
-    public Oeuvre AnimeModel
-    {
-        get { return animeModel; }
-        set
-        {
-            if (animeModel != value)
-            {
-                animeModel = value;
-                OnPropertyChanged(nameof(AnimeModel));
-            }
-        }
-    }
+
+    public Manager DataManager { get; set; }
+    public Oeuvre AnimeModel { get; set; }
 
     public ficheAnime()
     {
+
         List<string> genres = new List<string>() { "Action", "Aventure" };
         AnimeModel = new Oeuvre("Evangelion", genres, "Type de l'oeuvre", "Description de l'oeuvre", 5, 12, "Chemin/vers/l'affiche.png");
 
@@ -28,10 +20,13 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
         this.BindingContext = this;
     }
 
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected virtual void OnPropertyChanged(string propertyName)
+    public ficheAnime(Oeuvre anime)
     {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        AnimeModel = anime;
+
+        InitializeComponent();
+
+        this.BindingContext = this;
     }
+
 }
