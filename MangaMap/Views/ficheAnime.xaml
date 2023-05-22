@@ -47,7 +47,7 @@
             Margin="20"/>
 
             <Label Text="{Binding AnimeModel.Nom}" FontSize="Header" VerticalOptions="Center" TextColor="{StaticResource Primary}"/>
-            <Label Text="{Binding AnimeModel.Description}" Margin="20"/>
+            <Label Text="{Binding AnimeModel.Description}" Margin="20" TextColor="Wheat"/>
 
             <Entry Text="{Binding AnimeModel.Nom}" Placeholder="Entrez le nom"/>
             <Entry Text="{Binding AnimeModel.Description}" Placeholder="Entrez la description"/>
