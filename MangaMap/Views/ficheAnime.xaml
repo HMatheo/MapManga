@@ -29,19 +29,20 @@
                 <Label Text="test" BackgroundColor="{StaticResource Primary}"/>
             </Grid>
 
-            <HorizontalStackLayout>
-                <Image Source="star.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Image Source="star.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Image Source="star.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Image Source="star.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Image Source="star.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
+            <HorizontalStackLayout x:Name="star">
+                <Image Source="star_full.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Image Source="star_full.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Image Source="star_full.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Image Source="star_full.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Image Source="star_full.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
 
                 <Button Text="Ajouter à la liste"
-                    TextColor="#FFFFFF"
-                HorizontalOptions="Start"
-                Margin="20"
-                BackgroundColor="{StaticResource Primary}"/>
+                        TextColor="#FFFFFF"
+                        HorizontalOptions="Start"
+                        Margin="20"
+                        BackgroundColor="{StaticResource Primary}"/>    
             </HorizontalStackLayout>
+
 
             <Label
             Text="Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description."
@@ -58,7 +59,6 @@
         </VerticalStackLayout>
 
         
-
     </Grid>
 
 </ContentPage>

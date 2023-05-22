@@ -12,9 +12,7 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
     public ficheAnime()
     {
 
-        List<string> genres = new List<string>() { "Action", "Aventure" };
-        AnimeModel = new Oeuvre("Evangelion", genres, "Type de l'oeuvre", "Description de l'oeuvre", 5, 12, "Chemin/vers/l'affiche.png");
-
+   
         InitializeComponent();
 
         this.BindingContext = this;
@@ -27,6 +25,24 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
         InitializeComponent();
 
         this.BindingContext = this;
+    }
+
+    private void SetNote(float note)
+    {
+        note = (int)note; // Tronquer à un entier car nous ne gérons actuellement pas les demi-étoiles
+        var starImages = star.Children.OfType<Image>().Reverse().ToList();
+        foreach (var img in starImages)
+        {
+            if (note > 0)
+            {
+                img.Opacity = 1;
+                note--;
+            }
+            else
+            {
+                img.Opacity = 0;
+            }
+        }
     }
 
 }

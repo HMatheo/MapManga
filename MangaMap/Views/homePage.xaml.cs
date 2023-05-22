@@ -12,15 +12,16 @@ public partial class homePage : ContentPage
 
         InitializeComponent();
 		BindingContext = my_manager;
+
 	}
 
-    private void AnimeImageClicked(object sender, EventArgs e)
+    private async void AnimeImageClicked(object sender, EventArgs e)
     {
         var selectedAnime = (sender as ImageButton)?.BindingContext as Oeuvre;
         if (selectedAnime != null)
         {
             // Naviguez vers la page de la fiche d'anime en passant l'objet sélectionné
-            Navigation.PushAsync(new ficheAnime(selectedAnime));
+            await Navigation.PushAsync(new ficheAnime(selectedAnime));
         }
     }
 }
