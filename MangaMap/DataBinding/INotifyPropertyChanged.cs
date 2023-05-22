@@ -9,6 +9,5 @@ namespace MangaMap.DataBinding
 {
     public interface INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

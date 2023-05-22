@@ -17,10 +17,10 @@
                     Style="{StaticResource ImageAnime}"
                     BackgroundColor="Orange"
                     Margin="50"
-                    Source="test.jpg"
+                    Source="{Binding AnimeModel.Affiche}"
                     />
 
-                <Label Text="{Binding AnimeModel.Nom}" FontSize="Header" VerticalOptions="Center" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding AnimeModel.Nom}" FontSize="Header" VerticalOptions="Center" TextColor="White"/>
             </HorizontalStackLayout>
 
             <Grid>
@@ -30,11 +30,11 @@
             </Grid>
 
             <HorizontalStackLayout>
-                <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Ellipse Fill="Gold" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Image Source="star.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Image Source="star.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Image Source="star.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Image Source="star.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
+                <Image Source="star.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
 
                 <Button Text="Ajouter à la liste"
                     TextColor="#FFFFFF"

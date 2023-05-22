@@ -31,7 +31,7 @@
 
                 <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Oeuvres}" Spacing="100" HorizontalOptions="Center">
                     <BindableLayout.ItemTemplate>
-                        <DataTemplate x:DataType="modeles:Oeuvre">
+                        <DataTemplate>
                             <ImageButton
                                     Style="{StaticResource ImageAnime}"
                                     BackgroundColor="Red"

@@ -58,9 +58,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Remove="Resources\Images\Evangelion.jpg" />
 		<None Remove="Resources\Images\logo.png" />
 		<None Remove="Resources\Images\settings.png" />
-		<None Remove="Resources\Images\test.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>

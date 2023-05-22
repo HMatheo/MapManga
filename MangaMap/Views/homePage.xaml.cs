@@ -12,7 +12,6 @@ public partial class homePage : ContentPage
 
         InitializeComponent();
 		BindingContext = my_manager;
-		BindingContext = my_manager;
 	}
 
     private void AnimeImageClicked(object sender, EventArgs e)
