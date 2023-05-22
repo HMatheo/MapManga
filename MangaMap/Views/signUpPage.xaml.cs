@@ -72,6 +72,7 @@ public partial class signUpPage : ContentPage
             Utilisateur util = new Utilisateur(email, pseudo, password, nom, prenom, age);
             my_manager.Utilisateurs.Add(util);
             my_manager.sauvegarder();
+            my_manager.UtilisateurActuel = util;
             await Navigation.PushAsync(new homePage());
             return;
         }

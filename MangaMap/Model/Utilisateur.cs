@@ -17,7 +17,7 @@ namespace MangaMap.Model
         [DataMember] 
         public int age { get; private set; }
         [DataMember] 
-        public List<Oeuvre> ListeOeuvreEnVisionnage { get; private set; }
+        public List<Oeuvre> ListeOeuvreEnVisionnage { get; set; }
         [DataMember] 
         public List<Oeuvre> ListeOeuvreDejaVu { get; private set; }
         [DataMember]

@@ -6,7 +6,7 @@ using System.Xml.Linq;
 public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 {
 
-    public Manager DataManager { get; set; }
+    public Manager my_manager => (App.Current as App).MyManager;
     public Oeuvre AnimeModel { get; set; }
 
     public ficheAnime()
@@ -25,6 +25,19 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
         InitializeComponent();
 
         this.BindingContext = this;
+    }
+
+    public async void AjouterListe(object sender, EventArgs e)
+    {
+        if (my_manager.UtilisateurActuel == null)
+        {
+            await DisplayAlert("Erreur", "Vous n'êtes pas connecté.", "OK");
+            return;
+        }
+
+        my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage.Add(AnimeModel);
+        // Naviguez vers la page de la fiche d'anime en passant l'objet sélectionné
+        await Navigation.PushAsync(new listPage());
     }
 
     private void SetNote(float note)

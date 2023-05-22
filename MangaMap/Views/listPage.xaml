@@ -39,54 +39,18 @@
                         </Grid>
 
                         <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
-                            <VerticalStackLayout Spacing="10">
+                            <VerticalStackLayout BindableLayout.ItemsSource="{Binding ListeOeuvreEnVisionnage}" Spacing="10">
 
-                                <Grid Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">
-
-                                    <ImageButton Grid.Column="0" BackgroundColor="#FFFFFF" WidthRequest="100" HeightRequest="100" HorizontalOptions="Start"/>
-                                    <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
-                                    <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                    <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
-                                </Grid>
-
-                                <Grid Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">
-                                    <ImageButton Grid.Column="0" BackgroundColor="Blue" WidthRequest="100" HeightRequest="100" HorizontalOptions="Start"/>
-                                    <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
-                                    <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                    <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
-                                </Grid>
-
-                                <Grid Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">
-
-                                    <ImageButton Grid.Column="0" BackgroundColor="Red" WidthRequest="100" HeightRequest="100" HorizontalOptions="Start"/>
-                                    <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
-                                    <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                    <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
-                                </Grid>
-
-                                <Grid Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">
-
-                                    <ImageButton Grid.Column="0" BackgroundColor="#FFFFFF" WidthRequest="100" HeightRequest="100" HorizontalOptions="Start"/>
-                                    <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
-                                    <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                    <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
-                                </Grid>
-
-                                <Grid Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">
-
-                                    <ImageButton Grid.Column="0" BackgroundColor="Blue" WidthRequest="100" HeightRequest="100" HorizontalOptions="Start"/>
-                                    <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
-                                    <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                    <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
-                                </Grid>
-
-                                <Grid Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">
-
-                                    <ImageButton Grid.Column="0" BackgroundColor="Red" WidthRequest="100" HeightRequest="100" HorizontalOptions="Start"/>
-                                    <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
-                                    <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                    <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
-                                </Grid>
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">
+                                            <ImageButton Grid.Column="0" Source="{Binding Affiche}" BackgroundColor="#FFFFFF" WidthRequest="100" HeightRequest="100" HorizontalOptions="Start"/>
+                                            <Label Grid.Column="1" Text="Test Titre" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                                            <Label Grid.Column="2" Text="4/5" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                            <Label Grid.Column="3" Text="10/85" VerticalOptions="Center" HorizontalOptions="End"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
 
                             </VerticalStackLayout>
                         </ScrollView>

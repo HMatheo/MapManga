@@ -40,7 +40,8 @@
                         TextColor="#FFFFFF"
                         HorizontalOptions="Start"
                         Margin="20"
-                        BackgroundColor="{StaticResource Primary}"/>    
+                        BackgroundColor="{StaticResource Primary}"
+                        Clicked="AjouterListe"/>    
             </HorizontalStackLayout>
 
 
