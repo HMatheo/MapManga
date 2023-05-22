@@ -12,14 +12,15 @@
         <VerticalStackLayout Grid.Row="1">
 
             <HorizontalStackLayout>
-                <Rectangle
-                WidthRequest="150"
-                HeightRequest="150"
-                Fill="Red"
-                HorizontalOptions="Start"
-                Margin="50"/>
+                
+                <ImageButton
+                    Style="{StaticResource ImageAnime}"
+                    BackgroundColor="Orange"
+                    Margin="50"
+                    Source="test.jpg"
+                    />
 
-                <Label Text="Titre" FontSize="Header" VerticalOptions="Center"/>
+                <Label Text="{Binding AnimeModel.Nom}" FontSize="Header" VerticalOptions="Center" TextColor="{StaticResource Primary}"/>
             </HorizontalStackLayout>
 
             <Grid>
@@ -46,7 +47,7 @@
             Text="Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description. Je suis une description."
             Margin="20"/>
 
-            <Label Text="{Binding AnimeModel.Nom}" FontSize="Header" VerticalOptions="Center" TextColor="{StaticResource Primary}"/>
+            
             <Label Text="{Binding AnimeModel.Description}" Margin="20" TextColor="Wheat"/>
 
             <Entry Text="{Binding AnimeModel.Nom}" Placeholder="Entrez le nom"/>
