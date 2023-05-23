@@ -33,6 +33,11 @@ namespace MangaMap.Model
             this.nom = nom;
             this.prenom = prenom;
             this.age = age;
+
+            ListeOeuvreEnVisionnage = new List<Oeuvre>();
+            ListeOeuvreDejaVu = new List<Oeuvre>();
+            ListeOeuvrePourPlusTard = new List<Oeuvre>();
+            ListeOeuvreFavorites = new List<Oeuvre>();
         }
 
         public void SupprimerUtilisateur()
