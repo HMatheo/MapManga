@@ -2,7 +2,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MangaMap"
     x:Class="MangaMap.Views.listPage"
-    BackgroundColor="Black">
+    BackgroundColor="Black"
+    x:Name="listPage">
 
     <Grid RowDefinitions="40, *">
         <local:NewContent1 HeightRequest="40" VerticalOptions="Start" Padding="10, 0"/>

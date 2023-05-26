@@ -28,6 +28,8 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
         this.BindingContext = this;
     }
 
+
+
     public async void AjouterListe(object sender, EventArgs e)
     {
         if (my_manager.UtilisateurActuel == null)
@@ -36,18 +38,45 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
             return;
         }
 
-        if (my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage == null)
-        {
-            // Initialisez la liste si elle est nulle
-            //my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage = new List<Oeuvre>();
-        }
-        Debug.WriteLine("Iciii");
+        string selectedOption = await DisplayActionSheet("Ajouter à quelle liste ?", "Annuler", null, "En Visionnage", "Déjà Vu", "Pour Plus Tard", "Favoris");
 
-        my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage.Add(AnimeModel);
-        Debug.WriteLine("Okkkkkkkkkkkk");
-        // Naviguez vers la page de la fiche d'anime en passant l'objet sélectionné
+        if (selectedOption == "Annuler")
+            return;
+
+        Debug.WriteLine("Selected Option: " + selectedOption);
+
+        // Ajouter l'anime à la liste sélectionnée
+        switch (selectedOption)
+        {
+            case "En Visionnage":
+                Debug.WriteLine("Ajout à la liste En Visionnage");
+                my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage.Add(AnimeModel);
+                break;
+            case "Déjà Vu":
+                Debug.WriteLine("Ajout à la liste Déjà Vu");
+                my_manager.UtilisateurActuel.ListeOeuvreDejaVu.Add(AnimeModel);
+                break;
+            case "Pour Plus Tard":
+                Debug.WriteLine("Ajout à la liste Pour Plus Tard");
+                my_manager.UtilisateurActuel.ListeOeuvrePourPlusTard.Add(AnimeModel);
+                break;
+            case "Favoris":
+                Debug.WriteLine("Ajout à la liste Favoris");
+                my_manager.UtilisateurActuel.ListeOeuvreFavorites.Add(AnimeModel);
+                break;
+        }
+
+        foreach (Oeuvre oeuvre in my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage)
+        {
+            Debug.WriteLine("Titre de l'oeuvre : " + oeuvre.Nom);
+            // Faites d'autres opérations avec chaque élément de la liste
+        }
+
+        my_manager.sauvegarder();
+
         await Navigation.PushAsync(new listPage());
     }
+
 
     private void SetNote(float note)
     {
