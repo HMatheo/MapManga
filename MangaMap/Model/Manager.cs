@@ -33,7 +33,7 @@ namespace MangaMap.Model
             UtilisateurActuel = new Utilisateur();
         }
 
-        public Utilisateur charger()
+        /*public Utilisateur charger()
         {
             var donnees = Persistance.chargeDonne();
             foreach (var item in donnees.Item1)
@@ -46,7 +46,18 @@ namespace MangaMap.Model
             Utilisateur utilisateurActuel = Utilisateurs.FirstOrDefault();
 
             return utilisateurActuel; // Renvoyez l'utilisateur actuel
+        }*/
+
+        public void charger()
+        {
+            var donne = Persistance.chargeDonne();
+            foreach (var item in donne.Item1)
+            {
+                Oeuvres.Add(item);
+            }
+            Utilisateurs.AddRange(donne.Item2);
         }
+
 
 
         public void sauvegarder()
