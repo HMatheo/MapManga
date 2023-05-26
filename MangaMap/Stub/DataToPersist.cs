@@ -12,5 +12,6 @@ namespace MangaMap.Stub
     {
         public List<Oeuvre> Oeuvres { get; set; } = new List<Oeuvre>();
         public List<Utilisateur> Utilisateurs { get; set; } = new List<Utilisateur>();
+        
     }
 }

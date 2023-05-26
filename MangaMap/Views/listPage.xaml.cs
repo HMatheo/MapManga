@@ -11,4 +11,7 @@ public partial class listPage : ContentPage
         BindingContext = my_manager.UtilisateurActuel;
     }
 
+    
+
+
 }

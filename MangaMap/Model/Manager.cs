@@ -30,8 +30,23 @@ namespace MangaMap.Model
             Admins = new List<Admin>();
             Utilisateurs = new List<Utilisateur>();
             Oeuvres = new List<Oeuvre>();
-            UtilisateurActuel = null;
+            UtilisateurActuel = new Utilisateur();
         }
+
+        /*public Utilisateur charger()
+        {
+            var donnees = Persistance.chargeDonne();
+            foreach (var item in donnees.Item1)
+            {
+                Oeuvres.Add(item);
+            }
+            Utilisateurs.AddRange(donnees.Item2);
+
+            //  récupérer le premier utilisateur de la liste Utilisateurs :
+            Utilisateur utilisateurActuel = Utilisateurs.FirstOrDefault();
+
+            return utilisateurActuel; // Renvoyez l'utilisateur actuel
+        }*/
 
         public void charger()
         {
@@ -42,6 +57,8 @@ namespace MangaMap.Model
             }
             Utilisateurs.AddRange(donne.Item2);
         }
+
+
 
         public void sauvegarder()
         {
