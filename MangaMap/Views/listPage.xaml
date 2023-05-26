@@ -40,7 +40,6 @@
 
                         <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
                             <VerticalStackLayout BindableLayout.ItemsSource="{Binding ListeOeuvreEnVisionnage}" Spacing="10">
-
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <Grid Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">

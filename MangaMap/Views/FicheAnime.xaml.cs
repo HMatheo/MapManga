@@ -1,6 +1,7 @@
 namespace MangaMap.Views;
 using Model;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Xml.Linq;
 
 public partial class ficheAnime : ContentPage, INotifyPropertyChanged
@@ -35,7 +36,15 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
             return;
         }
 
+        if (my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage == null)
+        {
+            // Initialisez la liste si elle est nulle
+            //my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage = new List<Oeuvre>();
+        }
+        Debug.WriteLine("Iciii");
+
         my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage.Add(AnimeModel);
+        Debug.WriteLine("Okkkkkkkkkkkk");
         // Naviguez vers la page de la fiche d'anime en passant l'objet sélectionné
         await Navigation.PushAsync(new listPage());
     }

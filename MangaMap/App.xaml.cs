@@ -19,11 +19,12 @@ public partial class App : Application
 
         if (File.Exists(Path.Combine(FilePath, FileName)))
         {
-            MyManager = new Manager(new Stub.DataContract());	//pour utiliser le dataContract comme moyen de persistance.
+            MyManager = new Manager(new Stub.Stub());	//pour utiliser le dataContract comme moyen de persistance.
         }
 
-        MyManager.charger();
+        //MyManager.charger();
         MyManager.Admins.Add(MyAdmin);
+        MyManager.UtilisateurActuel = MyManager.charger();
 
         MainPage = new AppShell();
 
@@ -32,7 +33,7 @@ public partial class App : Application
             MyManager.Persistance = new DataContract();     //pour utiliser le stub comme moyen de persistance.
         }
 
-        MyManager.sauvegarder();
+        //MyManager.sauvegarder();
         Console.WriteLine("sauvegarde faite");
     }
 }
