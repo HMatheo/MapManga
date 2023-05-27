@@ -17,7 +17,7 @@ namespace MangaMap.Model
         [DataMember] 
         public int age { get; private set; }
         [DataMember] 
-        public List<Oeuvre> ListeOeuvreEnVisionnage { get; private set; }
+        public List<Oeuvre> ListeOeuvreEnVisionnage { get; set; }
         [DataMember] 
         public List<Oeuvre> ListeOeuvreDejaVu { get; private set; }
         [DataMember]
@@ -33,6 +33,18 @@ namespace MangaMap.Model
             this.nom = nom;
             this.prenom = prenom;
             this.age = age;
+
+            ListeOeuvreEnVisionnage = new List<Oeuvre>();
+            ListeOeuvreDejaVu = new List<Oeuvre>();
+            ListeOeuvrePourPlusTard = new List<Oeuvre>();
+            ListeOeuvreFavorites = new List<Oeuvre>();
+        }
+
+        public Utilisateur() {
+            ListeOeuvreEnVisionnage = new List<Oeuvre>();
+            ListeOeuvreDejaVu = new List<Oeuvre>();
+            ListeOeuvrePourPlusTard = new List<Oeuvre>();
+            ListeOeuvreFavorites = new List<Oeuvre>();
         }
 
         public void SupprimerUtilisateur()

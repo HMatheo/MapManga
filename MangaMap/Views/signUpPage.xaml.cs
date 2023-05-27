@@ -2,6 +2,7 @@ namespace MangaMap.Views;
 
 using MangaMap.Model;
 using System.Text.RegularExpressions;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 public partial class signUpPage : ContentPage
 {
@@ -17,13 +18,21 @@ public partial class signUpPage : ContentPage
     {
         // Récupérer les valeurs des entrées
         string nom = nameEntry.Text;
-        string prénom = firstNameEntry.Text;
+        string prenom = firstNameEntry.Text;
         int age = Convert.ToInt32(ageEntry.Text);
         string email = emailEntry.Text;
         string pseudo = usernameEntry.Text;
         string password = passwordEntry.Text;
         string confirmPassword = confirmPasswordEntry.Text;
 
+        foreach (Utilisateur u in my_manager.Utilisateurs)
+        {
+            if (u.Email == email ||u.Pseudo==pseudo)
+            {
+                await DisplayAlert("Erreur", "L'utilisateur existe déjà.", "OK");
+                return;
+            }
+        }
 
         if (string.IsNullOrWhiteSpace(email) ||
         string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
@@ -60,14 +69,13 @@ public partial class signUpPage : ContentPage
 
         if (password == confirmPassword)
         {
-            Utilisateur util = new Utilisateur(email, pseudo, password, nom, prénom, age);
+            Utilisateur util = new Utilisateur(email, pseudo, password, nom, prenom, age);
             my_manager.Utilisateurs.Add(util);
             my_manager.sauvegarder();
+            my_manager.UtilisateurActuel = util;
             await Navigation.PushAsync(new homePage());
             return;
         }
-
-
     }
 
     bool IsPasswordStrong(string password)

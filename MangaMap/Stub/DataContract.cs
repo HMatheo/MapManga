@@ -39,48 +39,31 @@ namespace MangaMap.Stub
         public void sauvegarder(List<Oeuvre> o, List<Utilisateur> u)
         {
             var serializer = new DataContractSerializer(typeof(DataToPersist));
-            DataToPersist data;
 
-            if (File.Exists(Path.Combine(FilePath, FileName)))
+            if (!Directory.Exists(FilePath))
             {
-                using (Stream s = File.OpenRead(Path.Combine(FilePath, FileName)))
-                {
-                    data = serializer.ReadObject(s) as DataToPersist;
-                }
-            }
-            else
-            {
-                data = new DataToPersist();
+                Debug.WriteLine("Directory doesn't exist.");
+                Directory.CreateDirectory(FilePath);
             }
 
-            // Parcourir les nouveaux utilisateurs
-            foreach (var newUser in u)
+            /*using (Stream s = File.Create(Path.Combine(FilePath, FileName)))
             {
-                // Vérifier si un utilisateur avec le même nom d'utilisateur existe déjà
-                var existingUser = data.Utilisateurs.FirstOrDefault(user => user.Pseudo == newUser.Pseudo);
-                if (existingUser != null)
-                {
-                    // Mettre à jour les informations de l'utilisateur existant
-                    existingUser.MotDePasse = newUser.MotDePasse;
-                    existingUser.Email = newUser.Email;
-                }
-                else
-                {
-                    // Ajouter le nouvel utilisateur à la liste existante
-                    data.Utilisateurs.Add(newUser);
-                }
-            }
+                serializer.WriteObject(s, o);                                           //Version d'enregistrement des données sans indentation.
+            }*/
+
+            DataToPersist data = new DataToPersist();
+            data.Oeuvres = o;
+            data.Utilisateurs = u;
 
             var settings = new XmlWriterSettings() { Indent = true };
             using (TextWriter tw = File.CreateText(Path.Combine(FilePath, FileName)))
             {
                 using (XmlWriter w = XmlWriter.Create(tw, settings))
                 {
-                    serializer.WriteObject(w, data);   // Enregistrer toutes les données dans le fichier
+                    serializer.WriteObject(w, data);                                       //Version d'enregistrement des données avec indentation.
                 }
             }
         }
-
     }
 
 }

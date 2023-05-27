@@ -29,80 +29,20 @@
                        Margin="30"
                        />
 
-                <ListView x:Name="a2" ItemsSource="{Binding Oeuvres}">
-                    <ListView.ItemTemplate>
+                <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Oeuvres}" Spacing="100" HorizontalOptions="Center">
+                    <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <ImageButton
+                            <ImageButton
                                     Style="{StaticResource ImageAnime}"
                                     BackgroundColor="Red"
                                     Source="{Binding Affiche}"
+                                    Clicked="AnimeImageClicked"
                                 />
-                            </ViewCell>
+                            <!--<views:StyleBouton -->                            
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-
-                <HorizontalStackLayout
-                Spacing="100"
-                HorizontalOptions="Center">
-
-
-                    <views:StyleBouton/>
-
-                    <ImageButton
-                        Style="{StaticResource ImageAnime}"
-                        BackgroundColor="Orange"
-                        Source="test.jpg"
-                    />
-
-                    <views:StyleBouton/>
-
-                    <views:StyleBouton/>
-
+                    </BindableLayout.ItemTemplate>
                 </HorizontalStackLayout>
 
-                <HorizontalStackLayout
-                Spacing="100"
-                HorizontalOptions="Center">
-
-                    <views:StyleBouton/>
-
-                    <views:StyleBouton/>
-
-                    <views:StyleBouton/>
-
-                    <views:StyleBouton/>
-
-                </HorizontalStackLayout>
-
-                <HorizontalStackLayout
-                Spacing="100"
-                HorizontalOptions="Center">
-
-                    <views:StyleBouton/>
-
-                    <views:StyleBouton/>
-                    <views:StyleBouton/>
-
-                    <views:StyleBouton/>
-
-
-                </HorizontalStackLayout>
-
-                <HorizontalStackLayout
-                Spacing="100"
-                HorizontalOptions="Center">
-
-                    <views:StyleBouton/>
-
-                    <views:StyleBouton/>
-
-                    <views:StyleBouton/>
-
-                    <views:StyleBouton/>
-
-                </HorizontalStackLayout>
 
                 <ListView x:Name="a1" ItemsSource="{Binding Utilisateurs}">
                     

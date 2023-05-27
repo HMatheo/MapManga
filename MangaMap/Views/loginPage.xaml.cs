@@ -5,8 +5,9 @@ using MangaMap.Stub;
 using MangaMap.Model;
 
 public partial class loginPage : ContentPage
-
 {
+    public Manager my_manager => (App.Current as App).MyManager;
+
     public loginPage()
 	{
 		InitializeComponent();
@@ -32,18 +33,16 @@ public partial class loginPage : ContentPage
             return;
         }
 
-        // Charger les données à partir de la persistance
-        IPersistanceManager persistanceManager = new DataContract();
-        (List<Oeuvre> oeuvres, List<Utilisateur> utilisateurs) = persistanceManager.chargeDonne();
-
         // Vérifier que l'utilisateur existe
-        Utilisateur utilisateur = utilisateurs.FirstOrDefault(u => u.Email == email && u.MotDePasse == password);
+        Utilisateur utilisateur = my_manager.Utilisateurs.FirstOrDefault(u => u.Email == email && u.MotDePasse == password);
         if (utilisateur == null)
         {
-            await DisplayAlert("Erreur", "L'e-mail ou le mot de passe est incorrect.", "OK");
+            await DisplayAlert("Erreur", "Le mot de passe entré est incorrect.", "OK");
             return;
         }
 
+        // On garde l'utilisateur qui vient de se connecter pour accéder à ses informations
+        my_manager.UtilisateurActuel = utilisateur;
         // Rediriger l'utilisateur vers la page principale
         await Navigation.PushAsync(new homePage());
     }

@@ -49,18 +49,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <AndroidResource Remove="Component\**" />
-	  <Compile Remove="Component\**" />
-	  <EmbeddedResource Remove="Component\**" />
-	  <MauiCss Remove="Component\**" />
-	  <MauiXaml Remove="Component\**" />
-	  <None Remove="Component\**" />
+		<AndroidResource Remove="Component\**" />
+		<Compile Remove="Component\**" />
+		<EmbeddedResource Remove="Component\**" />
+		<MauiCss Remove="Component\**" />
+		<MauiXaml Remove="Component\**" />
+		<None Remove="Component\**" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\logo.png" />
-	  <None Remove="Resources\Images\settings.png" />
-	  <None Remove="Resources\Images\test.jpg" />
+		<None Remove="Resources\Images\Evangelion.jpg" />
+		<None Remove="Resources\Images\logo.png" />
+		<None Remove="Resources\Images\settings.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -68,42 +68,39 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="CustomHeader.xaml.cs">
-	    <DependentUpon>CustomHeader.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Views\signUpPage.xaml.cs">
-	    <DependentUpon>signUpPage.xaml</DependentUpon>
-	  </Compile>
+		<Compile Update="CustomHeader.xaml.cs">
+			<DependentUpon>CustomHeader.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\signUpPage.xaml.cs">
+			<DependentUpon>signUpPage.xaml</DependentUpon>
+		</Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="CustomHeader.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Resources\Theme\DarkTheme.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Composants\StyleBouton.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\homePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\homePageDisconnect.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\listPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\loginPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\settingsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\signUpPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+		<MauiXaml Update="CustomHeader.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Resources\Theme\DarkTheme.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\Composants\StyleBouton.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\homePage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\listPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\loginPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\settingsPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\signUpPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 	</ItemGroup>
 
 </Project>

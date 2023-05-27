@@ -17,17 +17,19 @@ namespace MangaMap.Stub
             List<Oeuvre> l1 = new List<Oeuvre>();
             List<Utilisateur> l2 = new List<Utilisateur>();
 
-            Utilisateur u1 = new Utilisateur("test@test.ts", "Pseudo1", "MotDePasse123", "Jean", "Baptiste", 12);
+            Utilisateur u1 = new Utilisateur("test@test.tst", "Pseudo1", "MotDePasse123", "Jean", "Baptiste", 12);
             Utilisateur u2 = new Utilisateur("test@test.ts", "Pseudo2", "MotDePasse123", "Baptiste", "Jean", 12);
             Utilisateur u3 = new Utilisateur("test@test.ts", "Pseudo3", "MotDePasse123", "David", "Marc", 12);
             List<string> genres = new List<string>();
             genres.Add("Action");
             genres.Add("Future");
-            Oeuvre o1 = new Oeuvre("test", genres, "TV", "C'est une bonne série", 4, 150, "test.jpg");
-            Oeuvre o2 = new Oeuvre("test2", genres, "DVD", "A la fin il meurt", 2, 24, "test2.png");
+            Oeuvre o1 = new Oeuvre("Evangelion", genres, "TV", "C'est une bonne série", 4, 150, "evangelion.jpg");
+            Oeuvre o2 = new Oeuvre("[Oshi No Ko]", genres, "DVD", "A la fin il meurt", 2, 24, "oshinoko.png");
 
             l1.Add(o1); l1.Add(o2);
             l2.Add(u1); l2.Add(u2); l2.Add(u3);
+
+            u1.ListeOeuvreEnVisionnage.Add(o1);
 
             return (l1, l2);
         }

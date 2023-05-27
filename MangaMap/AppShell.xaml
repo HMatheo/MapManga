@@ -12,11 +12,6 @@
     <TabBar Route="page">
 
         <ShellContent
-            Title="HomeDisconnect"
-            ContentTemplate="{DataTemplate Views:homePageDisconnect}"
-            Route="homePageDisconnect" />
-
-        <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate Views:homePage}"
             Route="homePage" />
