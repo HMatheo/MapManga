@@ -13,6 +13,11 @@ public partial class loginPage : ContentPage
 		InitializeComponent();
 	}
 
+    async void OnSignUpClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//page/secondaire/inscriptionPage");
+    }
+
     async void OnLoginClicked(object sender, EventArgs e)
     {
         // Récupération de l'email et du mot de passe entrés

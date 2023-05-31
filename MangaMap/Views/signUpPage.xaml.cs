@@ -14,6 +14,11 @@ public partial class signUpPage : ContentPage
         InitializeComponent();
 	}
 
+    async void OnLoginClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//page/secondaire/connexionPage");
+    }
+
     async void OnSignUpClicked(object sender, System.EventArgs e)
     {
         // Récupérer les valeurs des entrées
