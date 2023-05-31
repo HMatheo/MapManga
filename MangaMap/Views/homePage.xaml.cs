@@ -44,8 +44,8 @@ public partial class homePage : ContentPage
             ImageButton imageButton = new ImageButton
             {
                 Source = favoris.Affiche,
-                WidthRequest = 150,
-                HeightRequest = 170,
+                WidthRequest = 170,
+                HeightRequest = 190,
                 CornerRadius = 15,
                 Aspect = Aspect.Fill,
                 AutomationId = indice.ToString(),
