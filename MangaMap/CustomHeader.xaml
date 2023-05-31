@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MangaMap.NewContent1"
              Background="{StaticResource Primary}">
-    <Grid ColumnDefinitions="50, *,40, 40">
+    <Grid ColumnDefinitions="50, *,100,40, 40">
         <ImageButton Source="logo.png"
                      MaximumHeightRequest="30"
                      MaximumWidthRequest="30"
@@ -11,16 +11,26 @@
                      Clicked="ImageButton_Clicked"/>
 
         <ImageButton Grid.Column="2"
+                     Source="listbutton.png"
+                     MaximumWidthRequest="30"
+                     MaximumHeightRequest="30"
+                     BackgroundColor="{StaticResource Primary}"
+                     VerticalOptions="Center"
+                     Clicked="ListButton_Clicked" />
+
+        <ImageButton Grid.Column="3"
                      Source="account_circle.png"
                      MaximumHeightRequest="30"
                      MaximumWidthRequest="30"
+                     BackgroundColor="{StaticResource Primary}"
                      VerticalOptions="Center"
                      Clicked="AccountButton_Clicked"/>
 
-        <ImageButton Grid.Column="3"
+        <ImageButton Grid.Column="4"
                      Source="settings.png"
                      MaximumHeightRequest="30"
                      MaximumWidthRequest="30"
+                     BackgroundColor="{StaticResource Primary}"
                      VerticalOptions="Center"
                      Clicked="SettingButton_Clicked"/>
     </Grid>

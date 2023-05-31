@@ -7,7 +7,7 @@
     xmlns:Views="clr-namespace:MangaMap.Views"
     Shell.FlyoutBehavior="Disabled"
     Shell.NavBarIsVisible="False"
-    Shell.TabBarIsVisible="True">
+    Shell.TabBarIsVisible="False">
 
     <TabBar Route="page">
 

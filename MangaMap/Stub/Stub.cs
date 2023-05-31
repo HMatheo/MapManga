@@ -29,7 +29,7 @@ namespace MangaMap.Stub
             l1.Add(o1); l1.Add(o2);
             l2.Add(u1); l2.Add(u2); l2.Add(u3);
 
-            u1.ListeOeuvreEnVisionnage.Add(o1);
+            //u1.ListeOeuvreEnVisionnage.Add(o1);
 
             return (l1, l2);
         }
