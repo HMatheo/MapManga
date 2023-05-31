@@ -44,7 +44,7 @@
                 </HorizontalStackLayout>
 
 
-                <ListView x:Name="a1" ItemsSource="{Binding Utilisateurs}">
+                <!--<ListView x:Name="a1" ItemsSource="{Binding Utilisateurs}">
                     
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -53,7 +53,7 @@
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>
+                </ListView>-->
 
             </VerticalStackLayout>
 
