@@ -36,7 +36,7 @@ public partial class listPage : ContentPage
             Grid.SetRow(imageButton, ligne);
             Grid.SetColumn(imageButton, 0);
 
-            grille.Children.Add(imageButton);
+            //grille.Children.Add(imageButton);
 
             indice++;
         }
