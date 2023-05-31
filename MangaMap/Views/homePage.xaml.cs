@@ -8,11 +8,11 @@ public partial class homePage : ContentPage
     public Manager my_manager => (App.Current as App).MyManager;
 
     public homePage()
-	{
+    {
         InitializeComponent();
-		BindingContext = my_manager;
+        BindingContext = my_manager;
         chargerSerie();
-	}
+    }
 
     private async void AnimeImageClicked(object sender, EventArgs e)
     {
@@ -65,4 +65,3 @@ public partial class homePage : ContentPage
     }
 
 }
-
