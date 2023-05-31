@@ -18,4 +18,9 @@ public partial class NewContent1 : ContentView
 	{
 		await Shell.Current.GoToAsync("//page/secondaire/settingsPage");
 	}
+
+	async void AccountButton_Clicked(object sender, System.EventArgs e)
+	{
+		await Shell.Current.GoToAsync("//page/secondaire/connexionPage");
+	}
 }
