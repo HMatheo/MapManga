@@ -32,7 +32,7 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 
     public async void AjouterListe(object sender, EventArgs e)
     {
-        if (my_manager.UtilisateurActuel == null)
+        if (my_manager.UtilisateurActuel.Email == null)
         {
             await DisplayAlert("Erreur", "Vous n'êtes pas connecté.", "OK");
             return;
@@ -66,15 +66,16 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
                 break;
         }
 
-        foreach (Oeuvre oeuvre in my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage)
-        {
-            Debug.WriteLine("Titre de l'oeuvre : " + oeuvre.Nom);
-            // Faites d'autres opérations avec chaque élément de la liste
-        }
+        ////foreach (oeuvre oeuvre in my_manager.utilisateuractuel.listeoeuvreenvisionnage)
+        ////{
+        ////    debug.writeline("titre de l'oeuvre : " + oeuvre.nom);
+        ////    // faites d'autres opérations avec chaque élément de la liste
+        ////}
 
         my_manager.sauvegarder();
 
-        await Navigation.PushAsync(new listPage());
+        //await Navigation.PushAsync(new listPage());
+        await Shell.Current.GoToAsync("//page/secondaire/listPage");
     }
 
 

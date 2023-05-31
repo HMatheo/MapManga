@@ -24,7 +24,6 @@ public partial class App : Application
 
         MyManager.charger();
         MyManager.Admins.Add(MyAdmin);
-        //MyManager.UtilisateurActuel = MyManager.charger();
 
         MainPage = new AppShell();
 

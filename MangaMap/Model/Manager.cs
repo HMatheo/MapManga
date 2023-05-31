@@ -20,7 +20,7 @@ namespace MangaMap.Model
             Admins = new List<Admin>();
             Utilisateurs = new List<Utilisateur>();
             Oeuvres = new List<Oeuvre>();
-            UtilisateurActuel = null;
+            UtilisateurActuel = new Utilisateur();
 
             Persistance = Pers;
         }

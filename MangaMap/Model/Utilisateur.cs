@@ -19,11 +19,11 @@ namespace MangaMap.Model
         [DataMember] 
         public List<Oeuvre> ListeOeuvreEnVisionnage { get; set; }
         [DataMember] 
-        public List<Oeuvre> ListeOeuvreDejaVu { get; private set; }
+        public List<Oeuvre> ListeOeuvreDejaVu { get; set; }
         [DataMember]
-        public List<Oeuvre> ListeOeuvrePourPlusTard { get; private set; }
+        public List<Oeuvre> ListeOeuvrePourPlusTard { get; set; }
         [DataMember]
-        public List<Oeuvre> ListeOeuvreFavorites { get; private set; }
+        public List<Oeuvre> ListeOeuvreFavorites { get; set; }
 
         public Utilisateur(string email, string pseudo, string mdp, string nom, string prenom, int age)
         {
