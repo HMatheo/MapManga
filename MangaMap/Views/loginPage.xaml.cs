@@ -13,6 +13,11 @@ public partial class loginPage : ContentPage
 		InitializeComponent();
 	}
 
+    async void OnSignUpClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//page/secondaire/inscriptionPage");
+    }
+
     async void OnLoginClicked(object sender, EventArgs e)
     {
         // Récupération de l'email et du mot de passe entrés
@@ -27,11 +32,11 @@ public partial class loginPage : ContentPage
         }
 
         // Vérifier que l'e-mail a la bonne forme
-        if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-        {
-            await DisplayAlert("Erreur", "L'email n'est pas valide.", "OK");
-            return;
-        }
+        //if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+        //{
+        //    await DisplayAlert("Erreur", "L'email n'est pas valide.", "OK");
+        //    return;
+        //}
 
         // Vérifier que l'utilisateur existe
         Utilisateur utilisateur = my_manager.Utilisateurs.FirstOrDefault(u => u.Email == email && u.MotDePasse == password);

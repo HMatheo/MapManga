@@ -2,7 +2,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MangaMap"
     x:Class="MangaMap.Views.listPage"
+<<<<<<< HEAD
     BackgroundColor="Black">
+=======
+    BackgroundColor="Black"
+>
+>>>>>>> 5ff49db92d0e603606c630e81dea03593ebab802
 
     <Grid RowDefinitions="40, *">
         <local:NewContent1 HeightRequest="40" VerticalOptions="Start" Padding="10, 0"/>
@@ -39,7 +44,7 @@
                         </Grid>
 
                         <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
-                            <!--<VerticalStackLayout BindableLayout.ItemsSource="{Binding ListeOeuvreEnVisionnage}" Spacing="10">-->
+                            <VerticalStackLayout BindableLayout.ItemsSource="{Binding ListeOeuvreEnVisionnage}" Spacing="10">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <Grid Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">
@@ -51,7 +56,12 @@
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
 
-                            <!--</VerticalStackLayout>-->
+                            </VerticalStackLayout> 
+
+                            <!--<Grid x:Name="grille"
+                                  Margin="20,0,20,0" ColumnDefinitions="*,*,300,300">
+                                
+                            </Grid>-->                            
                         </ScrollView>
                     </Grid>
                 </Frame>

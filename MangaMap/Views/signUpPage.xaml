@@ -26,8 +26,8 @@
         <Button Text="S'inscire" Clicked="OnSignUpClicked" Style="{StaticResource Bouton}"/>
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Text="Déjà un compte ? " TextColor="#FFFFFF" Margin="0,0,5,0"/>
-            <Label Text="Se connecter" TextColor="{StaticResource Primary}"/>
+            <Label Text="Déjà un compte ? " TextColor="#FFFFFF" Margin="0,12,5,0"/>
+            <Button Text="Se connecter" TextColor="{StaticResource Primary}" BackgroundColor="{StaticResource Secondary}" Clicked="OnLoginClicked"/>
         </StackLayout>
 
     </StackLayout>
