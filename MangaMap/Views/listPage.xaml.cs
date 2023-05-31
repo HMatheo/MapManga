@@ -10,10 +10,10 @@ public partial class listPage : ContentPage
 	{
 		InitializeComponent();
         BindingContext = my_manager;
-        if (my_manager.UtilisateurActuel.Email != null)
-        {
-            chargerFavoris();
-        }
+        //if (my_manager.UtilisateurActuel.Email != null)
+        //{
+        //    chargerFavoris();
+        //}
     }
 
     private void chargerFavoris()
