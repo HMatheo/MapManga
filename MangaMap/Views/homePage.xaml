@@ -29,7 +29,7 @@
                        Margin="30"
                        />
 
-                <HorizontalStackLayout BindableLayout.ItemsSource="{Binding Oeuvres}" Spacing="100" HorizontalOptions="Center">
+                <!--<HorizontalStackLayout BindableLayout.ItemsSource="{Binding Oeuvres}" Spacing="100" HorizontalOptions="Center">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <ImageButton
@@ -38,10 +38,28 @@
                                     Source="{Binding Affiche}"
                                     Clicked="AnimeImageClicked"
                                 />
-                            <!--<views:StyleBouton -->                            
+                            --><!--<views:StyleBouton --><!--                            
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-                </HorizontalStackLayout>
+                </HorizontalStackLayout>-->
+
+
+                <ScrollView>
+                    <Grid x:Name="grille">
+                        <Grid.RowDefinitions  >
+                            <RowDefinition Height="85"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollView>
 
 
                 <ListView x:Name="a1" ItemsSource="{Binding Utilisateurs}">
