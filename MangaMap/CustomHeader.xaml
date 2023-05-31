@@ -7,6 +7,7 @@
         <ImageButton Source="logo.png"
                      MaximumHeightRequest="30"
                      MaximumWidthRequest="30"
+                     BackgroundColor="{StaticResource Primary}"
                      VerticalOptions="Center"
                      Clicked="ImageButton_Clicked"/>
 
