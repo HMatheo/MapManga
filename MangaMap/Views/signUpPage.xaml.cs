@@ -78,7 +78,7 @@ public partial class signUpPage : ContentPage
             my_manager.Utilisateurs.Add(util);
             my_manager.sauvegarder();
             my_manager.UtilisateurActuel = util;
-            await Navigation.PushAsync(new homePage());
+            await Shell.Current.GoToAsync("//page/homePage");
             return;
         }
     }

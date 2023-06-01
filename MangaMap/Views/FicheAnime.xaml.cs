@@ -74,8 +74,8 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 
         my_manager.sauvegarder();
 
-        //await Navigation.PushAsync(new listPage());
-        await Shell.Current.GoToAsync("//page/secondaire/listPage");
+        await Navigation.PushAsync(new listPage());
+        //await Shell.Current.GoToAsync("//page/secondaire/listPage");
     }
 
 
