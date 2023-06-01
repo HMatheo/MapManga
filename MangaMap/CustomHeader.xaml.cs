@@ -1,13 +1,17 @@
 using MangaMap.Views;
 namespace MangaMap;
+using MangaMap.Model;
+using System.ComponentModel;
+using INotifyPropertyChanged = System.ComponentModel.INotifyPropertyChanged;
 
-public partial class NewContent1 : ContentView
+public partial class NewContent1 : ContentView, INotifyPropertyChanged
 {
+    public Manager my_manager => (App.Current as App).MyManager;
     public NewContent1()
     {
         InitializeComponent();
-    }
 
+    }
     async void ImageButton_Clicked(System.Object sender, System.EventArgs e)
     {
         //Navigation.PushAsync(new homePage());

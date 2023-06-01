@@ -21,4 +21,16 @@ public partial class listPage : ContentPage
             await Navigation.PushAsync(new ficheAnime(selectedAnime));
         }
     }
+
+    private async void OnAddClicked(object sender, EventArgs e)
+    {
+        var button = (ImageButton)sender;
+        var oeuvre = (Oeuvre)button.BindingContext;
+
+        // Mettez à jour le nombre d'épisodes vus
+        oeuvre.AjouterEpisode(1);
+
+        // Sauvegardez les modifications
+        my_manager.sauvegarder();
+    }
 }

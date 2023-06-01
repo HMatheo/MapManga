@@ -14,7 +14,7 @@ public partial class settingsPage : ContentPage
     {
         my_manager.UtilisateurActuel = new Utilisateur();
         my_manager.isAdmin = false;
-        await Shell.Current.Navigation.PushAsync(new loginPage());
+        await Shell.Current.GoToAsync("//page/secondaire/connexionPage");
     }
 
     private async void LoginAdminClicked(object sender, EventArgs e)

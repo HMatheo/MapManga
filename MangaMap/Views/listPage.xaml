@@ -20,7 +20,7 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-                        <Grid Margin="20" Grid.Row="0" ColumnDefinitions="*,300,300">
+                        <Grid Margin="20" Grid.Row="0" ColumnDefinitions="*,400,300">
                             <Label Grid.Column="0"
                            Text="Titre" FontSize="Large" TextColor="White"
                            HorizontalOptions="Start" VerticalOptions="Center"/>
@@ -36,11 +36,12 @@
                             <VerticalStackLayout BindableLayout.ItemsSource="{Binding UtilisateurActuel.ListeOeuvreEnVisionnage}" Spacing="10">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
-                                        <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
+                                        <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300,40">
                                             <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
                                             <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
                                             <Label Grid.Column="2" Text="4/5" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
                                             <Label Grid.Column="3" Text="{Binding NbEpisodes}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                            <ImageButton Grid.Column="4" Source="addepisodes.png" BackgroundColor="#333333" HorizontalOptions="End" MaximumHeightRequest="5" MaximumWidthRequest="5" Clicked="OnAddClicked"/>
                                         </Grid>
                                     </DataTemplate>
                                     
@@ -77,9 +78,9 @@
                                     <DataTemplate>
                                         <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
                                             <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
-                                            <Label Grid.Column="1" Text="{Binding Nom}" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
-                                            <Label Grid.Column="2" Text="4/5" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                            <Label Grid.Column="3" Text="{Binding NbEpisodes}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                            <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                                            <Label Grid.Column="2" Text="4/5" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                            <Label Grid.Column="3" Text="{Binding NbEpisodes}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
                                         </Grid>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
@@ -116,9 +117,9 @@
                                     <DataTemplate>
                                         <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
                                             <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
-                                            <Label Grid.Column="1" Text="{Binding Nom}" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
-                                            <Label Grid.Column="2" Text="4/5" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                            <Label Grid.Column="3" Text="{Binding NbEpisodes}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                            <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                                            <Label Grid.Column="2" Text="4/5" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                            <Label Grid.Column="3" Text="{Binding NbEpisodes}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
                                         </Grid>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
@@ -155,9 +156,9 @@
                                     <DataTemplate>
                                         <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
                                             <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
-                                            <Label Grid.Column="1" Text="{Binding Nom}" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
-                                            <Label Grid.Column="2" Text="4/5" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                            <Label Grid.Column="3" Text="{Binding NbEpisodes}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                            <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                                            <Label Grid.Column="2" Text="4/5" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                            <Label Grid.Column="2" Text="{Binding NbEpisodesVus}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
                                         </Grid>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>

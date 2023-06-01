@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 namespace MangaMap.Model
 {
     [DataContract]
-   public class Oeuvre
+    public class Oeuvre
     {
         [DataMember]
         public string Nom { get; private set; }
         [DataMember]
-        public List <string> Genre { get; private set; }
+        public List<string> Genre { get; private set; }
         [DataMember]
         public string Type { get; private set; }
         [DataMember]

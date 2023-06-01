@@ -9,8 +9,8 @@ namespace MangaMap.Stub
 {
     public class Stub : IPersistanceManager
 
-        //Cette classe sert à faire charger un jeu de données qui n'est pas celui enregistrer dans le fichier sur l'ordinateur.
-        //Il permet de faire des transistion entre différent moyen de persister.
+    //Cette classe sert à faire charger un jeu de données qui n'est pas celui enregistrer dans le fichier sur l'ordinateur.
+    //Il permet de faire des transistion entre différent moyen de persister.
     {
         public (List<Oeuvre>, List<Utilisateur>) chargeDonne()
         {
