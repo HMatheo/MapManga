@@ -17,7 +17,7 @@
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Label Text="Pas de compte ? " TextColor="#FFFFFF" Margin="0,12,5,0"/>
-            <Button Text="S'inscrire" TextColor="{StaticResource Primary}" BackgroundColor="{StaticResource Secondary}" Clicked="OnSignUpClicked"/>
+            <Button Text="S'inscrire" TextColor="{StaticResource Primary}" BackgroundColor="{StaticResource Secondary}" BorderColor="{StaticResource Secondary}" Clicked="OnSignUpClicked"/>
         </StackLayout>
 
     </StackLayout>
