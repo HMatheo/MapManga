@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MangaMap.Views.loginAdminPage"
+             Background="#1E1E1E">
+
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+        <Label Text="Se connecter à MapManga (ADMIN)" FontSize="Large" Margin="0,0,0,20" TextColor="#FFFFFF"/>
+
+        <Entry x:Name="pseudoEntry" Placeholder="Pseudo" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
+
+        <Entry x:Name="passwordEntry" Placeholder="Mot de passe" Margin="0,0,0,20" Style="{StaticResource ChampsMdp}"/>
+
+        <Button Text="Se connecter" Clicked="OnLoginClicked" Style="{StaticResource Bouton}" />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Pas admin ? " TextColor="#FFFFFF" Margin="0,12,5,0"/>
+            <Button Text="Se connecter en utilisateur" TextColor="{StaticResource Primary}" BackgroundColor="{StaticResource Secondary}" Clicked="userClicked"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

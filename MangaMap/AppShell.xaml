@@ -41,6 +41,16 @@
                 Title="Fiche Exemple"
                 ContentTemplate="{DataTemplate Views:ficheAnime}"
                 Route="fichePage"/>
+
+            <ShellContent
+                Title="Connection Admin"
+                ContentTemplate="{DataTemplate Views:loginAdminPage}"
+                Route="connexionAdminPage"/>
+
+            <ShellContent
+                Title="Creation oeuvre"
+                ContentTemplate="{DataTemplate Views:createOeuvre}"
+                Route="createOeuvrePage"/>
         </Tab>
     </TabBar>
 

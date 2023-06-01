@@ -72,6 +72,12 @@
 		<Compile Update="CustomHeader.xaml.cs">
 			<DependentUpon>CustomHeader.xaml</DependentUpon>
 		</Compile>
+		<Compile Update="Views\CreateOeuvre.xaml.cs">
+		  <DependentUpon>createOeuvre.xaml</DependentUpon>
+		</Compile>
+		<Compile Update="Views\loginAdminPage.xaml.cs">
+		  <DependentUpon>loginAdminPage.xaml</DependentUpon>
+		</Compile>
 		<Compile Update="Views\signUpPage.xaml.cs">
 			<DependentUpon>signUpPage.xaml</DependentUpon>
 		</Compile>
@@ -87,6 +93,9 @@
 		<MauiXaml Update="Views\Composants\StyleBouton.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
+		<MauiXaml Update="Views\createOeuvre.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Views\homePage.xaml">
 			<Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
@@ -95,6 +104,9 @@
 		</MauiXaml>
 		<MauiXaml Update="Views\loginPage.xaml">
 			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\loginAdminPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Views\settingsPage.xaml">
 			<Generator>MSBuild:Compile</Generator>

@@ -13,11 +13,22 @@ public partial class settingsPage : ContentPage
     private async void OnDisconnectClicked(object sender, EventArgs e)
     {
         my_manager.UtilisateurActuel = new Utilisateur();
+        my_manager.isAdmin = false;
         await Shell.Current.Navigation.PushAsync(new loginPage());
     }
 
-    private void OnLoginClicked(object sender, EventArgs e)
+    private async void LoginAdminClicked(object sender, EventArgs e)
     {
-        //
+        await Shell.Current.Navigation.PushAsync(new loginAdminPage());
+    }
+
+    private async void AddClicked(object sender, EventArgs e)
+    {
+        if(my_manager.isAdmin)
+        {
+            await Shell.Current.Navigation.PushAsync(new createOeuvre());
+        }
+        await DisplayAlert("Erreur", "Vous n'êtes pas connecté en tant qu'Administrateur.", "OK");
+        return;
     }
 }

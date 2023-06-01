@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -17,13 +18,13 @@ namespace MangaMap.Model
         [DataMember] 
         public int age { get; private set; }
         [DataMember] 
-        public List<Oeuvre> ListeOeuvreEnVisionnage { get; set; }
+        public ObservableCollection<Oeuvre> ListeOeuvreEnVisionnage { get; set; }
         [DataMember] 
-        public List<Oeuvre> ListeOeuvreDejaVu { get; set; }
+        public ObservableCollection<Oeuvre> ListeOeuvreDejaVu { get; set; }
         [DataMember]
-        public List<Oeuvre> ListeOeuvrePourPlusTard { get; set; }
+        public ObservableCollection<Oeuvre> ListeOeuvrePourPlusTard { get; set; }
         [DataMember]
-        public List<Oeuvre> ListeOeuvreFavorites { get; set; }
+        public ObservableCollection<Oeuvre> ListeOeuvreFavorites { get; set; }
 
         public Utilisateur(string email, string pseudo, string mdp, string nom, string prenom, int age)
         {
@@ -34,17 +35,17 @@ namespace MangaMap.Model
             this.prenom = prenom;
             this.age = age;
 
-            ListeOeuvreEnVisionnage = new List<Oeuvre>();
-            ListeOeuvreDejaVu = new List<Oeuvre>();
-            ListeOeuvrePourPlusTard = new List<Oeuvre>();
-            ListeOeuvreFavorites = new List<Oeuvre>();
+            ListeOeuvreEnVisionnage = new ObservableCollection<Oeuvre>();
+            ListeOeuvreDejaVu = new ObservableCollection<Oeuvre>();
+            ListeOeuvrePourPlusTard = new ObservableCollection<Oeuvre>();
+            ListeOeuvreFavorites = new ObservableCollection<Oeuvre>();
         }
 
         public Utilisateur() {
-            ListeOeuvreEnVisionnage = new List<Oeuvre>();
-            ListeOeuvreDejaVu = new List<Oeuvre>();
-            ListeOeuvrePourPlusTard = new List<Oeuvre>();
-            ListeOeuvreFavorites = new List<Oeuvre>();
+            ListeOeuvreEnVisionnage = new ObservableCollection<Oeuvre>();
+            ListeOeuvreDejaVu = new ObservableCollection<Oeuvre>();
+            ListeOeuvrePourPlusTard = new ObservableCollection<Oeuvre>();
+            ListeOeuvreFavorites = new ObservableCollection<Oeuvre>();
         }
 
         public void SupprimerUtilisateur()

@@ -36,6 +36,15 @@ namespace MangaMap.Model
             Affiche = affiche;
         }
 
+        public Oeuvre(string nom, string type, string description, int nbEpisode, string affiche)
+        {
+            Nom = nom;
+            Type = type;
+            Description = description;
+            NbEpisodes = nbEpisode;
+            Affiche = affiche;
+        }
+
         public void AjouterEpisode(int nb)
         {
             NbEpisodes = NbEpisodes + nb;

@@ -11,7 +11,7 @@
             Grid.Row="1">
             <VerticalStackLayout>
 
-                <Label Text="Watching" TextColor="White" FontSize="Title" Margin="50,10,0,0" Grid.Row="0"/>
+                <Label Text="Watching" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="0"/>
 
                 <Frame Grid.Row="1" BackgroundColor="Black" Margin="20" BorderColor="Black">
                     <Grid BackgroundColor="#333333" >
@@ -37,10 +37,10 @@
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
-                                            <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start"/>
+                                            <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
                                             <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
                                             <Label Grid.Column="2" Text="4/5" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                            <Label Grid.Column="3" Text="10/85" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                            <Label Grid.Column="3" Text="{Binding NbEpisodes}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
                                         </Grid>
                                     </DataTemplate>
                                     
@@ -50,7 +50,7 @@
                     </Grid>
                 </Frame>
 
-                <Label Text="Completed" TextColor="White" FontSize="Title" Margin="50,10,0,0" Grid.Row="2"/>
+                <Label Text="Completed" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="2"/>
 
                 <Frame Grid.Row="3" BackgroundColor="Black" Margin="20" BorderColor="Black">
                     <Grid BackgroundColor="#333333" >
@@ -76,10 +76,10 @@
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
-                                            <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start"/>
+                                            <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
                                             <Label Grid.Column="1" Text="{Binding Nom}" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
                                             <Label Grid.Column="2" Text="4/5" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                            <Label Grid.Column="3" Text="10/85" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                            <Label Grid.Column="3" Text="{Binding NbEpisodes}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
                                         </Grid>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
@@ -115,10 +115,49 @@
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
-                                            <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start"/>
+                                            <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
                                             <Label Grid.Column="1" Text="{Binding Nom}" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
                                             <Label Grid.Column="2" Text="4/5" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                            <Label Grid.Column="3" Text="10/85" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                            <Label Grid.Column="3" Text="{Binding NbEpisodes}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </VerticalStackLayout>
+                        </ScrollView>
+
+                    </Grid>
+                </Frame>
+
+                <Label Text="Favorite" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="2"/>
+
+                <Frame Grid.Row="3" BackgroundColor="Black" Margin="20" BorderColor="Black">
+                    <Grid BackgroundColor="#333333" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid Margin="20" Grid.Row="0" ColumnDefinitions="*,300,300">
+                            <Label Grid.Column="0"
+                           Text="Titre" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Label Grid.Column="1"
+                           Text="Score" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Column="2"
+                           Text="Progression" FontSize="Large" TextColor="White"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
+                            <VerticalStackLayout BindableLayout.ItemsSource="{Binding UtilisateurActuel.ListeOeuvreFavorites}" Spacing="10">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
+                                            <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
+                                            <Label Grid.Column="1" Text="{Binding Nom}" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                                            <Label Grid.Column="2" Text="4/5" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                            <Label Grid.Column="3" Text="{Binding NbEpisodes}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
                                         </Grid>
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>

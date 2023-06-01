@@ -26,6 +26,7 @@ public partial class NewContent1 : ContentView
 
     async void ListButton_Clicked(object sender, System.EventArgs e)
     {
-        await Shell.Current.GoToAsync("//page/secondaire/listPage");
+        //await Shell.Current.GoToAsync("//page/secondaire/listPage");
+        await Navigation.PushAsync(new listPage());
     }
 }

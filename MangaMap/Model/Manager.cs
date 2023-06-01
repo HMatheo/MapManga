@@ -15,12 +15,14 @@ namespace MangaMap.Model
         public List<Oeuvre> Oeuvres { get; private set; }
 
         public Utilisateur UtilisateurActuel { get; set; }
+        public bool isAdmin { get; set; }
 
         public Manager(IPersistanceManager Pers) { 
             Admins = new List<Admin>();
             Utilisateurs = new List<Utilisateur>();
             Oeuvres = new List<Oeuvre>();
             UtilisateurActuel = new Utilisateur();
+            isAdmin = false;
 
             Persistance = Pers;
         }
@@ -31,6 +33,7 @@ namespace MangaMap.Model
             Utilisateurs = new List<Utilisateur>();
             Oeuvres = new List<Oeuvre>();
             UtilisateurActuel = new Utilisateur();
+            isAdmin = false;
         }
 
         /*public Utilisateur charger()

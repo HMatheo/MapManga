@@ -12,7 +12,9 @@
 
             <Button Text="Deconnexion" Clicked="OnDisconnectClicked" Margin="0,0,0,30" Style="{StaticResource Bouton}"/>
 
-            <Button Text="Connexion/Inscription" Clicked="OnLoginClicked" Style="{StaticResource Bouton}"/>
+            <Button Text="Connexion Admin" Clicked="LoginAdminClicked" Style="{StaticResource Bouton}"/>
+
+            <Button Text="Ajouter une série" Clicked="AddClicked" Style="{StaticResource Bouton}"/>
 
         </StackLayout>
     </Grid>
