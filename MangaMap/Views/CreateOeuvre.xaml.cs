@@ -1,6 +1,9 @@
 using System.Text.RegularExpressions;
 using MangaMap.Model;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Threading.Tasks;
+using Microsoft.Maui.Storage;
+
 
 namespace MangaMap.Views;
 
@@ -12,6 +15,27 @@ public partial class createOeuvre : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private string imagePath;
+
+    async void SelectImageClicked(object sender, EventArgs e)
+    {
+        var result = await FilePicker.PickAsync(new PickOptions
+        {
+            FileTypes = FilePickerFileType.Images,
+            PickerTitle = "Pick an image"
+        });
+
+        if (result != null)
+        {
+            var stream = await result.OpenReadAsync();
+            // Utilisez le chemin d'accès à l'image sélectionnée
+            imagePath = result.FullPath;
+
+            // Affichez l'image sélectionnée dans l'interface utilisateur, si nécessaire
+            
+        }
+    }
 
     async void AddClicked(object sender, System.EventArgs e)
     {
@@ -43,7 +67,7 @@ public partial class createOeuvre : ContentPage
             return;
         }
 
-        Oeuvre oeuv = new Oeuvre(nom, type, description, nbEp, "logo.png");
+        Oeuvre oeuv = new Oeuvre(nom, type, description, nbEp, imagePath);
         my_manager.Oeuvres.Add(oeuv);
         my_manager.sauvegarder();
         await Navigation.PushAsync(new homePage());

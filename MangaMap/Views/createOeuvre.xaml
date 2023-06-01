@@ -7,6 +7,8 @@
     <VerticalStackLayout>
         <Label Text="Création d'une nouvelle série" FontSize="Title" Margin="0,0,0,20" TextColor="#ffffff"/>
 
+        <Button Text="Sélectionner une image" Clicked="SelectImageClicked" Margin="0,0,0,10"/>
+
         <Entry x:Name="nameEntry" Placeholder="Nom" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
 
         <Entry x:Name="typeEntry" Placeholder="Type" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
