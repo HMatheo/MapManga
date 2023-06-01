@@ -21,4 +21,9 @@ public partial class listPage : ContentPage
             await Navigation.PushAsync(new ficheAnime(selectedAnime));
         }
     }
+
+    private async void OnAddClicked(object sender, EventArgs e)
+    {
+        
+    }
 }
