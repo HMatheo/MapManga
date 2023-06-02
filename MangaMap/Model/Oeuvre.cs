@@ -4,12 +4,20 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Xml.Linq;
+using System.Runtime.CompilerServices;
 
 namespace MangaMap.Model
 {
     [DataContract]
-    public class Oeuvre
+    public class Oeuvre : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
         [DataMember]
         public string Nom { get; private set; }
         [DataMember]
@@ -18,8 +26,20 @@ namespace MangaMap.Model
         public string Type { get; private set; }
         [DataMember]
         public string Description { get; private set; }
+
         [DataMember]
-        public int Note { get; private set; }
+        public int Note {
+            get => note;
+            set
+            {
+                if (note == value)
+                    return;
+                note = value;
+                OnPropertyChanged();
+            }
+        }
+        private int note;
+
         [DataMember]
         public int NbEpisodes { get; private set; }
         [DataMember]

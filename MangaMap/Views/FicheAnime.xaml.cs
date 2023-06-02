@@ -1,19 +1,17 @@
 namespace MangaMap.Views;
+
 using Model;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Input;
 using System.Xml.Linq;
 
 
 public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 {
-
-
     public Manager my_manager => (App.Current as App).MyManager;
     public Oeuvre AnimeModel { get; set; }
-
-    public ICommand StarCommand => new Command<string>(count => SetNote(uint.Parse(count)));
 
     public ficheAnime()
     {
@@ -30,7 +28,8 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
         InitializeComponent();
 
         BindingContext = this;
-        
+
+        SetNote();        
     }
 
     public async void AjouterListe(object sender, EventArgs e)
@@ -81,22 +80,59 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
     }
 
 
-    private void SetNote(float note)
+    private void SetNote()
     {
-        note = (int)note; 
-        var starImages = star.Children.OfType<Image>().Reverse().ToList();
-        foreach (var img in starImages)
+        stars.Children.Clear();
+
+       for (int i = 0; i < 5; i++)
         {
-            if (note > 0)
+            if (i < AnimeModel.Note)
             {
-                img.Opacity = 1;
-                note--;
+                ImageButton imageButton = new ImageButton
+                {
+                    Source = "star_full.png",
+                    WidthRequest = 50,
+                    HeightRequest = 50,
+                    AutomationId = i.ToString(),
+                    Margin = 10,
+                };
+
+                imageButton.Clicked += StarClicked;
+
+                Grid.SetRow(imageButton, 0);
+                Grid.SetColumn(imageButton, i);
+                stars.Children.Add(imageButton);
             }
             else
             {
-                img.Opacity = 0;
+                ImageButton imageButton = new ImageButton
+                {
+                    Source = "star_empty.png",
+                    WidthRequest = 50,
+                    HeightRequest = 50,
+                    AutomationId = i.ToString(),
+                    Margin = 10,
+                };
+
+                imageButton.Clicked += StarClicked;
+
+                Grid.SetRow(imageButton, 0);
+                Grid.SetColumn(imageButton, i);
+                stars.Children.Add(imageButton);
             }
         }
     }
 
+    private async void StarClicked(object sender, EventArgs e)
+    {
+        var button = (ImageButton)sender;
+        var idAutomation = button.AutomationId;
+
+        if (int.TryParse(idAutomation, out int id))
+        {
+            AnimeModel.Note = id+1;
+            my_manager.sauvegarder();
+            SetNote();
+        }
+    }
 }

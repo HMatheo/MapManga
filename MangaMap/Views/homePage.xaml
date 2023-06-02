@@ -18,7 +18,6 @@
         BackgroundColor="#1E1E1E"
         Grid.Row="1">
             <VerticalStackLayout
-            Spacing="70"
             VerticalOptions="Center">
 
                 <SearchBar Placeholder="Recherche"
@@ -47,7 +46,9 @@
                 <ScrollView>
                     <Grid x:Name="grille">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="80"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>

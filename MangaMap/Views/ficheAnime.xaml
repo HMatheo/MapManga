@@ -26,13 +26,8 @@
 
             <Label Text="{Binding AnimeModel.Genre}" BackgroundColor="{StaticResource Primary}" TextColor="White" Margin="0,0,0,30"/>
 
-                            <HorizontalStackLayout x:Name="star">
-                <Image Source="star_full.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Image Source="star_full.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Image Source="star_full.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Image Source="star_full.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
-                <Image Source="star_empty.png" WidthRequest="50" HeightRequest="50" Margin="10"/>
-            </HorizontalStackLayout>
+            <Grid x:Name="stars" ColumnDefinitions="80,80,80,80,80">
+            </Grid>
 
             <Button Text="Ajouter à la liste"
                         TextColor="#FFFFFF"
