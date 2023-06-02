@@ -1,6 +1,7 @@
 ﻿using MangaMap.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -16,7 +17,7 @@ namespace MangaMap.Stub
         public string FileName { get; set; } = "SauvegardeDonnees.xml";
         public string FilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
 
-        public (List<Oeuvre>, List<Utilisateur>) chargeDonne()
+        public (ObservableCollection<Oeuvre>, List<Utilisateur>) chargeDonne()
         {
             var serializer = new DataContractSerializer(typeof(DataToPersist));
             DataToPersist data;
@@ -36,7 +37,7 @@ namespace MangaMap.Stub
             return (data.Oeuvres, data.Utilisateurs);
         }
 
-        public void sauvegarder(List<Oeuvre> o, List<Utilisateur> u)
+        public void sauvegarder(ObservableCollection<Oeuvre> o, List<Utilisateur> u)
         {
             var serializer = new DataContractSerializer(typeof(DataToPersist));
 

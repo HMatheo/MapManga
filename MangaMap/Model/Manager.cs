@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace MangaMap.Model
         public IPersistanceManager Persistance { get; set; }
         public List<Admin> Admins { get; private set; }
         public List<Utilisateur> Utilisateurs { get; private set; }
-        public List<Oeuvre> Oeuvres { get; private set; }
+        public ObservableCollection<Oeuvre> Oeuvres { get; private set; }
 
         public Utilisateur UtilisateurActuel { get; set; }
         public bool isAdmin { get; set; }
@@ -20,7 +21,7 @@ namespace MangaMap.Model
         public Manager(IPersistanceManager Pers) { 
             Admins = new List<Admin>();
             Utilisateurs = new List<Utilisateur>();
-            Oeuvres = new List<Oeuvre>();
+            Oeuvres = new ObservableCollection<Oeuvre>();
             UtilisateurActuel = new Utilisateur();
             isAdmin = false;
 
@@ -31,7 +32,7 @@ namespace MangaMap.Model
         {
             Admins = new List<Admin>();
             Utilisateurs = new List<Utilisateur>();
-            Oeuvres = new List<Oeuvre>();
+            Oeuvres = new ObservableCollection<Oeuvre>();
             UtilisateurActuel = new Utilisateur();
             isAdmin = false;
         }

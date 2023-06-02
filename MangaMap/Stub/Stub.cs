@@ -1,6 +1,7 @@
 ﻿using MangaMap.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +13,9 @@ namespace MangaMap.Stub
     //Cette classe sert à faire charger un jeu de données qui n'est pas celui enregistrer dans le fichier sur l'ordinateur.
     //Il permet de faire des transistion entre différent moyen de persister.
     {
-        public (List<Oeuvre>, List<Utilisateur>) chargeDonne()
+        public (ObservableCollection<Oeuvre>, List<Utilisateur>) chargeDonne()
         {
-            List<Oeuvre> l1 = new List<Oeuvre>();
+            ObservableCollection<Oeuvre> l1 = new ObservableCollection<Oeuvre>();
             List<Utilisateur> l2 = new List<Utilisateur>();
 
             Utilisateur u1 = new Utilisateur("t", "Pseudo1", "t", "Jean", "Baptiste", 12);
@@ -34,7 +35,7 @@ namespace MangaMap.Stub
             return (l1, l2);
         }
 
-        public void sauvegarder(List<Oeuvre> o, List<Utilisateur> u)
+        public void sauvegarder(ObservableCollection<Oeuvre> o, List<Utilisateur> u)
         {
             throw new NotImplementedException();
         }
