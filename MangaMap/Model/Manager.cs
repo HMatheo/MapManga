@@ -13,10 +13,7 @@ namespace MangaMap.Model
 {
     public class Manager : System.ComponentModel.INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        
 
         public IPersistanceManager Persistance { get; set; }
         public List<Admin> Admins { get; private set; }
@@ -36,6 +33,10 @@ namespace MangaMap.Model
                 OnPropertyChanged();
             }
         }
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         public Utilisateur UtilisateurActuel { get; set; }
         public bool isAdmin { get; set; }

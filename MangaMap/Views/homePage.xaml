@@ -11,10 +11,10 @@
         <modeles:Manager/>
     </ContentPage.BindingContext>
 
-    <Grid RowDefinitions="40, *">
+    <Grid RowDefinitions="40, *" >
         <local:NewContent1 HeightRequest="40" VerticalOptions="Start" Padding="10, 0"/>
         
-    <ScrollView
+    <ScrollView 
         BackgroundColor="#1E1E1E"
         Grid.Row="1">
             <VerticalStackLayout
@@ -38,13 +38,33 @@
                                     Source="{Binding Affiche}"
                                     Clicked="AnimeImageClicked"
                                 />
-                            --><!--<views:StyleBouton --><!--                            
+                            <views:StyleBouton/>                         
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </HorizontalStackLayout>-->
 
+                
+                    <ScrollView>
+                    <CollectionView ItemsSource="{Binding Oeuvre}" VerticalScrollBarVisibility="Always" x:Name="searchResults">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageButton
+                                            Style="{StaticResource ImageAnime}"
+                                            BackgroundColor="Red"
+                                            Source="{Binding Affiche}"
+                                            Clicked="AnimeImageClicked"
+                                        />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Span="4" Orientation="Vertical" VerticalItemSpacing="30" HorizontalItemSpacing="15"/>
+                        </CollectionView.ItemsLayout>
+                    </CollectionView>
+                    </ScrollView>
+                
 
-                <ScrollView >
+
+                <!--<ScrollView >
                     <Grid x:Name="grille">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -61,7 +81,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                     </Grid>
-                </ScrollView>
+                </ScrollView>-->
 
                 
 
