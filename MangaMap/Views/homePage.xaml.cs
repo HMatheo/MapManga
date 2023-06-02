@@ -1,11 +1,13 @@
 namespace MangaMap.Views;
 
 using MangaMap.Model;
-
+using System.Collections.ObjectModel;
 
 public partial class homePage : ContentPage
 {
     public Manager my_manager => (App.Current as App).MyManager;
+
+    private ObservableCollection<Oeuvre> filteredOeuvres = new ObservableCollection<Oeuvre>();
 
     public homePage()
     {
@@ -64,6 +66,18 @@ public partial class homePage : ContentPage
             grille.Children.Add(imageButton);
 
             indice++;
+        }
+    }
+
+    private void OnTextChanged(object sender, TextChangedEventArgs e)
+    {
+        if(string.IsNullOrEmpty(e.NewTextValue))
+        {
+            searchResults.ItemsSource = my_manager.Oeuvres;
+        }
+        else
+        {
+            searchResults.ItemsSource = my_manager.Oeuvres.Where(i => i.Nom.ToLower().Contains(e.NewTextValue.ToLower()));
         }
     }
 

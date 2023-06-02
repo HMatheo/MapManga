@@ -20,12 +20,13 @@
             <VerticalStackLayout
             VerticalOptions="Center">
 
-                <SearchBar Placeholder="Recherche"
-                       CancelButtonColor="Orange"
-                       TextColor="Black"
-                       BackgroundColor="White"
-                       HorizontalTextAlignment="Center"
-                       Margin="30"
+                <SearchBar 
+                        Placeholder="Recherche"
+                        TextChanged="OnTextChanged"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        HorizontalTextAlignment="Center"
+                        Margin="30"
                        />
 
                 <!--<HorizontalStackLayout BindableLayout.ItemsSource="{Binding Oeuvres}" Spacing="100" HorizontalOptions="Center">
@@ -43,7 +44,7 @@
                 </HorizontalStackLayout>-->
 
 
-                <ScrollView>
+                <ScrollView >
                     <Grid x:Name="grille">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -61,6 +62,8 @@
                         </Grid.ColumnDefinitions>
                     </Grid>
                 </ScrollView>
+
+                
 
 
                 <!--<ListView x:Name="a1" ItemsSource="{Binding Utilisateurs}">
