@@ -30,9 +30,6 @@ public partial class createOeuvre : ContentPage
             var stream = await result.OpenReadAsync();
             // Utilisez le chemin d'accès à l'image sélectionnée
             imagePath = result.FullPath;
-
-            // Affichez l'image sélectionnée dans l'interface utilisateur, si nécessaire
-
         }
     }
 

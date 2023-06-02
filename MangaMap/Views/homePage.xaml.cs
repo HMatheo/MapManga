@@ -45,10 +45,13 @@ public partial class homePage : ContentPage
             {
                 Source = favoris.Affiche,
                 WidthRequest = 170,
+                MaximumHeightRequest = 190,
+                MinimumHeightRequest = 190,
                 HeightRequest = 190,
                 CornerRadius = 15,
                 Aspect = Aspect.Fill,
                 AutomationId = indice.ToString(),
+                Margin = 90
             };
 
             imageButton.Clicked += AnimeImageClicked;
