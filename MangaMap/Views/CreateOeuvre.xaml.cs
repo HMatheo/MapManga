@@ -4,19 +4,18 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Threading.Tasks;
 using Microsoft.Maui.Storage;
 
-
 namespace MangaMap.Views;
 
 public partial class createOeuvre : ContentPage
 {
     public Manager my_manager => (App.Current as App).MyManager;
+    private string imagePath;
 
     public createOeuvre()
 	{
 		InitializeComponent();
+        BindingContext = this;
 	}
-
-    private string imagePath;
 
     async void SelectImageClicked(object sender, EventArgs e)
     {
@@ -33,7 +32,7 @@ public partial class createOeuvre : ContentPage
             imagePath = result.FullPath;
 
             // Affichez l'image sélectionnée dans l'interface utilisateur, si nécessaire
-            
+
         }
     }
 

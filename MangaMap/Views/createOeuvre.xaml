@@ -3,15 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MangaMap.Views.createOeuvre"
              Background="{StaticResource Secondary}">
-    
+
     <VerticalStackLayout>
-        <Label Text="Création d'une nouvelle série" FontSize="Title" Margin="0,0,0,20" TextColor="#ffffff"/>
+
+        <Label Text="Création d'une nouvelle série" FontSize="Title" Margin="0,0,0,20" TextColor="#ffffff" HorizontalOptions="Center"/>
 
         <Button Text="Sélectionner une image" Clicked="SelectImageClicked" Margin="0,0,0,10"/>
 
-        <Entry x:Name="nameEntry" Placeholder="Nom" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
+        <Grid ColumnDefinitions="*,*" Margin="10" ColumnSpacing="10">
+            <Entry x:Name="nameEntry" Placeholder="Nom" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
 
-        <Entry x:Name="typeEntry" Placeholder="Type" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
+            <Entry Grid.Column="1" x:Name="typeEntry" Placeholder="Type" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
+        </Grid>
 
         <Entry x:Name="descriptionEntry" Placeholder="Description" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
 

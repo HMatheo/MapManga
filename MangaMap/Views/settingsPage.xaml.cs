@@ -24,11 +24,11 @@ public partial class settingsPage : ContentPage
 
     private async void AddClicked(object sender, EventArgs e)
     {
-        if(my_manager.isAdmin)
+        if(!my_manager.isAdmin)
         {
-            await Shell.Current.Navigation.PushAsync(new createOeuvre());
+            await DisplayAlert("Erreur", "Vous n'êtes pas connecté en tant qu'Administrateur.", "OK");
+            return;
         }
-        await DisplayAlert("Erreur", "Vous n'êtes pas connecté en tant qu'Administrateur.", "OK");
-        return;
+        await Shell.Current.Navigation.PushAsync(new createOeuvre());
     }
 }

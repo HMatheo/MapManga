@@ -12,11 +12,9 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 
     public ficheAnime()
     {
-
-   
         InitializeComponent();
 
-        this.BindingContext = this;
+        BindingContext = this;
     }
 
     public ficheAnime(Oeuvre anime)
@@ -25,10 +23,8 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 
         InitializeComponent();
 
-        this.BindingContext = this;
+        BindingContext = this;
     }
-
-
 
     public async void AjouterListe(object sender, EventArgs e)
     {
@@ -40,7 +36,7 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 
         string selectedOption = await DisplayActionSheet("Ajouter à quelle liste ?", "Annuler", null, "En Visionnage", "Déjà Vu", "Pour Plus Tard", "Favoris");
 
-        if (selectedOption == "Annuler")
+        if (selectedOption == "Annuler" || selectedOption == null)
             return;
 
         Debug.WriteLine("Selected Option: " + selectedOption);
@@ -75,7 +71,6 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
         my_manager.sauvegarder();
 
         await Navigation.PushAsync(new listPage());
-        //await Shell.Current.GoToAsync("//page/secondaire/listPage");
     }
 
 
