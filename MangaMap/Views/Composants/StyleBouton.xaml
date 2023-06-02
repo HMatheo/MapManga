@@ -4,9 +4,8 @@
              x:Class="MangaMap.Views.Composants.StyleBouton">
 
     <ImageButton
+                Source="{Binding Affiche}"
                 Style="{StaticResource ImageAnime}"
-                BackgroundColor="Red"
-                Source="test2.png"
-                Clicked="ButtonIsPressed"/>
+                Clicked="AnimeImageClickedList"/>
 
 </ContentView>

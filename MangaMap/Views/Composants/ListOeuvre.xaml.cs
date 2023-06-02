@@ -1,11 +1,11 @@
 namespace MangaMap.Views.Composants;
 using MangaMap.Model;
 
-public partial class StyleBouton : ContentView
+public partial class ListOeuvre : ContentView
 {
     public Manager my_manager => (App.Current as App).MyManager;
 
-    public StyleBouton()
+    public ListOeuvre()
 	{
 		InitializeComponent();
         BindingContext = my_manager;

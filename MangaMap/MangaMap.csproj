@@ -72,6 +72,9 @@
 		<Compile Update="CustomHeader.xaml.cs">
 			<DependentUpon>CustomHeader.xaml</DependentUpon>
 		</Compile>
+		<Compile Update="Views\Composants\ListOeuvre.xaml.cs">
+		  <DependentUpon>ListOeuvre.xaml</DependentUpon>
+		</Compile>
 		<Compile Update="Views\CreateOeuvre.xaml.cs">
 		  <DependentUpon>createOeuvre.xaml</DependentUpon>
 		</Compile>
@@ -89,6 +92,9 @@
 		</MauiXaml>
 		<MauiXaml Update="Resources\Theme\DarkTheme.xaml">
 			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\Composants\ListOeuvre.xaml">
+		  <Generator>MSBuild:Compile</Generator>
 		</MauiXaml>
 		<MauiXaml Update="Views\Composants\StyleBouton.xaml">
 			<Generator>MSBuild:Compile</Generator>

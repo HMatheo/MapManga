@@ -2,19 +2,25 @@ namespace MangaMap.Views;
 using Model;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Windows.Input;
 using System.Xml.Linq;
+
 
 public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 {
 
+
     public Manager my_manager => (App.Current as App).MyManager;
     public Oeuvre AnimeModel { get; set; }
+
+    public ICommand StarCommand => new Command<string>(count => SetNote(uint.Parse(count)));
 
     public ficheAnime()
     {
         InitializeComponent();
 
         BindingContext = this;
+
     }
 
     public ficheAnime(Oeuvre anime)
@@ -24,6 +30,7 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
         InitializeComponent();
 
         BindingContext = this;
+        
     }
 
     public async void AjouterListe(object sender, EventArgs e)
@@ -76,7 +83,7 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 
     private void SetNote(float note)
     {
-        note = (int)note; // Tronquer à un entier car nous ne gérons actuellement pas les demi-étoiles
+        note = (int)note; 
         var starImages = star.Children.OfType<Image>().Reverse().ToList();
         foreach (var img in starImages)
         {

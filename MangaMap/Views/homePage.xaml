@@ -47,7 +47,7 @@
                 <ScrollView>
                     <Grid x:Name="grille">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="80"/>
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>

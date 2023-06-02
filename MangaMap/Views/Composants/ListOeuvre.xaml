@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MangaMap.Views.Composants.ListOeuvre"
+             xmlns:views="clr-namespace:MangaMap.Views.Composants">
+
+    <VerticalStackLayout>
+
+        <Label Text="Watching" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="0"/>
+
+        <Frame Grid.Row="1" BackgroundColor="Black" Margin="20" BorderColor="Black">
+            <Grid BackgroundColor="#333333" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Margin="20" Grid.Row="0" ColumnDefinitions="*,400,300">
+                    <Label Grid.Column="0"
+                           Text="Titre" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Column="1"
+                           Text="Score" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Column="2"
+                           Text="Progression" FontSize="Large" TextColor="White"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+
+                <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
+                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding UtilisateurActuel.ListeOeuvreEnVisionnage}" Spacing="10">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300,40">
+                                    <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
+                                    <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                                    <Label Grid.Column="2" Text="4/5" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Grid.Column="3" Text="{Binding NbEpisodes}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                </Grid>
+                            </DataTemplate>
+
+                        </BindableLayout.ItemTemplate>
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Grid>
+        </Frame>
+
+        <Label Text="Completed" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="2"/>
+
+        <Frame Grid.Row="3" BackgroundColor="Black" Margin="20" BorderColor="Black">
+            <Grid BackgroundColor="#333333" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Margin="20" Grid.Row="0" ColumnDefinitions="*,300,300">
+                    <Label Grid.Column="0"
+                           Text="Titre" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Column="1"
+                           Text="Score" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Column="2"
+                           Text="Progression" FontSize="Large" TextColor="White"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+
+                <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
+                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding UtilisateurActuel.ListeOeuvreDejaVu}" Spacing="10">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
+                                    <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
+                                    <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                                    <Label Grid.Column="2" Text="4/5" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Grid.Column="3" Text="{Binding NbEpisodes}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </VerticalStackLayout>
+                </ScrollView>
+
+            </Grid>
+        </Frame>
+
+        <Label Text="Plan to Watch" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="2"/>
+
+        <Frame Grid.Row="3" BackgroundColor="Black" Margin="20" BorderColor="Black">
+            <Grid BackgroundColor="#333333" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Margin="20" Grid.Row="0" ColumnDefinitions="*,300,300">
+                    <Label Grid.Column="0"
+                           Text="Titre" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Column="1"
+                           Text="Score" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Column="2"
+                           Text="Progression" FontSize="Large" TextColor="White"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+
+                <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
+                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding UtilisateurActuel. ListeOeuvrePourPlusTard}" Spacing="10">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
+                                    <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
+                                    <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                                    <Label Grid.Column="2" Text="4/5" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Grid.Column="3" Text="{Binding NbEpisodes}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </VerticalStackLayout>
+                </ScrollView>
+
+            </Grid>
+        </Frame>
+
+        <Label Text="Favorite" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="2"/>
+
+        <Frame Grid.Row="3" BackgroundColor="Black" Margin="20" BorderColor="Black">
+            <Grid BackgroundColor="#333333" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Margin="20" Grid.Row="0" ColumnDefinitions="*,300,300">
+                    <Label Grid.Column="0"
+                           Text="Titre" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Grid.Column="1"
+                           Text="Score" FontSize="Large" TextColor="White"
+                           HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Column="2"
+                           Text="Progression" FontSize="Large" TextColor="White"
+                           HorizontalOptions="End" VerticalOptions="Center"/>
+                </Grid>
+
+                <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
+                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding UtilisateurActuel.ListeOeuvreFavorites}" Spacing="10">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
+                                    <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
+                                    <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
+                                    <Label Grid.Column="2" Text="4/5" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Grid.Column="2" Text="{Binding NbEpisodesVus}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                </Grid>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </VerticalStackLayout>
+                </ScrollView>
+
+            </Grid>
+        </Frame>
+
+    </VerticalStackLayout>
+
+</ContentView>
