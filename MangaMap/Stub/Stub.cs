@@ -26,8 +26,12 @@ namespace MangaMap.Stub
             genres.Add("Future");
             Oeuvre o1 = new Oeuvre("Evangelion", genres, "TV", "C'est une bonne série", 4, 150, "evangelion.jpg");
             Oeuvre o2 = new Oeuvre("[Oshi No Ko]", genres, "DVD", "A la fin il meurt", 2, 24, "oshinoko.png");
+            Oeuvre o3 = new Oeuvre("One Piece", genres, "TV", "C'est la meilleur série du monde, regardez absolument", 2, 24, "onepiece.jpg");
+            Oeuvre o4 = new Oeuvre("Naruto", genres, "DVD", "A la fin il meurt pas", 2, 24, "oshinoko.png");
+            Oeuvre o5 = new Oeuvre("Vinland Saga", genres, "DVD", "A la fin il meurt peut-être", 2, 24, "oshinoko.png");
+            Oeuvre o6 = new Oeuvre("Hell's Paradise", genres, "DVD", "A la fin j'espère il meurt pas", 2, 24, "oshinoko.png");
 
-            l1.Add(o1); l1.Add(o2);
+            l1.Add(o1); l1.Add(o2); l1.Add(o3); l1.Add(o4); l1.Add(o5); l1.Add(o6);
             l2.Add(u1); l2.Add(u2); l2.Add(u3);
 
             //u1.ListeOeuvreEnVisionnage.Add(o1);
