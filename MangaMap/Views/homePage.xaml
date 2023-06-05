@@ -29,28 +29,15 @@
                         Margin="30"
                        />
 
-                <!--<HorizontalStackLayout BindableLayout.ItemsSource="{Binding Oeuvres}" Spacing="100" HorizontalOptions="Center">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <ImageButton
-                                    Style="{StaticResource ImageAnime}"
-                                    BackgroundColor="Red"
-                                    Source="{Binding Affiche}"
-                                    Clicked="AnimeImageClicked"
-                                />
-                            <views:StyleBouton/>                         
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-                </HorizontalStackLayout>-->
-
-                
                     <ScrollView>
                     <CollectionView ItemsSource="{Binding Oeuvre}" VerticalScrollBarVisibility="Always" x:Name="searchResults">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <ImageButton
-                                            Style="{StaticResource ImageAnime}"
-                                            BackgroundColor="Red"
+                                            HeightRequest="190"
+                                            WidthRequest="170"
+                                            Aspect="Fill"
+                                            CornerRadius="15"
                                             Source="{Binding Affiche}"
                                             Clicked="AnimeImageClicked"
                                         />
@@ -61,41 +48,6 @@
                         </CollectionView.ItemsLayout>
                     </CollectionView>
                     </ScrollView>
-                
-
-
-                <!--<ScrollView >
-                    <Grid x:Name="grille">
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                </ScrollView>-->
-
-                
-
-
-                <!--<ListView x:Name="a1" ItemsSource="{Binding Utilisateurs}">
-                    
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Label Text="{Binding Pseudo}" TextColor="White" FontSize="Header"/>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>-->
 
             </VerticalStackLayout>
 
