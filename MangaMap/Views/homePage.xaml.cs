@@ -11,6 +11,7 @@ public partial class homePage : ContentPage
     {
         InitializeComponent();
         BindingContext = my_manager;
+        searchResults.ItemsSource = my_manager.Oeuvres;
         //chargerSerie();
     }
 
