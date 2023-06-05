@@ -3,9 +3,6 @@ namespace MangaMap.Views;
 using Model;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
-using System.Windows.Input;
-using System.Xml.Linq;
 
 
 public partial class ficheAnime : ContentPage, INotifyPropertyChanged
@@ -83,10 +80,29 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
     private void SetNote()
     {
         stars.Children.Clear();
+        bool test = my_manager.UtilisateurActuel.notesOeuvres.ContainsKey(AnimeModel.Nom);
+        int x;
 
        for (int i = 0; i < 5; i++)
         {
-            if (i < AnimeModel.Note)
+            if (my_manager.UtilisateurActuel.notesOeuvres.TryGetValue(AnimeModel.Nom,out x) && i<x)
+            {
+                ImageButton imageButton = new ImageButton
+                {
+                    Source = "star_full.png",
+                    WidthRequest = 50,
+                    HeightRequest = 50,
+                    AutomationId = i.ToString(),
+                    Margin = 10,
+                };
+
+                imageButton.Clicked += StarClicked;
+
+                Grid.SetRow(imageButton, 0);
+                Grid.SetColumn(imageButton, i);
+                stars.Children.Add(imageButton);
+            }
+            else if (!test && i < AnimeModel.Note)
             {
                 ImageButton imageButton = new ImageButton
                 {
@@ -125,14 +141,39 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 
     private async void StarClicked(object sender, EventArgs e)
     {
+        if (my_manager.UtilisateurActuel.Email == null)
+        {
+            await DisplayAlert("Erreur", "Vous n'êtes pas connecté.", "OK");
+            return;
+        }
+
         var button = (ImageButton)sender;
         var idAutomation = button.AutomationId;
 
         if (int.TryParse(idAutomation, out int id))
         {
-            AnimeModel.Note = id+1;
+            if (my_manager.UtilisateurActuel.notesOeuvres.ContainsKey(AnimeModel.Nom))
+                my_manager.UtilisateurActuel.notesOeuvres.Remove(AnimeModel.Nom);
+
+            my_manager.UtilisateurActuel.notesOeuvres.Add(AnimeModel.Nom, id+1);
             my_manager.sauvegarder();
             SetNote();
         }
+    }
+
+    private async void NbEpCheck(object sender, EventArgs e)
+    {
+        if (my_manager.UtilisateurActuel.Email == null)
+        {
+            await DisplayAlert("Erreur", "Vous n'êtes pas connecté.", "OK");
+            return;
+        }
+
+        int nb = Convert.ToInt32(nombreEP.Text);
+
+        if (my_manager.UtilisateurActuel.episodesVus.ContainsKey(AnimeModel.Nom))
+            my_manager.UtilisateurActuel.episodesVus.Remove(AnimeModel.Nom);
+        
+        my_manager.UtilisateurActuel.episodesVus.Add(AnimeModel.Nom, nb);
     }
 }

@@ -61,6 +61,7 @@
 		<None Remove="Resources\Images\account_circle.png" />
 		<None Remove="Resources\Images\Evangelion.jpg" />
 		<None Remove="Resources\Images\logo.png" />
+		<None Remove="Resources\Images\OK.png" />
 		<None Remove="Resources\Images\settings.png" />
 	</ItemGroup>
 

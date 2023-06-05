@@ -66,5 +66,4 @@ public partial class homePage : ContentPage
             indice++;
         }
     }
-
 }
