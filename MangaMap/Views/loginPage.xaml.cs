@@ -48,6 +48,7 @@ public partial class loginPage : ContentPage
 
         // On garde l'utilisateur qui vient de se connecter pour accéder à ses informations
         my_manager.UtilisateurActuel = utilisateur;
+
         // Rediriger l'utilisateur vers la page principale
         await Shell.Current.GoToAsync("//page/homePage");                                                                                                                                   
     }

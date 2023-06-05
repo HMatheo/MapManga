@@ -26,9 +26,7 @@ namespace MangaMap.Model
         [DataMember]
         public ObservableCollection<Oeuvre> ListeOeuvreFavorites { get; set; }
         [DataMember]
-        public Dictionary<string,int> notesOeuvres { get; set; }
-        [DataMember]
-        public Dictionary<string,int> episodesVus { get; set; }
+        public Dictionary<string,List<int>> notesNombres { get; set; }
 
         public Utilisateur(string email, string pseudo, string mdp, string nom, string prenom, int age)
         {
@@ -43,8 +41,7 @@ namespace MangaMap.Model
             ListeOeuvreDejaVu = new ObservableCollection<Oeuvre>();
             ListeOeuvrePourPlusTard = new ObservableCollection<Oeuvre>();
             ListeOeuvreFavorites = new ObservableCollection<Oeuvre>();
-            notesOeuvres = new Dictionary<string, int>();
-            episodesVus = new Dictionary<string, int>();
+            notesNombres = new Dictionary<string, List<int>>();
         }
 
         public Utilisateur() {
@@ -52,8 +49,7 @@ namespace MangaMap.Model
             ListeOeuvreDejaVu = new ObservableCollection<Oeuvre>();
             ListeOeuvrePourPlusTard = new ObservableCollection<Oeuvre>();
             ListeOeuvreFavorites = new ObservableCollection<Oeuvre>();
-            notesOeuvres = new Dictionary<string, int>();
-            episodesVus = new Dictionary<string, int>();
+            notesNombres = new Dictionary<string, List<int>>();
         }
 
         public void SupprimerUtilisateur()

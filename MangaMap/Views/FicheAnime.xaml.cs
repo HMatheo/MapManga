@@ -30,15 +30,49 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 
         BindingContext = this;
 
-        SetNote();        
+        SetNote();
     }
-
+    
     public async void AjouterListe(object sender, EventArgs e)
     {
         if (my_manager.UtilisateurActuel.Email == null)
         {
             await DisplayAlert("Erreur", "Vous n'êtes pas connecté.", "OK");
             return;
+        }
+
+        // Si la série est déjà dans la liste il faut bloquer l'ajout.
+        foreach (Oeuvre oeuvre in my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage)
+        {
+            if (oeuvre.Nom == AnimeModel.Nom)
+            {
+                await DisplayAlert("Erreur", "Avez déjà cette série dans une la liste 'En visionnage'.", "OK");
+                return;
+            }
+        }
+        foreach (Oeuvre oeuvre in my_manager.UtilisateurActuel.ListeOeuvreDejaVu)
+        {
+            if (oeuvre.Nom == AnimeModel.Nom)
+            {
+                await DisplayAlert("Erreur", "Avez déjà cette série dans une la liste 'Déjà vu'.", "OK");
+                return;
+            }
+        }
+        foreach (Oeuvre oeuvre in my_manager.UtilisateurActuel.ListeOeuvreFavorites)
+        {
+            if (oeuvre.Nom == AnimeModel.Nom)
+            {
+                await DisplayAlert("Erreur", "Avez déjà cette série dans une la liste 'En favoris'.", "OK");
+                return;
+            }
+        }
+        foreach (Oeuvre oeuvre in my_manager.UtilisateurActuel.ListeOeuvrePourPlusTard)
+        {
+            if (oeuvre.Nom == AnimeModel.Nom)
+            {
+                await DisplayAlert("Erreur", "Avez déjà cette série dans une la liste 'Pour plus tard'.", "OK");
+                return;
+            }
         }
 
         string selectedOption = await DisplayActionSheet("Ajouter à quelle liste ?", "Annuler", null, "En Visionnage", "Déjà Vu", "Pour Plus Tard", "Favoris");
@@ -69,27 +103,35 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
                 break;
         }
 
-        ////foreach (oeuvre oeuvre in my_manager.utilisateuractuel.listeoeuvreenvisionnage)
-        ////{
-        ////    debug.writeline("titre de l'oeuvre : " + oeuvre.nom);
-        ////    // faites d'autres opérations avec chaque élément de la liste
-        ////}
-
         my_manager.sauvegarder();
 
         await Navigation.PushAsync(new listPage());
     }
 
+    public async void SupprimerListe(object sender, EventArgs e)
+    {
+        if (my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage.Remove(AnimeModel) ||
+        my_manager.UtilisateurActuel.ListeOeuvreDejaVu.Remove(AnimeModel) ||
+        my_manager.UtilisateurActuel.ListeOeuvreFavorites.Remove(AnimeModel) ||
+        my_manager.UtilisateurActuel.ListeOeuvrePourPlusTard.Remove(AnimeModel))
+            my_manager.sauvegarder();
+
+        else
+        {
+            await DisplayAlert("Erreur", "Avez n'avez pas cette série dans une liste.", "OK");
+            return;
+        }
+    }
 
     private void SetNote()
     {
         stars.Children.Clear();
-        bool test = my_manager.UtilisateurActuel.notesOeuvres.ContainsKey(AnimeModel.Nom);
-        int x;
+        bool test = my_manager.UtilisateurActuel.notesNombres.ContainsKey(AnimeModel.Nom);
+        List<int> x;
 
        for (int i = 0; i < 5; i++)
         {
-            if (my_manager.UtilisateurActuel.notesOeuvres.TryGetValue(AnimeModel.Nom,out x) && i<x)
+            if (my_manager.UtilisateurActuel.notesNombres.TryGetValue(AnimeModel.Nom,out x) && i < x[0])
             {
                 ImageButton imageButton = new ImageButton
                 {
@@ -155,15 +197,38 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
 
         var button = (ImageButton)sender;
         var idAutomation = button.AutomationId;
+        List<int> x = new List<int>();
+        int somme = 0;
+        int compteur = 0;
 
         if (int.TryParse(idAutomation, out int id))
         {
-            if (my_manager.UtilisateurActuel.notesOeuvres.ContainsKey(AnimeModel.Nom))
-                my_manager.UtilisateurActuel.notesOeuvres.Remove(AnimeModel.Nom);
+            if (my_manager.UtilisateurActuel.notesNombres.ContainsKey(AnimeModel.Nom))
+            {
+                my_manager.UtilisateurActuel.notesNombres.Remove(AnimeModel.Nom, out x);
+                x[0] = id + 1;
+                my_manager.UtilisateurActuel.notesNombres.Add(AnimeModel.Nom, x);
+            }
+            else
+            {
+                x.Add(id + 1);
+                x.Add(0);
+                my_manager.UtilisateurActuel.notesNombres.Add(AnimeModel.Nom, x);
+            }
 
-            my_manager.UtilisateurActuel.notesOeuvres.Add(AnimeModel.Nom, id+1);
-            my_manager.sauvegarder();
             SetNote();
+
+            foreach (Utilisateur u in my_manager.Utilisateurs)
+            {
+                if(u.notesNombres.TryGetValue(AnimeModel.Nom, out x) && x[0] != 0)
+                {
+                    compteur = compteur + 1;
+                    somme = somme + x[0];
+                }
+            }
+
+            AnimeModel.Note = somme / compteur;
+            my_manager.sauvegarder();
         }
     }
 
@@ -175,11 +240,23 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
             return;
         }
 
+        List<int> x = new List<int>();
         int nb = Convert.ToInt32(nombreEP.Text);
 
-        if (my_manager.UtilisateurActuel.episodesVus.ContainsKey(AnimeModel.Nom))
-            my_manager.UtilisateurActuel.episodesVus.Remove(AnimeModel.Nom);
-        
-        my_manager.UtilisateurActuel.episodesVus.Add(AnimeModel.Nom, nb);
+        if (my_manager.UtilisateurActuel.notesNombres.ContainsKey(AnimeModel.Nom))
+        {
+            my_manager.UtilisateurActuel.notesNombres.Remove(AnimeModel.Nom, out x);
+            x[1] = nb;
+            my_manager.UtilisateurActuel.notesNombres.Add(AnimeModel.Nom, x);
+            return;
+        }
+        else
+        {
+            x.Add(0);
+            x.Add(nb);
+            my_manager.UtilisateurActuel.notesNombres.Add(AnimeModel.Nom, x);
+        }
+
+        my_manager.sauvegarder();
     }
 }

@@ -1,5 +1,6 @@
 namespace MangaMap.Views.Composants;
 using MangaMap.Model;
+using System.Xml;
 
 public partial class ListOeuvre : ContentView
 {
@@ -8,7 +9,7 @@ public partial class ListOeuvre : ContentView
     public ListOeuvre()
 	{
 		InitializeComponent();
-        BindingContext = my_manager;
+        BindingContext = this;
     }
 
     private async void AnimeImageClickedList(object sender, EventArgs e)

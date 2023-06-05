@@ -28,14 +28,14 @@
                 </Grid>
 
                 <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
-                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding UtilisateurActuel.ListeOeuvreEnVisionnage}" Spacing="10">
+                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage}" Spacing="10">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
                                     <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
                                     <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
                                     <Label Grid.Column="2" Text="{Binding Note, StringFormat='{0}/5'}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                    <Label Grid.Column="3" Text="{Binding NbEpisodes}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                    <Label Grid.Column="3" Text="{Binding NbEpisodes}"  TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
                                 </Grid>
                             </DataTemplate>
 
@@ -67,14 +67,14 @@
                 </Grid>
 
                 <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
-                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding UtilisateurActuel.ListeOeuvreDejaVu}" Spacing="10">
+                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding my_manager.UtilisateurActuel.ListeOeuvreDejaVu}" Spacing="10">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
                                     <ImageButton Grid.Column="0" Source="{Binding Affiche}" Style="{StaticResource ImageAnime}" HorizontalOptions="Start" Clicked="AnimeImageClickedList"/>
                                     <Label Grid.Column="1" Text="{Binding Nom}" TextColor="White" FontSize="Medium" VerticalOptions="Center" Margin="15"/>
                                     <Label Grid.Column="2" Text="{Binding Note, StringFormat='{0}/5'}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                        <Label Grid.Column="3" Text="{Binding NbEpisodes}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
+                                    <Label Grid.Column="3" Text="{Binding NbEpisodes}" TextColor="White" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="End"/>
                                 </Grid>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
@@ -106,7 +106,7 @@
                 </Grid>
 
                 <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
-                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding UtilisateurActuel. ListeOeuvrePourPlusTard}" Spacing="10">
+                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding my_manager.UtilisateurActuel.ListeOeuvrePourPlusTard}" Spacing="10">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">
@@ -145,7 +145,7 @@
                 </Grid>
 
                 <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Always">
-                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding UtilisateurActuel.ListeOeuvreFavorites}" Spacing="10">
+                    <VerticalStackLayout BindableLayout.ItemsSource="{Binding my_manager.UtilisateurActuel.ListeOeuvreFavorites}" Spacing="10">
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="20,0,20,20" ColumnDefinitions="*,*,300,300">

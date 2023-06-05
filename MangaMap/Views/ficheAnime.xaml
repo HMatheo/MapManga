@@ -36,13 +36,20 @@
                         BackgroundColor="{StaticResource Primary}"
                         Clicked="AjouterListe"/>
 
-                <Entry x:Name="nombreEP" Placeholder="Nombre d'épisodes vues" Margin="10,10,10,10" HeightRequest="20" WidthRequest="180" Style="{StaticResource Champs}"/>
+                <Entry x:Name="nombreEP" Placeholder="Nombre d'épisodes vu" Margin="10,10,10,10" HeightRequest="20" WidthRequest="180" PlaceholderColor="White"/>
                 <Label Text="{Binding AnimeModel.NbEpisodes, StringFormat='/ {0}'}" FontSize="Medium" VerticalOptions="Center"/>
                 <ImageButton Source="ok.png" Margin="20,0,0,0" HeightRequest="20" Clicked="NbEpCheck"/>
             </HorizontalStackLayout>
 
-            <Label Text="{Binding AnimeModel.Type}" FontSize="Large"  TextColor="White"/>
-            <Label Text="{Binding AnimeModel.Description}"/>
+            <Label Text="{Binding AnimeModel.Type}" FontSize="Large"  TextColor="White" Margin="20,0,0,0"/>
+            <Label Text="{Binding AnimeModel.Description}" Margin="20,0,0,0"/>
+
+            <Button Text="Supprimer de la liste"
+                        TextColor="#FFFFFF"
+                        HorizontalOptions="End"
+                        Margin="20"
+                        BackgroundColor="Red"
+                        Clicked="SupprimerListe"/>
 
         </VerticalStackLayout>
 
