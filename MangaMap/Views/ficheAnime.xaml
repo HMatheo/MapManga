@@ -36,7 +36,7 @@
                         BackgroundColor="{StaticResource Primary}"
                         Clicked="AjouterListe"/>
 
-                <Entry x:Name="nombreEP" Placeholder="Nombre d'épisodes vu" Margin="10,10,10,10" HeightRequest="20" WidthRequest="180" PlaceholderColor="White"/>
+                <Entry x:Name="nombreEP" Placeholder="Nombre d'épisodes vu" Margin="10,10,10,10" HeightRequest="20" WidthRequest="180" PlaceholderColor="White" TextColor="White"/>
                 <Label Text="{Binding AnimeModel.NbEpisodes, StringFormat='/ {0}'}" FontSize="Medium" VerticalOptions="Center"/>
                 <ImageButton Source="ok.png" Margin="20,0,0,0" HeightRequest="20" Clicked="NbEpCheck"/>
             </HorizontalStackLayout>

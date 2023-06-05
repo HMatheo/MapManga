@@ -136,6 +136,7 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
                 ImageButton imageButton = new ImageButton
                 {
                     Source = "star_full.png",
+                    BackgroundColor = Microsoft.Maui.Graphics.Color.FromHex("1E1E1E"),
                     WidthRequest = 50,
                     HeightRequest = 50,
                     AutomationId = i.ToString(),
@@ -208,12 +209,14 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
                 my_manager.UtilisateurActuel.notesNombres.Remove(AnimeModel.Nom, out x);
                 x[0] = id + 1;
                 my_manager.UtilisateurActuel.notesNombres.Add(AnimeModel.Nom, x);
+                BackgroundColor = Microsoft.Maui.Graphics.Color.FromHex("1E1E1E");
             }
             else
             {
                 x.Add(id + 1);
                 x.Add(0);
                 my_manager.UtilisateurActuel.notesNombres.Add(AnimeModel.Nom, x);
+                //BackgroundColor = Microsoft.Maui.Graphics.Color.FromHex("1E1E1E");
             }
 
             SetNote();
