@@ -1,18 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using MangaMap.DataBinding;
 using MangaMap.Stub;
 
 namespace MangaMap.Model
 {
-    public class Manager
+    public class Manager : System.ComponentModel.INotifyPropertyChanged
     {
+        
+
         public IPersistanceManager Persistance { get; set; }
         public List<Admin> Admins { get; private set; }
         public List<Utilisateur> Utilisateurs { get; private set; }
-        public List<Oeuvre> Oeuvres { get; private set; }
+
+        private ObservableCollection<Oeuvre> oeuvres;
+
+        public ObservableCollection<Oeuvre> Oeuvres 
+        { 
+            get
+            {
+                return oeuvres;
+            }
+            set
+            {
+                oeuvres = value;
+                OnPropertyChanged();
+            }
+        }
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         public Utilisateur UtilisateurActuel { get; set; }
         public bool isAdmin { get; set; }
@@ -20,7 +44,7 @@ namespace MangaMap.Model
         public Manager(IPersistanceManager Pers) { 
             Admins = new List<Admin>();
             Utilisateurs = new List<Utilisateur>();
-            Oeuvres = new List<Oeuvre>();
+            Oeuvres = new ObservableCollection<Oeuvre>();
             UtilisateurActuel = new Utilisateur();
             isAdmin = false;
 
@@ -31,7 +55,7 @@ namespace MangaMap.Model
         {
             Admins = new List<Admin>();
             Utilisateurs = new List<Utilisateur>();
-            Oeuvres = new List<Oeuvre>();
+            Oeuvres = new ObservableCollection<Oeuvre>();
             UtilisateurActuel = new Utilisateur();
             isAdmin = false;
         }
