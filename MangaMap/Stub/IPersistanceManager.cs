@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,8 +10,8 @@ namespace MangaMap.Stub
 {
     public interface IPersistanceManager
     {
-        (List<Oeuvre>, List<Utilisateur>) chargeDonne();
+        (ObservableCollection<Oeuvre>, List<Utilisateur>) chargeDonne();
 
-        void sauvegarder(List<Oeuvre> o, List<Utilisateur> u);
+        void sauvegarder(ObservableCollection<Oeuvre> o, List<Utilisateur> u);
     }
 }

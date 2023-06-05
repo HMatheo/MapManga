@@ -11,21 +11,22 @@
         <modeles:Manager/>
     </ContentPage.BindingContext>
 
-    <Grid RowDefinitions="40, *">
+    <Grid RowDefinitions="40, *" >
         <local:NewContent1 HeightRequest="40" VerticalOptions="Start" Padding="10, 0"/>
         
-    <ScrollView
+    <ScrollView 
         BackgroundColor="#1E1E1E"
         Grid.Row="1">
             <VerticalStackLayout
             VerticalOptions="Center">
 
-                <SearchBar Placeholder="Recherche"
-                       CancelButtonColor="Orange"
-                       TextColor="Black"
-                       BackgroundColor="White"
-                       HorizontalTextAlignment="Center"
-                       Margin="30"
+                <SearchBar 
+                        Placeholder="Recherche"
+                        TextChanged="OnTextChanged"
+                        TextColor="Black"
+                        BackgroundColor="White"
+                        HorizontalTextAlignment="Center"
+                        Margin="30"
                        />
 
                 <!--<HorizontalStackLayout BindableLayout.ItemsSource="{Binding Oeuvres}" Spacing="100" HorizontalOptions="Center">
@@ -37,13 +38,33 @@
                                     Source="{Binding Affiche}"
                                     Clicked="AnimeImageClicked"
                                 />
-                            --><!--<views:StyleBouton --><!--                            
+                            <views:StyleBouton/>                         
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </HorizontalStackLayout>-->
 
+                
+                    <ScrollView>
+                    <CollectionView ItemsSource="{Binding Oeuvre}" VerticalScrollBarVisibility="Always" x:Name="searchResults">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageButton
+                                            Style="{StaticResource ImageAnime}"
+                                            BackgroundColor="Red"
+                                            Source="{Binding Affiche}"
+                                            Clicked="AnimeImageClicked"
+                                        />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Span="4" Orientation="Vertical" VerticalItemSpacing="30" HorizontalItemSpacing="15"/>
+                        </CollectionView.ItemsLayout>
+                    </CollectionView>
+                    </ScrollView>
+                
 
-                <ScrollView>
+
+                <!--<ScrollView >
                     <Grid x:Name="grille">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -60,7 +81,9 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                     </Grid>
-                </ScrollView>
+                </ScrollView>-->
+
+                
 
 
                 <!--<ListView x:Name="a1" ItemsSource="{Binding Utilisateurs}">

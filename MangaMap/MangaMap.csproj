@@ -32,7 +32,7 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiIcon Include="Resources\AppIcon\logo.png"/>
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -58,10 +58,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Remove="Resources\AppIcon\logo.png" />
 		<None Remove="Resources\Images\account_circle.png" />
 		<None Remove="Resources\Images\Evangelion.jpg" />
 		<None Remove="Resources\Images\logo.png" />
 		<None Remove="Resources\Images\settings.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiImage Include="Resources\AppIcon\logo.png" />
 	</ItemGroup>
 
 	<ItemGroup>

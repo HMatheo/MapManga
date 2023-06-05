@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Input;
 using System.Xml.Linq;
+using Microsoft.Maui.Graphics;
 
 
 public partial class ficheAnime : ContentPage, INotifyPropertyChanged
@@ -91,6 +92,7 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
                 ImageButton imageButton = new ImageButton
                 {
                     Source = "star_full.png",
+                    BackgroundColor = Microsoft.Maui.Graphics.Color.FromHex("1E1E1E"),
                     WidthRequest = 50,
                     HeightRequest = 50,
                     AutomationId = i.ToString(),
@@ -108,6 +110,7 @@ public partial class ficheAnime : ContentPage, INotifyPropertyChanged
                 ImageButton imageButton = new ImageButton
                 {
                     Source = "star_empty.png",
+                    BackgroundColor = Microsoft.Maui.Graphics.Color.FromHex("1E1E1E"),
                     WidthRequest = 50,
                     HeightRequest = 50,
                     AutomationId = i.ToString(),
