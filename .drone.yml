@@ -42,7 +42,7 @@ steps:
         from_secret: SECRET_SONAR_LOGIN
     depends_on: [tests]
 
-  - name: generate-and-deploy-docs
+- name: generate-and-deploy-docs
     image: hub.codefirst.iut.uca.fr/maxime.batista/codefirst-docdeployer
     failure: ignore
     commands:
@@ -53,3 +53,7 @@ steps:
       event:
         - push
     depends_on: [ build, tests ]
+
+volumes:
+- name: docs
+  temp: {}
