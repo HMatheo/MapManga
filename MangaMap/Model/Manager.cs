@@ -10,18 +10,33 @@ using MangaMap.Stub;
 
 namespace MangaMap.Model
 {
+    /// <summary>
+    /// Classe responsable de la gestion globale de l'application de gestion de listes d'anime.
+    /// </summary>
     public class Manager : System.ComponentModel.INotifyPropertyChanged
     {
-        
-
+        /// <summary>
+        /// Obtient ou définit le gestionnaire de persistance utilisé pour charger et sauvegarder les données.
+        /// </summary>
         public IPersistanceManager Persistance { get; set; }
+
+        /// <summary>
+        /// Obtient la liste des administrateurs de l'application.
+        /// </summary>
         public List<Admin> Admins { get; private set; }
+
+        /// <summary>
+        /// Obtient la liste des utilisateurs de l'application.
+        /// </summary>
         public List<Utilisateur> Utilisateurs { get; private set; }
 
         private ObservableCollection<Oeuvre> oeuvres;
 
-        public ObservableCollection<Oeuvre> Oeuvres 
-        { 
+        /// <summary>
+        /// Obtient ou définit la collection observable des oeuvres de l'application.
+        /// </summary>
+        public ObservableCollection<Oeuvre> Oeuvres
+        {
             get
             {
                 return oeuvres;
@@ -32,15 +47,28 @@ namespace MangaMap.Model
                 OnPropertyChanged();
             }
         }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         void OnPropertyChanged([CallerMemberName] string propertyName = null)
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
+        /// <summary>
+        /// Obtient ou définit l'utilisateur actuellement connecté à l'application.
+        /// </summary>
         public Utilisateur UtilisateurActuel { get; set; }
+
+        /// <summary>
+        /// Obtient ou définit une valeur indiquant si l'utilisateur actuel est un administrateur.
+        /// </summary>
         public bool isAdmin { get; set; }
 
-        public Manager(IPersistanceManager Pers) { 
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe Manager avec un gestionnaire de persistance spécifié.
+        /// </summary>
+        /// <param name="Pers">Le gestionnaire de persistance à utiliser.</param>
+        public Manager(IPersistanceManager Pers)
+        {
             Admins = new List<Admin>();
             Utilisateurs = new List<Utilisateur>();
             Oeuvres = new ObservableCollection<Oeuvre>();
@@ -50,6 +78,9 @@ namespace MangaMap.Model
             Persistance = Pers;
         }
 
+        /// <summary>
+        /// Initialise une nouvelle instance par défaut de la classe Manager.
+        /// </summary>
         public Manager()
         {
             Admins = new List<Admin>();
@@ -74,6 +105,9 @@ namespace MangaMap.Model
             return utilisateurActuel; // Renvoyez l'utilisateur actuel
         }*/
 
+        /// <summary>
+        /// Charge les données de l'application à partir du gestionnaire de persistance.
+        /// </summary>
         public void charger()
         {
             var donne = Persistance.chargeDonne();
@@ -84,8 +118,9 @@ namespace MangaMap.Model
             Utilisateurs.AddRange(donne.Item2);
         }
 
-
-
+        /// <summary>
+        /// Sauvegarde les données de l'application en utilisant le gestionnaire de persistance.
+        /// </summary>
         public void sauvegarder()
         {
             Persistance.sauvegarder(Oeuvres, Utilisateurs);

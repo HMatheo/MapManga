@@ -9,14 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-
 namespace MangaMap.Stub
 {
+    /// <summary>
+    /// Implémentation de l'interface IPersistanceManager utilisant la sérialisation avec DataContract.
+    /// </summary>
     public class DataContract : IPersistanceManager
     {
+        /// <summary>
+        /// Obtient ou définit le nom du fichier de sauvegarde.
+        /// </summary>
         public string FileName { get; set; } = "SauvegardeDonnees.xml";
+
+        /// <summary>
+        /// Obtient ou définit le chemin du fichier de sauvegarde.
+        /// </summary>
         public string FilePath { get; set; } = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
 
+        /// <summary>
+        /// Charge les données sauvegardées à partir du fichier xml.
+        /// </summary>
+        /// <returns>Un tuple contenant la liste des oeuvres et la liste des utilisateurs.</returns>
         public (ObservableCollection<Oeuvre>, List<Utilisateur>) chargeDonne()
         {
             var serializer = new DataContractSerializer(typeof(DataToPersist));
@@ -37,6 +50,11 @@ namespace MangaMap.Stub
             return (data.Oeuvres, data.Utilisateurs);
         }
 
+        /// <summary>
+        /// Sauvegarde les données dans le fichier xml.
+        /// </summary>
+        /// <param name="o">La liste des oeuvres à sauvegarder.</param>
+        /// <param name="u">La liste des utilisateurs à sauvegarder.</param>
         public void sauvegarder(ObservableCollection<Oeuvre> o, List<Utilisateur> u)
         {
             var serializer = new DataContractSerializer(typeof(DataToPersist));
@@ -47,11 +65,6 @@ namespace MangaMap.Stub
                 Directory.CreateDirectory(FilePath);
             }
 
-            /*using (Stream s = File.Create(Path.Combine(FilePath, FileName)))
-            {
-                serializer.WriteObject(s, o);                                           //Version d'enregistrement des données sans indentation.
-            }*/
-
             DataToPersist data = new DataToPersist();
             data.Oeuvres = o;
             data.Utilisateurs = u;
@@ -61,10 +74,9 @@ namespace MangaMap.Stub
             {
                 using (XmlWriter w = XmlWriter.Create(tw, settings))
                 {
-                    serializer.WriteObject(w, data);                                       //Version d'enregistrement des données avec indentation.
+                    serializer.WriteObject(w, data); // Version d'enregistrement des données avec indentation.
                 }
             }
         }
     }
-
 }
