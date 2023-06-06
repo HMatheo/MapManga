@@ -21,7 +21,7 @@ steps:
     commands:
       - cd MangaMap/
       - dotnet restore MangaMap.sln 
-      - dotnet test MangaMap.sln --logger trx --no-restore 
+      - dotnet test MangaMap.sln --logger trx --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --collect "XPlat Code Coverage"
     depends_on: [build]
 
   - name: code-analysis
