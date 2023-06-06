@@ -24,6 +24,18 @@ steps:
       - dotnet test MangaMap.sln --logger trx --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --collect "XPlat Code Coverage"
     depends_on: [build]
 
+  - name: generate-and-deploy-docs
+    image: hub.codefirst.iut.uca.fr/maxime.batista/codefirst-docdeployer
+    failure: ignore
+    commands:
+      - /entrypoint.sh -l Documentation/doxygen -t doxygen 
+    when:
+      branch:
+        - master
+      event:
+        - push
+    depends_on: [ build, tests ]
+
   - name: code-analysis
     image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dronesonarplugin-dotnet7-maui
     secrets: [ SECRET_SONAR_LOGIN ]
@@ -42,17 +54,7 @@ steps:
       - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
     depends_on: [tests]
 
-  - name: generate-and-deploy-docs
-    image: hub.codefirst.iut.uca.fr/maxime.batista/codefirst-docdeployer
-    failure: ignore
-    commands:
-      - /entrypoint.sh -l Documentation/doxygen -t doxygen 
-    when:
-      branch:
-        - master
-      event:
-        - push
-    depends_on: [ build, tests ]
+
 
 volumes:
 - name: docs
