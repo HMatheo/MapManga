@@ -26,13 +26,6 @@ steps:
 
   - name: code-analysis
     image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dronesonarplugin-dotnet7-maui
-    commands:
-      - cd MangaMap/
-      - dotnet restore MangaMap.sln
-      - dotnet sonarscanner begin /k:$${project_key} /d:sonar.host.url=$${sonar_host} /d:sonar.coverageReportPaths="coveragereport/SonarQube.xml" /d:sonar.coverage.exclusions=$${coverage_exclusions} /d:sonar.login=$${sonar_token}
-      - reportgenerator -reports:"**/coverage.cobertura.xml" -reporttypes:SonarQube -targetdir:"coveragereport"
-      - dotnet publish MangaMap.sln -c Release --no-restore -o CI_PROJECT_DIR/build/release
-      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
     secrets: [ SECRET_SONAR_LOGIN ]
     settings:
       # accessible en ligne de commande par ${PLUGIN_SONAR_HOST}
@@ -40,6 +33,13 @@ steps:
       # accessible en ligne de commande par ${PLUGIN_SONAR_TOKEN}
       sonar_token:
         from_secret: SECRET_SONAR_LOGIN
+    commands:
+      - cd MangaMap/
+      - dotnet restore MangaMap.sln
+      - dotnet sonarscanner begin /k:"MangaMap" /d:sonar.host.url=$${PLUGIN_SONAR_HOST} /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
+      - dotnet build MangaMap.sln -c Release --no-restore
+      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
+      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
     depends_on: [tests]
 
   - name: generate-and-deploy-docs
