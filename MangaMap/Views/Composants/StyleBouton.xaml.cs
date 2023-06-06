@@ -1,23 +1,39 @@
-namespace MangaMap.Views.Composants;
 using MangaMap.Model;
 
-public partial class StyleBouton : ContentView
+namespace MangaMap.Views.Composants
 {
-    public Manager my_manager => (App.Current as App).MyManager;
-
-    public StyleBouton()
-	{
-		InitializeComponent();
-        BindingContext = my_manager;
-    }
-
-    private async void AnimeImageClickedList(object sender, EventArgs e)
+    /// <summary>
+    /// Code-behind pour le UserControl StyleBouton.xaml.
+    /// </summary>
+    public partial class StyleBouton : ContentView
     {
-        var selectedAnime = (sender as ImageButton)?.BindingContext as Oeuvre;
-        if (selectedAnime != null)
+        /// <summary>
+        /// Instance du manager pour accéder aux données.
+        /// </summary>
+        public Manager my_manager => (App.Current as App).MyManager;
+
+        /// <summary>
+        /// Constructeur de la classe StyleBouton.
+        /// </summary>
+        public StyleBouton()
         {
-            // Naviguez vers la page de la fiche d'anime en passant l'objet sélectionné
-            await Navigation.PushAsync(new ficheAnime(selectedAnime));
+            InitializeComponent();
+            BindingContext = my_manager;
+        }
+
+        /// <summary>
+        /// Gère l'événement lorsqu'une image d'anime est cliquée.
+        /// </summary>
+        /// <param name="sender">L'objet déclenchant l'événement.</param>
+        /// <param name="e">Les arguments de l'événement.</param>
+        private async void AnimeImageClickedList(object sender, EventArgs e)
+        {
+            var selectedAnime = (sender as ImageButton)?.BindingContext as Oeuvre;
+            if (selectedAnime != null)
+            {
+                // Naviguez vers la page de la fiche d'anime en passant l'objet sélectionné
+                await Navigation.PushAsync(new ficheAnime(selectedAnime));
+            }
         }
     }
 }

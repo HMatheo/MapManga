@@ -4,20 +4,39 @@ using System.Threading.Tasks;
 using MangaMap.Stub;
 using MangaMap.Model;
 
+/// <summary>
+/// Classe représentant la page de connexion administrateur de l'application.
+/// </summary>
 public partial class loginAdminPage : ContentPage
 {
+    /// <summary>
+    /// Référence au gestionnaire de l'application.
+    /// </summary>
     public Manager my_manager => (App.Current as App).MyManager;
 
+    /// <summary>
+    /// Constructeur de la page de connexion administrateur.
+    /// </summary>
     public loginAdminPage()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
+    /// <summary>
+    /// Gestionnaire d'événement lorsqu'un utilisateur clique sur le bouton "Utilisateur".
+    /// </summary>
+    /// <param name="sender">L'objet qui a déclenché l'événement.</param>
+    /// <param name="e">Arguments de l'événement.</param>
     async void userClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//page/secondaire/inscriptionPage");
     }
 
+    /// <summary>
+    /// Gestionnaire d'événement lorsqu'un utilisateur clique sur le bouton "Connexion".
+    /// </summary>
+    /// <param name="sender">L'objet qui a déclenché l'événement.</param>
+    /// <param name="e">Arguments de l'événement.</param>
     async void OnLoginClicked(object sender, EventArgs e)
     {
         // Récupération du pseudo et du mot de passe entrés
@@ -39,7 +58,7 @@ public partial class loginAdminPage : ContentPage
             return;
         }
 
-        // On garde la connection admin
+        // On garde la connexion admin
         my_manager.isAdmin = true;
         // Rediriger l'utilisateur vers la page principale
         await Shell.Current.GoToAsync("//page/homePage");

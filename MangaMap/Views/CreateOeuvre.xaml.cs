@@ -11,13 +11,21 @@ public partial class createOeuvre : ContentPage
     public Manager my_manager => (App.Current as App).MyManager;
     private string imagePath;
 
+    /// <summary>
+    /// Constructeur de la page de création d'oeuvre.
+    /// </summary>
     public createOeuvre()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         BindingContext = this;
-	}
+    }
 
-    async void SelectImageClicked(object sender, EventArgs e)
+    /// <summary>
+    /// Gère l'événement de clic sur le bouton de sélection d'image.
+    /// </summary>
+    /// <param name="sender">L'objet déclencheur de l'événement.</param>
+    /// <param name="e">Les arguments de l'événement.</param>
+    private async void SelectImageClicked(object sender, EventArgs e)
     {
         var result = await FilePicker.PickAsync(new PickOptions
         {
@@ -33,7 +41,12 @@ public partial class createOeuvre : ContentPage
         }
     }
 
-    async void AddClicked(object sender, System.EventArgs e)
+    /// <summary>
+    /// Gère l'événement de clic sur le bouton d'ajout d'oeuvre.
+    /// </summary>
+    /// <param name="sender">L'objet déclencheur de l'événement.</param>
+    /// <param name="e">Les arguments de l'événement.</param>
+    private async void AddClicked(object sender, System.EventArgs e)
     {
         // Récupérer les valeurs des entrées
         string nom = nameEntry.Text;
@@ -51,7 +64,7 @@ public partial class createOeuvre : ContentPage
         }
 
         if (string.IsNullOrWhiteSpace(nom) ||
-        string.IsNullOrWhiteSpace(description) || string.IsNullOrWhiteSpace(type))
+            string.IsNullOrWhiteSpace(description) || string.IsNullOrWhiteSpace(type))
         {
             await DisplayAlert("Erreur", "Veuillez remplir tous les champs.", "OK");
             return;
@@ -59,7 +72,7 @@ public partial class createOeuvre : ContentPage
 
         if (nbEp < 0)
         {
-            await DisplayAlert("Erreur", "Il faut avoir au 1 épisode pour l'application.", "OK");
+            await DisplayAlert("Erreur", "Il faut avoir au moins 1 épisode pour l'application.", "OK");
             return;
         }
 
