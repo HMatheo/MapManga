@@ -135,6 +135,7 @@ namespace MangaMap.Views
                 await DisplayAlert("Erreur", "Avez n'avez pas cette série dans une liste.", "OK");
                 return;
             }
+            await DisplayAlert("Succès", "La série a bien été supprimée de la liste.", "OK");
         }
 
         /// <summary>
