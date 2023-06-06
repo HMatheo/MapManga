@@ -8,11 +8,15 @@ using System.Threading.Tasks;
 
 namespace MangaMap.Stub
 {
+    /// <summary>
+    /// Classe de stub pour la gestion de la persistance des données.
+    /// </summary>
     public class Stub : IPersistanceManager
-
-    //Cette classe sert à faire charger un jeu de données qui n'est pas celui enregistrer dans le fichier sur l'ordinateur.
-    //Il permet de faire des transistion entre différent moyen de persister.
     {
+        /// <summary>
+        /// Charge un jeu de données en mémoire.
+        /// </summary>
+        /// <returns>Un tuple contenant la liste des oeuvres et la liste des utilisateurs.</returns>
         public (ObservableCollection<Oeuvre>, List<Utilisateur>) chargeDonne()
         {
             ObservableCollection<Oeuvre> l1 = new ObservableCollection<Oeuvre>();
@@ -39,6 +43,11 @@ namespace MangaMap.Stub
             return (l1, l2);
         }
 
+        /// <summary>
+        /// Méthode non implémentée pour la sauvegarde des données.
+        /// </summary>
+        /// <param name="o">La liste des oeuvres à sauvegarder.</param>
+        /// <param name="u">La liste des utilisateurs à sauvegarder.</param>
         public void sauvegarder(ObservableCollection<Oeuvre> o, List<Utilisateur> u)
         {
             throw new NotImplementedException();

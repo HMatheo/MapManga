@@ -8,11 +8,19 @@ using System.Collections.ObjectModel;
 
 namespace MangaMap.Stub
 {
-    //Cette classe permet de définir ce qui doit être enregistrer par la persistance.
+    /// <summary>
+    /// Classe de données pour la persistance contenant les listes des oeuvres et des utilisateurs.
+    /// </summary>
     public class DataToPersist
     {
+        /// <summary>
+        /// Obtient ou définit la liste des oeuvres à persister.
+        /// </summary>
         public ObservableCollection<Oeuvre> Oeuvres { get; set; } = new ObservableCollection<Oeuvre>();
+
+        /// <summary>
+        /// Obtient ou définit la liste des utilisateurs à persister.
+        /// </summary>
         public List<Utilisateur> Utilisateurs { get; set; } = new List<Utilisateur>();
-        
     }
 }

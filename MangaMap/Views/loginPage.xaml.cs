@@ -4,23 +4,42 @@ using System.Threading.Tasks;
 using MangaMap.Stub;
 using MangaMap.Model;
 
+/// <summary>
+/// Classe représentant la page de connexion de l'application.
+/// </summary>
 public partial class loginPage : ContentPage
 {
+    /// <summary>
+    /// Référence au gestionnaire de l'application.
+    /// </summary>
     public Manager my_manager => (App.Current as App).MyManager;
 
+    /// <summary>
+    /// Constructeur de la page de connexion.
+    /// </summary>
     public loginPage()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
+    /// <summary>
+    /// Gestionnaire d'événement lorsqu'un utilisateur clique sur le bouton "Inscription".
+    /// </summary>
+    /// <param name="sender">L'objet qui a déclenché l'événement.</param>
+    /// <param name="e">Arguments de l'événement.</param>
     async void OnSignUpClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//page/secondaire/inscriptionPage");
     }
 
+    /// <summary>
+    /// Gestionnaire d'événement lorsqu'un utilisateur clique sur le bouton "Connexion".
+    /// </summary>
+    /// <param name="sender">L'objet qui a déclenché l'événement.</param>
+    /// <param name="e">Arguments de l'événement.</param>
     async void OnLoginClicked(object sender, EventArgs e)
     {
-        // Récupération de l'email et du mot de passe entrés
+        // Récupération de l'e-mail et du mot de passe entrés
         string email = emailEntry.Text;
         string password = passwordEntry.Text;
 
@@ -34,7 +53,7 @@ public partial class loginPage : ContentPage
         // Vérifier que l'e-mail a la bonne forme
         //if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
         //{
-        //    await DisplayAlert("Erreur", "L'email n'est pas valide.", "OK");
+        //    await DisplayAlert("Erreur", "L'e-mail n'est pas valide.", "OK");
         //    return;
         //}
 
@@ -50,7 +69,6 @@ public partial class loginPage : ContentPage
         my_manager.UtilisateurActuel = utilisateur;
 
         // Rediriger l'utilisateur vers la page principale
-        await Shell.Current.GoToAsync("//page/homePage");                                                                                                                                   
+        await Shell.Current.GoToAsync("//page/homePage");
     }
-
 }

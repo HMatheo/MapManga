@@ -4,21 +4,39 @@ using MangaMap.Model;
 using System.Text.RegularExpressions;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+/// <summary>
+/// Classe représentant la page d'inscription de l'application.
+/// </summary>
 public partial class signUpPage : ContentPage
 {
-
+    /// <summary>
+    /// Référence au gestionnaire de l'application.
+    /// </summary>
     public Manager my_manager => (App.Current as App).MyManager;
 
-	public signUpPage()
-	{
+    /// <summary>
+    /// Constructeur de la page d'inscription.
+    /// </summary>
+    public signUpPage()
+    {
         InitializeComponent();
-	}
+    }
 
+    /// <summary>
+    /// Gestionnaire d'événement lorsqu'un utilisateur clique sur le bouton "Connexion".
+    /// </summary>
+    /// <param name="sender">L'objet qui a déclenché l'événement.</param>
+    /// <param name="e">Arguments de l'événement.</param>
     async void OnLoginClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("//page/secondaire/connexionPage");
     }
 
+    /// <summary>
+    /// Gestionnaire d'événement lorsqu'un utilisateur clique sur le bouton "Inscription".
+    /// </summary>
+    /// <param name="sender">L'objet qui a déclenché l'événement.</param>
+    /// <param name="e">Arguments de l'événement.</param>
     async void OnSignUpClicked(object sender, System.EventArgs e)
     {
         // Récupérer les valeurs des entrées
@@ -32,7 +50,7 @@ public partial class signUpPage : ContentPage
 
         foreach (Utilisateur u in my_manager.Utilisateurs)
         {
-            if (u.Email == email ||u.Pseudo==pseudo)
+            if (u.Email == email || u.Pseudo == pseudo)
             {
                 await DisplayAlert("Erreur", "L'utilisateur existe déjà.", "OK");
                 return;
@@ -40,7 +58,7 @@ public partial class signUpPage : ContentPage
         }
 
         if (string.IsNullOrWhiteSpace(email) ||
-        string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
+            string.IsNullOrWhiteSpace(password) || string.IsNullOrWhiteSpace(confirmPassword))
         {
             await DisplayAlert("Erreur", "Veuillez remplir tous les champs.", "OK");
             return;
@@ -83,6 +101,11 @@ public partial class signUpPage : ContentPage
         }
     }
 
+    /// <summary>
+    /// Vérifie si un mot de passe est suffisamment fort.
+    /// </summary>
+    /// <param name="password">Le mot de passe à vérifier.</param>
+    /// <returns>True si le mot de passe est suffisamment fort, sinon False.</returns>
     bool IsPasswordStrong(string password)
     {
         // Vérifier si le mot de passe est assez long
