@@ -38,8 +38,8 @@ steps:
       - dotnet restore MangaMap.sln
       - dotnet sonarscanner begin /k:"MapManga" /d:sonar.host.url=$${PLUGIN_SONAR_HOST} /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
       - dotnet build MangaMap.sln -c Release --no-restore
-      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
-      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
+#      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
+#      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
     depends_on: [tests]
 
   - name: generate-and-deploy-docs
