@@ -54,3 +54,4 @@ steps:
       event:
         - push
     depends_on: [ build, tests ]
+    
