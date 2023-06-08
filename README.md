@@ -2,7 +2,6 @@
 
 Vianney Jourdy (G9) Hersan Mathéo (G10)
 
-
 [![Build Status](https://codefirst.iut.uca.fr/api/badges/antoine.perederii/Banquale/status.svg)](https://codefirst.iut.uca.fr/vianney.jourdy/MapManga)
 [![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=Banquale&metric=alert_status&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
 [![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=Banquale&metric=bugs&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
