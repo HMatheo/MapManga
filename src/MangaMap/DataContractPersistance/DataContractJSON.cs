@@ -8,7 +8,7 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MangaMap.Stub
+namespace MangaMap.DataContractPersistance
 {
     /// <summary>
     /// Implémentation de l'interface IPersistanceManager utilisant la sérialisation avec DataContract.
@@ -65,7 +65,7 @@ namespace MangaMap.Stub
             {
                 using (var writer = JsonReaderWriterFactory.CreateJsonWriter(
                             stream,
-                            System.Text.Encoding.UTF8,
+                            Encoding.UTF8,
                             false,
                             true))//<- this boolean says that we sant indentation
                 {

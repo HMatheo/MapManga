@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace MangaMap.Stub
+namespace MangaMap.DataContractPersistance
 {
     /// <summary>
     /// Implémentation de l'interface IPersistanceManager utilisant la sérialisation avec DataContract.

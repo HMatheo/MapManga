@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 
-namespace MangaMap.Stub
+namespace MangaMap.DataContractPersistance
 {
     /// <summary>
     /// Classe de données pour la persistance contenant les listes des oeuvres et des utilisateurs.
