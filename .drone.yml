@@ -19,10 +19,9 @@ steps:
   - name: tests
     image: hub.codefirst.iut.uca.fr/marc.chevaldonne/codefirst-dotnet7-maui:latest
     commands:
-#      - cd src/MangaMap/
-#     - dotnet restore MangaMap.sln 
-#      - dotnet test MangaMap.sln --logger trx --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --collect "XPlat Code Coverage"
-      - dotnet test --framework net7.0 'src/UnitTests/UnitTests.csproj'      
+      - cd src/MangaMap/
+     - dotnet restore MangaMap.sln 
+      - dotnet test MangaMap.sln --logger trx --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --collect "XPlat Code Coverage"   
     depends_on: [build]
 
   - name: code-analysis
