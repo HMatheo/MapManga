@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Xml.Linq;
 using System.Runtime.CompilerServices;
 
-namespace MangaMap.Model
+namespace Models
 {
     /// <summary>
     /// Représente une oeuvre dans le système de gestion de listes d'anime.
@@ -18,7 +18,7 @@ namespace MangaMap.Model
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         /// <summary>

@@ -2,7 +2,7 @@ namespace MangaMap.Views;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using MangaMap.Stub;
-using MangaMap.Model;
+using Models;
 
 /// <summary>
 /// Classe représentant la page de connexion administrateur de l'application.

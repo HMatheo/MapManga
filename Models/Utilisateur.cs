@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MangaMap.Model
+namespace Models
 {
     /// <summary>
     /// Représente un utilisateur de l'application de gestion de listes d'anime.
@@ -18,13 +18,13 @@ namespace MangaMap.Model
         /// Obtient ou définit le nom de l'utilisateur.
         /// </summary>
         [DataMember]
-        public string nom { get; private set; }
+        public string? nom { get; private set; }
 
         /// <summary>
         /// Obtient ou définit le prénom de l'utilisateur.
         /// </summary>
         [DataMember]
-        public string prenom { get; private set; }
+        public string? prenom { get; private set; }
 
         /// <summary>
         /// Obtient ou définit l'âge de l'utilisateur.

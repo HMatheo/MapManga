@@ -1,5 +1,5 @@
 namespace MangaMap.Views.Composants;
-using MangaMap.Model;
+using Models;
 using System.Xml;
 
 public partial class ListOeuvre : ContentView

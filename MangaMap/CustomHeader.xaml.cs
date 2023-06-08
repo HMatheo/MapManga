@@ -1,6 +1,6 @@
 using MangaMap.Views;
 namespace MangaMap;
-using MangaMap.Model;
+using Models;
 using System.ComponentModel;
 using INotifyPropertyChanged = System.ComponentModel.INotifyPropertyChanged;
 

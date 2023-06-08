@@ -1,4 +1,4 @@
-using MangaMap.Model;
+using Models;
 
 namespace MangaMap.Views.Composants
 {

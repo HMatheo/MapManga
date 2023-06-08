@@ -1,6 +1,6 @@
 namespace MangaMap.Views;
 
-using MangaMap.Model;
+using Models;
 using System.Text.RegularExpressions;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 

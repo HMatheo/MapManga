@@ -6,9 +6,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using MangaMap.Stub;
 
-namespace MangaMap.Model
+namespace Models
 {
     /// <summary>
     /// Classe responsable de la gestion globale de l'application de gestion de listes d'anime.
@@ -50,7 +49,7 @@ namespace MangaMap.Model
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         /// <summary>
@@ -89,21 +88,6 @@ namespace MangaMap.Model
             UtilisateurActuel = new Utilisateur();
             isAdmin = false;
         }
-
-        /*public Utilisateur charger()
-        {
-            var donnees = Persistance.chargeDonne();
-            foreach (var item in donnees.Item1)
-            {
-                Oeuvres.Add(item);
-            }
-            Utilisateurs.AddRange(donnees.Item2);
-
-            //  récupérer le premier utilisateur de la liste Utilisateurs :
-            Utilisateur utilisateurActuel = Utilisateurs.FirstOrDefault();
-
-            return utilisateurActuel; // Renvoyez l'utilisateur actuel
-        }*/
 
         /// <summary>
         /// Charge les données de l'application à partir du gestionnaire de persistance.

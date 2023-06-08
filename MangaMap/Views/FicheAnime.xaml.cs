@@ -1,6 +1,6 @@
 namespace MangaMap.Views
 {
-    using Model;
+    using Models;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Drawing;

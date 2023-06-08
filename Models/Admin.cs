@@ -1,11 +1,10 @@
-﻿using MangaMap.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MangaMap.Model
+namespace Models
 {
     /// <summary>
     /// Représente un administrateur dans le système de gestion de listes d'anime.

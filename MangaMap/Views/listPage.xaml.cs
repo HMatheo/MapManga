@@ -1,5 +1,5 @@
 namespace MangaMap.Views;
-using MangaMap.Model;
+using Models;
 using static System.Net.Mime.MediaTypeNames;
 
 

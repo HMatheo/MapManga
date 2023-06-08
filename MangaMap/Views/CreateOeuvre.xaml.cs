@@ -1,5 +1,5 @@
 using System.Text.RegularExpressions;
-using MangaMap.Model;
+using Models;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Threading.Tasks;
 using Microsoft.Maui.Storage;

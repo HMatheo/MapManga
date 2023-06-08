@@ -1,6 +1,7 @@
-﻿using MangaMap.Model;
+﻿using Models;
 using MangaMap.Stub;
 using MangaMap.Views;
+using System.Diagnostics;
 
 namespace MangaMap;
 
@@ -49,7 +50,7 @@ public partial class App : Application
 
         if (!File.Exists(Path.Combine(FilePath, FileName)))
         {
-            MyManager.Persistance = new DataContractXML(); // Utilise le Stub comme moyen de persistance.
+            MyManager.Persistance = new Stub.DataContractXML(); // Utilise le Stub comme moyen de persistance.
             //MyManager = new Manager(new Stub.DataContractJSON());
         }
 

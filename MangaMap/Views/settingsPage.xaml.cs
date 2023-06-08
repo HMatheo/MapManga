@@ -1,5 +1,5 @@
 namespace MangaMap.Views;
-using Model;
+using Models;
 
 /// <summary>
 /// Classe représentant la page des paramètres de l'application.

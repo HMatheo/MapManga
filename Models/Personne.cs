@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MangaMap.Model
+namespace Models
 {
     /// <summary>
     /// Représente une personne dans le système de gestion de listes d'anime.
@@ -17,19 +17,19 @@ namespace MangaMap.Model
         /// Obtient ou définit le mot de passe de la personne.
         /// </summary>
         [DataMember]
-        public string MotDePasse { get; set; }
+        public string? MotDePasse { get; set; }
 
         /// <summary>
         /// Obtient ou définit l'adresse e-mail de la personne.
         /// </summary>
         [DataMember]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// Obtient ou définit le pseudo de la personne.
         /// </summary>
         [DataMember]
-        public string Pseudo { get; set; }
+        public string? Pseudo { get; set; }
 
         /// <summary>
         /// Modifie le mot de passe de la personne en vérifiant une confirmation.
