@@ -62,7 +62,6 @@ namespace UnitTests
             // Assert
             // Since the implementation of Sauvegarder only calls Console.WriteLine,
             // we can't directly test the functionality, but we can assert that the method was called
-            // You can check the console output manually to verify the expected message
         }
     }
 }
