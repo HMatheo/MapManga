@@ -1,7 +1,7 @@
 namespace MangaMap.Views;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using MangaMap.Stub;
+using Stub;
 using Models;
 
 /// <summary>

@@ -1,5 +1,5 @@
 ﻿using Models;
-using MangaMap.Stub;
+using Stub;
 using MangaMap.Views;
 using System.Diagnostics;
 

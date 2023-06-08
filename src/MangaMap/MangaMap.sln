@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MangaMap", "MangaMap.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "..\Models\Models.csproj", "{D13B26C4-A575-4577-A735-0B04DC02BC85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{6B675815-FEE2-49D0-BAF9-84ECD5116FF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "..\UnitTests\UnitTests.csproj", "{6B675815-FEE2-49D0-BAF9-84ECD5116FF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stub", "..\Stub\Stub.csproj", "{434D7C7C-2B01-44AA-8619-28D65657C47A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{6B675815-FEE2-49D0-BAF9-84ECD5116FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B675815-FEE2-49D0-BAF9-84ECD5116FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B675815-FEE2-49D0-BAF9-84ECD5116FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{434D7C7C-2B01-44AA-8619-28D65657C47A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{434D7C7C-2B01-44AA-8619-28D65657C47A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{434D7C7C-2B01-44AA-8619-28D65657C47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{434D7C7C-2B01-44AA-8619-28D65657C47A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
