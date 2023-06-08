@@ -106,6 +106,7 @@ namespace Models
         public Oeuvre(string nom, string type, string description, int nbEpisode, string affiche)
         {
             Nom = nom;
+            Genre = new List<string>();
             Type = type;
             Description = description;
             NbEpisodes = nbEpisode;
