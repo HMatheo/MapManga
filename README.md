@@ -44,8 +44,4 @@ All the information about MapManga are [here](https://codefirst.iut.uca.fr/git/v
 ## Contributors
 - [JOURDY Vianney](https://codefirst.iut.uca.fr/git/vianney.jourdy)
 - [HERSAN Mathéo](https://codefirst.iut.uca.fr/git/matheo.hersan)
-
-
-
-
     
