@@ -3,10 +3,10 @@
 Vianney Jourdy (G9) Hersan Mathéo (G10)
 
 [![Build Status](https://codefirst.iut.uca.fr/api/badges/vianney.jourdy/MapManga/status.svg)](https://codefirst.iut.uca.fr/vianney.jourdy/MapManga)
-[![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=alert_status&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
-[![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=bugs&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
-[![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=coverage&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
-[![Vulnerabilities](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=vulnerabilities&token=1a49717e4d2f15e2eecaaa971ebd8c83fb9bd5c5)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
+[![Quality Gate Status](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=alert_status&token=ebbdc36d23b25e2104d276df1bf5ae218f26970b)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
+[![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=bugs&token=ebbdc36d23b25e2104d276df1bf5ae218f26970b)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
+[![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=coverage&token=ebbdc36d23b25e2104d276df1bf5ae218f26970b)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
+[![Vulnerabilities](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=vulnerabilities&token=ebbdc36d23b25e2104d276df1bf5ae218f26970b)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
 
 ## Overview
 MapManga is an application designed to help manga and anime fans manage their reading and viewing experience. If you are a manga and anime fan, MapManga is the perfect application for you.
