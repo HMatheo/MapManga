@@ -47,7 +47,9 @@ namespace DataContractPersistance
                 data = new DataToPersist(); // Si le fichier n'existe pas, créez une nouvelle liste
             }
 
-            return (data.Oeuvres, data.Utilisateurs);
+            
+            return (data!.Oeuvres, data.Utilisateurs);
+            
         }
 
         /// <summary>

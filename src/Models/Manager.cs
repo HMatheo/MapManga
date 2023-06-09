@@ -38,7 +38,7 @@ namespace Models
         {
             get
             {
-                return oeuvres;
+                return oeuvres ??= new ObservableCollection<Oeuvre>();
             }
             set
             {
@@ -46,7 +46,7 @@ namespace Models
                 OnPropertyChanged();
             }
         }
-
+           
         public event PropertyChangedEventHandler? PropertyChanged;
 
         void OnPropertyChanged([CallerMemberName] string? propertyName = null)
@@ -94,14 +94,17 @@ namespace Models
         /// </summary>
         public void charger()
         {
-            
-            var donne = Persistance.chargeDonne();
-
-            foreach (var item in donne.Item1)
+            if (Persistance != null)
             {
-                Oeuvres.Add(item);
+
+                var donne = Persistance.chargeDonne();
+
+                foreach (var item in donne.Item1)
+                {
+                    Oeuvres.Add(item);
+                }
+                Utilisateurs.AddRange(donne.Item2);
             }
-            Utilisateurs.AddRange(donne.Item2);
             
             
         }
