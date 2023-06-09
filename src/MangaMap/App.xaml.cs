@@ -39,8 +39,8 @@ public partial class App : Application
 
         if (File.Exists(Path.Combine(FilePath, FileName)))
         {
-            MyManager = new Manager(new DataContractPersistance.DataContractXML()); // Utilise le DataContract comme moyen de persistance.
-            //MyManager = new Manager(new Stub.DataContractJSON()); // Utilise le DataContract comme moyen de persistance.
+            MyManager = new Manager(new DataContractPersistance.DataContractXml()); // Utilise le DataContract comme moyen de persistance.
+            //MyManager = new Manager(new Stub.DataContractJson()); // Utilise le DataContract comme moyen de persistance.
         }
 
         MyManager.charger();
@@ -50,8 +50,7 @@ public partial class App : Application
 
         if (!File.Exists(Path.Combine(FilePath, FileName)))
         {
-            MyManager.Persistance = new DataContractPersistance.DataContractXML(); // Utilise le Stub comme moyen de persistance.
-            //MyManager = new Manager(new Stub.DataContractJSON());
+            MyManager.Persistance = new DataContractPersistance.DataContractXml(); // Utilise le Stub comme moyen de persistance.
         }
 
         MyManager.sauvegarder();

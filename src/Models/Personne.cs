@@ -38,7 +38,7 @@ namespace Models
         /// <returns>True si la modification a réussi, False sinon.</returns>
         public bool MofifierMotDePasse(string MotDePasse)
         {
-            string test = "";
+            string ?test = "";
             test = Console.ReadLine();
 
             if (test == this.MotDePasse)
@@ -57,7 +57,7 @@ namespace Models
         /// <returns>True si la modification a réussi, False sinon.</returns>
         public bool MofifierEmail(string Email)
         {
-            string test = "";
+            string ?test = "";
             test = Console.ReadLine();
 
             if (test == this.MotDePasse)
@@ -76,7 +76,7 @@ namespace Models
         /// <returns>True si la modification a réussi, False sinon.</returns>
         public bool MofifierPseudo(string Pseudo)
         {
-            string test = "";
+            string ?test = "";
             test = Console.ReadLine();
 
             if (test == this.MotDePasse)

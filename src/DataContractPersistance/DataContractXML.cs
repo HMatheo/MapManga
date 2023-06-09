@@ -14,7 +14,7 @@ namespace DataContractPersistance
     /// <summary>
     /// Implémentation de l'interface IPersistanceManager utilisant la sérialisation avec DataContract.
     /// </summary>
-    public class DataContractXML : IPersistanceManager
+    public class DataContractXml : IPersistanceManager
     {
         /// <summary>
         /// Obtient ou définit le nom du fichier de sauvegarde XML.
@@ -47,7 +47,9 @@ namespace DataContractPersistance
                 data = new DataToPersist(); // Si le fichier n'existe pas, créez une nouvelle liste
             }
 
-            return (data.Oeuvres, data.Utilisateurs);
+            
+            return (data!.Oeuvres, data.Utilisateurs);
+            
         }
 
         /// <summary>
