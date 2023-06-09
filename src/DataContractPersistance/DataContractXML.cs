@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace MangaMap.DataContractPersistance
+namespace DataContractPersistance
 {
     /// <summary>
     /// Implémentation de l'interface IPersistanceManager utilisant la sérialisation avec DataContract.
@@ -33,7 +33,7 @@ namespace MangaMap.DataContractPersistance
         public (ObservableCollection<Oeuvre>, List<Utilisateur>) chargeDonne()
         {
             var serializer = new DataContractSerializer(typeof(DataToPersist));
-            DataToPersist data;
+            DataToPersist? data;
 
             if (File.Exists(Path.Combine(FilePath, FileName))) // Vérifiez si le fichier existe
             {
