@@ -38,10 +38,11 @@ steps:
       - dotnet restore MangaMap.sln
       - dotnet sonarscanner begin /k:"MangaMap" /d:sonar.host.url=$${PLUGIN_SONAR_HOST} /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
       - dotnet build MangaMap.sln -c Release --no-restore
-      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
       - dotnet test MangaMap.sln --logger trx --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura --collect "XPlat Code Coverage"
       - reportgenerator -reports:"**/coverage.cobertura.xml" -reporttypes:SonarQube -targetdir:"coveragereport"
-      - dotnet publish MangaMap/MangaMap.csproj -c Release --no-restore -o $CI_PROJECT_DIR/build/release -f:net7.0-android /p:AndroidSdkDirectory=/usr/lib/android-sdk
+      - dotnet publish MangaMap/MangaMap.csproj -c Release --no-restore -o $CI_PROJECT_DIR/build/release 
+      - dotnet sonarscanner end /d:sonar.login=$${PLUGIN_SONAR_TOKEN}
+      
     depends_on: [tests]
 
   - name: generate-and-deploy-docs
