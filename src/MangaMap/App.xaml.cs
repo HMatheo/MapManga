@@ -51,7 +51,6 @@ public partial class App : Application
         if (!File.Exists(Path.Combine(FilePath, FileName)))
         {
             MyManager.Persistance = new DataContractPersistance.DataContractXml(); // Utilise le Stub comme moyen de persistance.
-            //MyManager = new Manager(new Stub.DataContractJson());
         }
 
         MyManager.sauvegarder();

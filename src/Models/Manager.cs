@@ -17,7 +17,7 @@ namespace Models
         /// <summary>
         /// Obtient ou définit le gestionnaire de persistance utilisé pour charger et sauvegarder les données.
         /// </summary>
-        public IPersistanceManager Persistance { get; set; }
+        public IPersistanceManager ?Persistance { get; set; }
 
         /// <summary>
         /// Obtient la liste des administrateurs de l'application.
@@ -29,7 +29,7 @@ namespace Models
         /// </summary>
         public List<Utilisateur> Utilisateurs { get; private set; }
 
-        private ObservableCollection<Oeuvre> oeuvres;
+        private ObservableCollection<Oeuvre> ?oeuvres;
 
         /// <summary>
         /// Obtient ou définit la collection observable des oeuvres de l'application.
@@ -94,12 +94,16 @@ namespace Models
         /// </summary>
         public void charger()
         {
+            
             var donne = Persistance.chargeDonne();
+
             foreach (var item in donne.Item1)
             {
                 Oeuvres.Add(item);
             }
             Utilisateurs.AddRange(donne.Item2);
+            
+            
         }
 
         /// <summary>
@@ -107,7 +111,7 @@ namespace Models
         /// </summary>
         public void sauvegarder()
         {
-            Persistance.sauvegarder(Oeuvres, Utilisateurs);
+            Persistance?.sauvegarder(Oeuvres, Utilisateurs);
         }
     }
 }

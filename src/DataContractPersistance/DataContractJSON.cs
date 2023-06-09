@@ -40,7 +40,7 @@ namespace DataContractPersistance
                 data = jsonSerializer.ReadObject(stream2) as DataToPersist;
             }
 
-            return (data.Oeuvres, data.Utilisateurs);
+            return (data!.Oeuvres, data.Utilisateurs);
         }
 
         /// <summary>
