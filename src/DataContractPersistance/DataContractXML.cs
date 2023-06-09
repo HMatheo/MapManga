@@ -14,7 +14,7 @@ namespace DataContractPersistance
     /// <summary>
     /// Implémentation de l'interface IPersistanceManager utilisant la sérialisation avec DataContract.
     /// </summary>
-    public class DataContractXML : IPersistanceManager
+    public class DataContractXml : IPersistanceManager
     {
         /// <summary>
         /// Obtient ou définit le nom du fichier de sauvegarde XML.

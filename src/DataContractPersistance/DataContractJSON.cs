@@ -13,7 +13,7 @@ namespace DataContractPersistance
     /// <summary>
     /// Implémentation de l'interface IPersistanceManager utilisant la sérialisation avec DataContract.
     /// </summary>
-    public class DataContractJSON : IPersistanceManager
+    public class DataContractJson : IPersistanceManager
     {
         /// <summary>
         /// Obtient ou définit le nom du fichier de sauvegarde JSON.
