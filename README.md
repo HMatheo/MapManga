@@ -7,6 +7,7 @@ Vianney Jourdy (G9) Hersan Mathéo (G10)
 [![Bugs](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=bugs&token=ebbdc36d23b25e2104d276df1bf5ae218f26970b)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
 [![Coverage](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=coverage&token=ebbdc36d23b25e2104d276df1bf5ae218f26970b)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
 [![Vulnerabilities](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=vulnerabilities&token=ebbdc36d23b25e2104d276df1bf5ae218f26970b)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
+[![Maintainability Rating](https://codefirst.iut.uca.fr/sonar/api/project_badges/measure?project=MangaMap&metric=sqale_rating&token=ebbdc36d23b25e2104d276df1bf5ae218f26970b)](https://codefirst.iut.uca.fr/sonar/dashboard?id=MangaMap)
 
 ## Overview
 MapManga is an application designed to help manga and anime fans manage their reading and viewing experience. If you are a manga and anime fan, MapManga is the perfect application for you.
