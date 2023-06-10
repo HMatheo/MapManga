@@ -28,6 +28,7 @@ All the information about MapManga are [here](https://codefirst.iut.uca.fr/git/v
 
 ## Screen Capture 
 
+![homePage](/Documentation/Images/homePage.png)
 ![loginPage](/Documentation/Images/connexionPage.png)
 ![signUpPage](/Documentation/Images/signUpPage.png)
 ![settingsPage](/Documentation/Images/settingsPage.png)
