@@ -26,9 +26,9 @@ namespace Stub
             ObservableCollection<Oeuvre> l1 = new ObservableCollection<Oeuvre>();
             List<Utilisateur> l2 = new List<Utilisateur>();
 
-            Utilisateur u1 = new Utilisateur("t", "Pseudo1", "t", "Jean", "Baptiste", 12);
-            Utilisateur u2 = new Utilisateur("s", "Pseudo2", "s", "Baptiste", "Jean", 12);
-            Utilisateur u3 = new Utilisateur("v", "Pseudo3", "v", "David", "Marc", 12);
+            Utilisateur u1 = new Utilisateur("te@st.com", "Pseudo1", "t", "Jean", "Baptiste", 12);
+            Utilisateur u2 = new Utilisateur("st@te.com", "Pseudo2", "s", "Baptiste", "Jean", 12);
+            Utilisateur u3 = new Utilisateur("vtest@test.com", "Pseudo3", "v", "David", "Marc", 12);
             List<string> genres = new List<string>();
             genres.Add("Action");
             genres.Add("Future");

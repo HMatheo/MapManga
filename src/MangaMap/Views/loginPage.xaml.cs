@@ -56,11 +56,11 @@ public partial class loginPage : ContentPage
         }
 
         // Vérifier que l'e-mail a la bonne forme
-        //if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-        //{
-        //    await DisplayAlert("Erreur", "L'e-mail n'est pas valide.", "OK");
-        //    return;
-        //}
+        if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+        {
+            await DisplayAlert("Erreur", "L'e-mail n'est pas valide.", "OK");
+            return;
+        }
 
         // Vérifier que l'utilisateur existe
         Utilisateur utilisateur = my_manager.Utilisateurs.FirstOrDefault(u => u.Email == email && u.MotDePasse == password);
