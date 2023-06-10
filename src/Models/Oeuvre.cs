@@ -29,7 +29,7 @@ namespace Models
         /// Obtient ou définit le nom de l'oeuvre.
         /// </summary>
         [DataMember]
-        public string Nom { get; private set; }
+        public string Nom { get; set; }
 
         /// <summary>
         /// Obtient ou définit les genres de l'oeuvre.
@@ -41,13 +41,13 @@ namespace Models
         /// Obtient ou définit le type de l'oeuvre.
         /// </summary>
         [DataMember]
-        public string Type { get; private set; }
+        public string Type { get; set; }
 
         /// <summary>
         /// Obtient ou définit la description de l'oeuvre.
         /// </summary>
         [DataMember]
-        public string Description { get; private set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// Obtient ou définit la note de l'oeuvre.
@@ -70,7 +70,7 @@ namespace Models
         /// Obtient ou définit le nombre d'épisodes de l'oeuvre.
         /// </summary>
         [DataMember]
-        public int NbEpisodes { get; private set; }
+        public int NbEpisodes { get; set; }
 
         /// <summary>
         /// Obtient ou définit l'affiche de l'oeuvre.

@@ -24,8 +24,6 @@
 
             </HorizontalStackLayout>
 
-            <Label Text="{Binding AnimeModel.Genre}" BackgroundColor="{StaticResource Primary}" TextColor="White" Margin="0,0,0,30"/>
-
             <Grid x:Name="stars" ColumnDefinitions="80,80,80,80,80"/>
 
             <HorizontalStackLayout>
