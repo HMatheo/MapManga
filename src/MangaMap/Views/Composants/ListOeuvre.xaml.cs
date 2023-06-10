@@ -14,6 +14,10 @@ public partial class ListOeuvre : ContentView
     {
         InitializeComponent();
         BindingContext = this;
+        WatchInt.Text = my_manager.UtilisateurActuel.ListeOeuvreEnVisionnage.Count.ToString();
+        CompInt.Text = my_manager.UtilisateurActuel.ListeOeuvreDejaVu.Count.ToString();
+        PlanInt.Text = my_manager.UtilisateurActuel.ListeOeuvrePourPlusTard.Count.ToString();
+        FavInt.Text = my_manager.UtilisateurActuel.ListeOeuvreFavorites.Count.ToString();
     }
 
     /// <summary>

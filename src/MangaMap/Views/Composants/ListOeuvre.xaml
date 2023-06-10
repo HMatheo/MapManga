@@ -7,6 +7,7 @@
     <VerticalStackLayout>
 
         <Label Text="Watching" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="0"/>
+        <Label x:Name="WatchInt" TextColor="White" FontSize="Small" HorizontalOptions="End" Margin="0,0,30,0"/>
 
         <Frame Grid.Row="1" BackgroundColor="Black" Margin="20" BorderColor="Black">
             <Grid BackgroundColor="#333333" >
@@ -47,6 +48,7 @@
         </Frame>
 
         <Label Text="Completed" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="2"/>
+        <Label x:Name="CompInt" TextColor="White" FontSize="Small" HorizontalOptions="End" Margin="0,0,30,0"/>
 
         <Frame Grid.Row="3" BackgroundColor="Black" Margin="20" BorderColor="Black">
             <Grid BackgroundColor="#333333" >
@@ -87,6 +89,7 @@
         </Frame>
 
         <Label Text="Plan to Watch" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="2"/>
+        <Label x:Name="PlanInt" TextColor="White" FontSize="Small" HorizontalOptions="End" Margin="0,0,30,0"/>
 
         <Frame Grid.Row="3" BackgroundColor="Black" Margin="20" BorderColor="Black">
             <Grid BackgroundColor="#333333" >
@@ -127,6 +130,7 @@
         </Frame>
 
         <Label Text="Favorite" TextColor="White" FontSize="Large" Margin="50,10,0,0" Grid.Row="2"/>
+        <Label x:Name="FavInt" TextColor="White" FontSize="Small" HorizontalOptions="End" Margin="0,0,30,0"/>
 
         <Frame Grid.Row="3" BackgroundColor="Black" Margin="20" BorderColor="Black">
             <Grid BackgroundColor="#333333" >
