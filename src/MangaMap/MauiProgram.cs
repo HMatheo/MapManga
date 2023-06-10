@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿///// \brief Fichier pour la classe MauiProgram
+/// \file MauiProgram.cs
+
+using Microsoft.Extensions.Logging;
 
 namespace MangaMap;
 

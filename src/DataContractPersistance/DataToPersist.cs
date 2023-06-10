@@ -1,4 +1,8 @@
-﻿using System;
+﻿///// \brief Fichier pour la classe DataToPersist
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file DataToPersist.cs
+
+using System;
 using Models;
 using System.Collections.Generic;
 using System.Linq;

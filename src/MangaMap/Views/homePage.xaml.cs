@@ -1,3 +1,7 @@
+///// \brief Fichier pour la classe homePage
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file homePage.xaml.cs
+
 namespace MangaMap.Views
 {
     using Models;

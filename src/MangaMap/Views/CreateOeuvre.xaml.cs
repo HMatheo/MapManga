@@ -1,3 +1,7 @@
+///// \brief Fichier pour la classe CreateOeuvre
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file CreateOeuvre.xaml.cs
+
 using System.Text.RegularExpressions;
 using Models;
 using static System.Runtime.InteropServices.JavaScript.JSType;

@@ -1,3 +1,7 @@
+///// \brief Fichier pour la classe settingsPage
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file settingsPage.xaml.cs
+
 namespace MangaMap.Views;
 using Models;
 

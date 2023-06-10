@@ -1,4 +1,4 @@
-﻿///// \brief Fichier pour la classe Liste
+﻿///// \brief Fichier pour l'interface IPersistanceManager
 ///// \author HERSAN Mathéo, JOURDY Vianney
 /// \file IPersistanceManager.cs
 

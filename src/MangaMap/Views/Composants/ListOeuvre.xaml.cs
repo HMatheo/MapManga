@@ -1,3 +1,7 @@
+///// \brief Fichier pour la classe ListOeuvre
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file ListOeuvre.xaml.cs
+
 namespace MangaMap.Views.Composants;
 using Models;
 using System.Diagnostics;

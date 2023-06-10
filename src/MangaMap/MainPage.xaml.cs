@@ -1,4 +1,7 @@
-﻿namespace MangaMap;
+﻿///// \brief Fichier pour la classe MainPage
+/// \file MainPage.xaml.cs
+
+namespace MangaMap;
 
 public partial class MainPage : ContentPage
 {

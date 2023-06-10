@@ -1,3 +1,7 @@
+///// \brief Fichier pour la classe FicheAnime
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file FicheAnime.xaml.cs
+
 namespace MangaMap.Views
 {
     using Models;
