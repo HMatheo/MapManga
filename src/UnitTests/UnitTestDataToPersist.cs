@@ -12,7 +12,7 @@ namespace UnitTests
     public class UnitTestDataToPersist
     {
         /// <summary>
-        ///  Vérifie que la propriété Oeuvres est initialisée et est une instance de ObservableCollection<Oeuvre>.
+        /// Vérifie que la propriété Oeuvres est initialisée et est une instance de ObservableCollection<Oeuvre>.
         /// </summary>
         [Fact]
         public void Oeuvres_Should_BeInitialized()
@@ -42,16 +42,20 @@ namespace UnitTests
         /// <summary>
         /// Vérifie que la propriété Oeuvres peut être assignée avec une autre collection d'œuvres et que la valeur assignée est correcte.
         /// </summary>
-        [Fact]
-        public void Oeuvres_Should_BeAssignable()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Oeuvres_Should_BeAssignable(int oeuvresCount)
         {
             // Arrange
             var dataToPersist = new DataToPersist();
-            var oeuvres = new ObservableCollection<Oeuvre>
+            var oeuvres = new ObservableCollection<Oeuvre>();
+
+            // Add oeuvresCount number of oeuvres
+            for (int i = 0; i < oeuvresCount; i++)
             {
-                new Oeuvre("Evangelion", new List<string> { "Action", "Future" }, "TV", "C'est une bonne série", 4, 150, "evangelion.jpg"),
-                new Oeuvre("[Oshi No Ko]", new List<string> { "Action", "Future" }, "DVD", "A la fin il meurt", 2, 24, "oshinoko.png"),
-            };
+                oeuvres.Add(new Oeuvre($"Oeuvre{i}", new List<string>(), "Type", "Description", 0, 0, "Affiche"));
+            }
 
             // Act
             dataToPersist.Oeuvres = oeuvres;
@@ -61,14 +65,22 @@ namespace UnitTests
         }
 
         /// <summary>
-        /// vérifie que la propriété Utilisateurs peut être assignée avec une autre liste d'utilisateurs et que la valeur assignée est correcte.
+        /// Vérifie que la propriété Utilisateurs peut être assignée avec une autre liste d'utilisateurs et que la valeur assignée est correcte.
         /// </summary>
-        [Fact]
-        public void Utilisateurs_Should_BeAssignable()
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Utilisateurs_Should_BeAssignable(int utilisateursCount)
         {
             // Arrange
             var dataToPersist = new DataToPersist();
-            var utilisateurs = new List<Utilisateur> { new Utilisateur(), new Utilisateur() };
+            var utilisateurs = new List<Utilisateur>();
+
+            // Add utilisateursCount number of utilisateurs
+            for (int i = 0; i < utilisateursCount; i++)
+            {
+                utilisateurs.Add(new Utilisateur());
+            }
 
             // Act
             dataToPersist.Utilisateurs = utilisateurs;

@@ -12,16 +12,16 @@ namespace UnitTests
         /// <summary>
         /// Vérifie que la propriété FileName a la valeur par défaut "SauvegardeDonnees.json".
         /// </summary>
-        public class DataContractXmlTests
+        public class DataContractJsonTests
         {
             [Fact]
             public void FileName_Should_HaveDefaultValue()
             {
                 // Arrange
-                var dataContractXml = new DataContractJson();
+                var dataContractJson = new DataContractJson();
 
                 // Assert
-                Assert.Equal("SauvegardeDonnees.json", dataContractXml.FileName);
+                Assert.Equal("SauvegardeDonnees.json", dataContractJson.FileName);
             }
 
             /// <summary>
@@ -31,10 +31,28 @@ namespace UnitTests
             public void FilePath_Should_HaveDefaultValue()
             {
                 // Arrange
-                var dataContractXml = new DataContractJson();
+                var dataContractJson = new DataContractJson();
 
                 // Assert
-                Assert.Equal(Path.Combine(AppDomain.CurrentDomain.BaseDirectory), dataContractXml.FilePath);
+                Assert.Equal(Path.Combine(AppDomain.CurrentDomain.BaseDirectory), dataContractJson.FilePath);
+            }
+
+            /// <summary>
+            /// Vérifie que la propriété FilePath peut être assignée avec une autre valeur et que la valeur assignée est correcte.
+            /// </summary>
+            [Theory]
+            [InlineData("C:\\Data\\")]
+            [InlineData("D:\\Backup\\")]
+            public void FilePath_Should_BeAssignable(string filePath)
+            {
+                // Arrange
+                var dataContractJson = new DataContractJson();
+
+                // Act
+                dataContractJson.FilePath = filePath;
+
+                // Assert
+                Assert.Equal(filePath, dataContractJson.FilePath);
             }
         }
     }

@@ -11,6 +11,9 @@ namespace UnitTests
 {
     public class UnitTestIPersistanceManager
     {
+        /// <summary>
+        /// Vérifie que la méthode ChargeDonne renvoie les données attendues.
+        /// </summary>
         [Fact]
         public void ChargeDonne_ReturnsExpectedData()
         {
@@ -48,8 +51,12 @@ namespace UnitTests
             Assert.Equal(12, utilisateur.age);
         }
 
+        /// <summary>
+        /// Vérifie que la méthode Sauvegarder appelle Console.WriteLine.
+        /// </summary>
         [Fact]
-        public void Sauvegarder_CallsConsoleWriteLine()
+        public void Sauvegarder_CallsConsoleWriteLine()  //pas besoin d'utiliser les attributs [Theory] et [InlineData]
+                                                         //car il ne teste pas différentes variations de données.
         {
             // Arrange
             var stub = new Stub.Stub();
@@ -60,9 +67,8 @@ namespace UnitTests
             stub.sauvegarder(oeuvres, utilisateurs);
 
             // Assert
-            // Since the implementation of Sauvegarder only calls Console.WriteLine,
-            // we can't directly test the functionality, but we can assert that the method was called
+            // Étant donné que l'implémentation de Sauvegarder appelle uniquement Console.WriteLine,
+            // nous ne pouvons pas tester directement la fonctionnalité, mais nous pouvons vérifier que la méthode a été appelée.
         }
     }
 }
-

@@ -12,13 +12,16 @@ namespace UnitTests
 {
     public class UnitTestManager
     {
+        /// <summary>
+        /// Vérifie que la méthode Charger charge les données à partir de PersistanceManager (Stub).
+        /// </summary>
         [Fact]
         public void Charger_Should_LoadDataFromPersistanceManager_Stub()
         {
             // Arrange
             var persistanceStub = new Stub.Stub();
             var manager = new Manager(persistanceStub);
-            var oeuvres = new ObservableCollection<Oeuvre> 
+            var oeuvres = new ObservableCollection<Oeuvre>
             {
                 new Oeuvre("Evangelion", new List<string> { "Action", "Future" }, "TV", "C'est une bonne série", 4, 150, "evangelion.jpg"),
                 new Oeuvre("[Oshi No Ko]", new List<string> { "Action", "Future" }, "DVD", "A la fin il meurt", 2, 24, "oshinoko.png"),
@@ -41,17 +44,20 @@ namespace UnitTests
             Assert.Equal("evangelion.jpg", evangelion.Affiche);
         }
 
+        /// <summary>
+        /// Vérifie que la méthode Charger charge les données à partir de PersistanceManager (DataContractXml).
+        /// </summary>
         [Fact]
         public void Charger_Should_LoadDataFromPersistanceManager_DataContractXml()
         {
             // Arrange
             var persistanceXml = new DataContractPersistance.DataContractXml();
             var manager = new Manager(persistanceXml);
-            var oeuvres = new ObservableCollection<Oeuvre> 
+            var oeuvres = new ObservableCollection<Oeuvre>
             {
                 new Oeuvre("Evangelion", new List<string> { "Action", "Future" }, "TV", "C'est une bonne série", 4, 150, "evangelion.jpg"),
                 new Oeuvre("[Oshi No Ko]", new List<string> { "Action", "Future" }, "DVD", "A la fin il meurt", 2, 24, "oshinoko.png"),
-            };  
+            };
             var utilisateurs = new List<Utilisateur> { new Utilisateur(), new Utilisateur() };
 
             // Act
@@ -64,16 +70,19 @@ namespace UnitTests
             Assert.Equal(utilisateurs.Count, manager.Utilisateurs.Count);
         }
 
+        /// <summary>
+        /// Vérifie que la méthode Sauvegarder enregistre les données en utilisant PersistanceManager (DataContractXml).
+        /// </summary>
         [Fact]
         public void Sauvegarder_Should_SaveDataUsingPersistanceManager_DataContractXml()
         {
             // Arrange
             var persistanceXml = new DataContractPersistance.DataContractXml();
             var manager = new Manager(persistanceXml);
-            var oeuvres = new ObservableCollection<Oeuvre> 
-            { 
-                new Oeuvre("Evangelion", new List<string> { "Action", "Future" }, "TV", "C'est une bonne série", 4, 150, "evangelion.jpg"), 
-                new Oeuvre("[Oshi No Ko]", new List<string> { "Action", "Future" }, "DVD", "A la fin il meurt", 2, 24, "oshinoko.png"), 
+            var oeuvres = new ObservableCollection<Oeuvre>
+            {
+                new Oeuvre("Evangelion", new List<string> { "Action", "Future" }, "TV", "C'est une bonne série", 4, 150, "evangelion.jpg"),
+                new Oeuvre("[Oshi No Ko]", new List<string> { "Action", "Future" }, "DVD", "A la fin il meurt", 2, 24, "oshinoko.png"),
             };
             var utilisateurs = new List<Utilisateur> { new Utilisateur(), new Utilisateur() };
 

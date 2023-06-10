@@ -4,6 +4,15 @@ namespace UnitTests
 {
     public class UnitTestUtilisateur
     {
+        /// <summary>
+        /// Vérifie que le constructeur de la classe Utilisateur initialise correctement les propriétés.
+        /// </summary>
+        /// <param name="email">L'adresse e-mail de l'utilisateur.</param>
+        /// <param name="pseudo">Le pseudo de l'utilisateur.</param>
+        /// <param name="mdp">Le mot de passe de l'utilisateur.</param>
+        /// <param name="nom">Le nom de l'utilisateur.</param>
+        /// <param name="prenom">Le prénom de l'utilisateur.</param>
+        /// <param name="age">L'âge de l'utilisateur.</param>
         [Theory]
         [InlineData("test@test.com", "pseudo", "mdp", "John", "Doe", 30)]
         [InlineData("test2@test.com", "pseudo2", "mdp2", "Jane", "Smith", 25)]
@@ -21,6 +30,10 @@ namespace UnitTests
             Assert.Equal(age, utilisateur.age);
         }
 
+        /// <summary>
+        /// Vérifie que la méthode SupprimerUtilisateur réinitialise les propriétés de l'utilisateur à null.
+        /// </summary>
+        /// <param name="utilisateur">L'utilisateur à supprimer.</param>
         // Utilisez [MemberData] pour des jeux de données dynamiques
         [Theory]
         [MemberData(nameof(UtilisateursTestData.GetTestData), MemberType = typeof(UtilisateursTestData))]
@@ -38,6 +51,9 @@ namespace UnitTests
         }
     }
 
+    /// <summary>
+    /// Classe de données pour les tests de la classe Utilisateur.
+    /// </summary>
     public class UtilisateursTestData
     {
         public static IEnumerable<object[]> GetTestData()
