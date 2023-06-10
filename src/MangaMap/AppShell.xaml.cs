@@ -27,5 +27,6 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("fichePagedetails", typeof(ficheAnime));
         Routing.RegisterRoute("connexionAdminPagedetails", typeof(loginAdminPage));
         Routing.RegisterRoute("createPagedetails", typeof(createOeuvre));
+        Routing.RegisterRoute("modifyPagedetails", typeof(modifyOeuvre));
     }
 }

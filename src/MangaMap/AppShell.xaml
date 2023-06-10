@@ -51,6 +51,11 @@
                 Title="Creation oeuvre"
                 ContentTemplate="{DataTemplate Views:createOeuvre}"
                 Route="createOeuvrePage"/>
+
+            <ShellContent
+                Title="Modification oeuvre"
+                ContentTemplate="{DataTemplate Views:modifyOeuvre}"
+                Route="modifyOeuvrePage"/>
         </Tab>
     </TabBar>
 

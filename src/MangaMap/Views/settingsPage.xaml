@@ -16,6 +16,9 @@
 
             <Button Text="Ajouter une série" Clicked="AddClicked" Style="{StaticResource Bouton}"/>
 
+            <Entry x:Name="oeuvreEntry" Placeholder="Oeuvre à modifier" Margin="10" Style="{StaticResource Champs}"/>
+            <Button Text="Modifier l'ouvre" Clicked="ModifyClicked" Style="{StaticResource Bouton}"/>
+
         </StackLayout>
     </Grid>
 

@@ -65,4 +65,34 @@ public partial class settingsPage : ContentPage
         }
         await Shell.Current.Navigation.PushAsync(new createOeuvre());
     }
+
+    private async void ModifyClicked(object sender, System.EventArgs e)
+    {
+        if (!my_manager.isAdmin)
+        {
+            await DisplayAlert("Erreur", "Vous n'êtes pas connecté en tant qu'Administrateur.", "OK");
+            return;
+        }
+
+        // Récupérer les valeurs des entrées
+        string nom = oeuvreEntry.Text;
+
+        if (string.IsNullOrWhiteSpace(nom))
+        {
+            await DisplayAlert("Erreur", "Veuillez remplir le champs.", "OK");
+            return;
+        }
+
+        foreach (Oeuvre o in my_manager.Oeuvres)
+        {
+            if (o.Nom == nom)
+            {
+                await Navigation.PushAsync(new modifyOeuvre(o));
+                return;
+            }
+        }
+            
+        await DisplayAlert("Erreur", "L'oeuvre n'existe pas.", "OK");
+        return;
+    }
 }
