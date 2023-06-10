@@ -17,7 +17,7 @@ namespace Models
         /// <summary>
         /// Obtient ou définit le gestionnaire de persistance utilisé pour charger et sauvegarder les données.
         /// </summary>
-        public IPersistanceManager Persistance { get; set; }
+        public IPersistanceManager ?Persistance { get; set; }
 
         /// <summary>
         /// Obtient la liste des administrateurs de l'application.
@@ -27,9 +27,9 @@ namespace Models
         /// <summary>
         /// Obtient la liste des utilisateurs de l'application.
         /// </summary>
-        public List<Utilisateur> Utilisateurs { get; private set; }
+        public List<Utilisateur> Utilisateurs { get; set; }
 
-        private ObservableCollection<Oeuvre> oeuvres;
+        private ObservableCollection<Oeuvre> ?oeuvres;
 
         /// <summary>
         /// Obtient ou définit la collection observable des oeuvres de l'application.
@@ -38,7 +38,7 @@ namespace Models
         {
             get
             {
-                return oeuvres;
+                return oeuvres ??= new ObservableCollection<Oeuvre>();
             }
             set
             {
@@ -46,7 +46,7 @@ namespace Models
                 OnPropertyChanged();
             }
         }
-
+           
         public event PropertyChangedEventHandler? PropertyChanged;
 
         void OnPropertyChanged([CallerMemberName] string? propertyName = null)
@@ -94,12 +94,19 @@ namespace Models
         /// </summary>
         public void charger()
         {
-            var donne = Persistance.chargeDonne();
-            foreach (var item in donne.Item1)
+            if (Persistance != null)
             {
-                Oeuvres.Add(item);
+
+                var donne = Persistance.chargeDonne();
+
+                foreach (var item in donne.Item1)
+                {
+                    Oeuvres.Add(item);
+                }
+                Utilisateurs.AddRange(donne.Item2);
             }
-            Utilisateurs.AddRange(donne.Item2);
+            
+            
         }
 
         /// <summary>
@@ -107,7 +114,7 @@ namespace Models
         /// </summary>
         public void sauvegarder()
         {
-            Persistance.sauvegarder(Oeuvres, Utilisateurs);
+            Persistance?.sauvegarder(Oeuvres, Utilisateurs);
         }
     }
 }

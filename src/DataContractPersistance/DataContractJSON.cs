@@ -8,12 +8,12 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MangaMap.DataContractPersistance
+namespace DataContractPersistance
 {
     /// <summary>
     /// Implémentation de l'interface IPersistanceManager utilisant la sérialisation avec DataContract.
     /// </summary>
-    public class DataContractJSON : IPersistanceManager
+    public class DataContractJson : IPersistanceManager
     {
         /// <summary>
         /// Obtient ou définit le nom du fichier de sauvegarde JSON.
@@ -33,14 +33,14 @@ namespace MangaMap.DataContractPersistance
         {
             DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(DataToPersist));
 
-            DataToPersist data;
+            DataToPersist? data;
 
             using (FileStream stream2 = File.OpenRead(Path.Combine(FilePath, FileName)))
             {
                 data = jsonSerializer.ReadObject(stream2) as DataToPersist;
             }
 
-            return (data.Oeuvres, data.Utilisateurs);
+            return (data!.Oeuvres, data.Utilisateurs);
         }
 
         /// <summary>

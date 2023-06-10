@@ -27,11 +27,11 @@ namespace Models
         /// <summary>
         /// Méthode permettant d'ajouter un anime.
         /// </summary>
-        public void ajouterAnime() { }
+        static void ajouterAnime() { }
 
         /// <summary>
         /// Méthode permettant de supprimer un anime.
         /// </summary>
-        public void supprimerAnime() { }
+        static void supprimerAnime() { }
     }
 }
