@@ -34,7 +34,7 @@ namespace Models
         /// Obtient ou définit l'âge de l'utilisateur.
         /// </summary>
         [DataMember]
-        public int age { get; private set; }
+        public int age { get; set; }
 
         /// <summary>
         /// Obtient ou définit la liste des oeuvres en visionnage de l'utilisateur.

@@ -56,6 +56,11 @@
                 Title="Modification oeuvre"
                 ContentTemplate="{DataTemplate Views:modifyOeuvre}"
                 Route="modifyOeuvrePage"/>
+
+            <ShellContent
+                Title="Modification utilisateur"
+                ContentTemplate="{DataTemplate Views:loginModifyPage}"
+                Route="loginModifyPage"/>
         </Tab>
     </TabBar>
 

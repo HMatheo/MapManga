@@ -95,4 +95,16 @@ public partial class settingsPage : ContentPage
         await DisplayAlert("Erreur", "L'oeuvre n'existe pas.", "OK");
         return;
     }
+
+    private async void ModifyAccountClicked(object sender, System.EventArgs e)
+    {
+        if (my_manager.UtilisateurActuel.Email == null)
+        {
+            await DisplayAlert("Erreur", "Vous n'êtes pas connecté.", "OK");
+            return;
+        }
+
+        await Navigation.PushAsync(new loginModifyPage(my_manager.UtilisateurActuel));
+        return;
+    }
 }

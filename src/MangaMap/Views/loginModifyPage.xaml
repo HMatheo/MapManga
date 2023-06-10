@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MangaMap.Views.loginModifyPage"
+             Title="loginModifyPage">
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+        <Label Text="Modifier son compte MapManga" FontSize="Large" Margin="0,0,0,20" TextColor="#ffffff"/>
+
+        <Entry x:Name="nameEntry" Placeholder="Nom" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
+
+        <Entry x:Name="firstNameEntry" Placeholder="Prénom" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
+
+        <Entry x:Name="ageEntry" Placeholder="Âge" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
+
+        <Entry x:Name="emailEntry" Placeholder="Email" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
+
+        <Entry x:Name="usernameEntry" Placeholder="Nom d'utilisateur" Margin="0,0,0,10" Style="{StaticResource Champs}"/>
+
+        <Entry x:Name="passwordEntry" Placeholder="Mot de passe" Margin="0,0,0,10" Style="{StaticResource ChampsMdp}"/>
+
+        <Entry x:Name="confirmPasswordEntry" Placeholder="Confirmer le mot de passe"  Margin="0,0,0,20" Style="{StaticResource ChampsMdp}"/>
+
+        <Button Text="Modifier" Clicked="OnModifiedClicked" Style="{StaticResource Bouton}"/>
+
+    </StackLayout>
+</ContentPage>

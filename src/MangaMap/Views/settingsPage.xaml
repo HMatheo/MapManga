@@ -9,14 +9,16 @@
         <local:NewContent1 HeightRequest="40" VerticalOptions="Start" Padding="10, 0"/>
 
         <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1">
-
+            
+            <Button Text="Modifier le compte" Clicked="ModifyAccountClicked"  Margin="0,0,0,10" Style="{StaticResource Bouton}"/>
+            
             <Button Text="Deconnexion" Clicked="OnDisconnectClicked" Margin="0,0,0,30" Style="{StaticResource Bouton}"/>
 
             <Button Text="Connexion Admin" Clicked="LoginAdminClicked" Style="{StaticResource Bouton}"/>
 
             <Button Text="Ajouter une série" Clicked="AddClicked" Style="{StaticResource Bouton}"/>
 
-            <Entry x:Name="oeuvreEntry" Placeholder="Oeuvre à modifier" Margin="10" Style="{StaticResource Champs}"/>
+            <Entry x:Name="oeuvreEntry" Placeholder="Oeuvre à modifier" Margin="0,10,0,0" Style="{StaticResource Champs}"/>
             <Button Text="Modifier l'ouvre" Clicked="ModifyClicked" Style="{StaticResource Bouton}"/>
 
         </StackLayout>
