@@ -1,4 +1,8 @@
-﻿using System;
+﻿///// \brief Fichier pour la classe Stub
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file Stub.cs
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;

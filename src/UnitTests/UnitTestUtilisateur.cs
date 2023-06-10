@@ -1,3 +1,7 @@
+///// \brief Fichier de test pour la classe Utilisateur.
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file UnitTestUtilisateur.cs
+
 using Models;
 
 namespace UnitTests

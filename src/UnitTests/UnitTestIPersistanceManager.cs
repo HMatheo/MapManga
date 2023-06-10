@@ -1,4 +1,8 @@
-﻿using Models;
+﻿///// \brief Fichier de test pour la classe IPersistanceManager.
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file UnitTestIPersistanceManager.cs
+
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
