@@ -3,6 +3,8 @@ type: docker
 name: MangaMap
 
 trigger:
+  branche:
+    - master
   event:
     - push
 
