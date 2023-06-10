@@ -54,6 +54,12 @@ public partial class createOeuvre : ContentPage
         int nbEp = Convert.ToInt32(nbEpisodeEntry.Text);
         string description = descriptionEntry.Text;
 
+        if (imagePath == null)
+        {
+            await DisplayAlert("Erreur", "Veuillez sélectionner une image.", "OK");
+            return;
+        }
+
         foreach (Oeuvre o in my_manager.Oeuvres)
         {
             if (o.Nom == nom)
