@@ -9,24 +9,17 @@ namespace UnitTests
 {
     public class UnitTestOeuvre
     {
-        [Fact]
-        public void Oeuvre_Constructor_WithAllParameters_ShouldSetPropertiesCorrectly()
+        [Theory]
+        [InlineData("[Oshi No Ko]", new string[] { "Action", "Drama", "Fantasy" }, "TV Series", "A thrilling anime series.", 9, 25, "oshinoko.png")]
+        public void Oeuvre_Constructor_WithAllParameters_ShouldSetPropertiesCorrectly(
+            string nom, string[] genres, string type, string description, int note, int nbEpisodes, string affiche)
         {
-            // Arrange
-            string nom = "[Oshi No Ko]";
-            List<string> genre = new List<string> { "Action", "Drama", "Fantasy" };
-            string type = "TV Series";
-            string description = "A thrilling anime series.";
-            int note = 9;
-            int nbEpisodes = 25;
-            string affiche = "oshinoko.png";
-
-            // Act
-            Oeuvre oeuvre = new Oeuvre(nom, genre, type, description, note, nbEpisodes, affiche);
+            // Arrange & Act
+            Oeuvre oeuvre = new Oeuvre(nom, new List<string>(genres), type, description, note, nbEpisodes, affiche);
 
             // Assert
             Assert.Equal(nom, oeuvre.Nom);
-            Assert.Equal(genre, oeuvre.Genre);
+            Assert.Equal(new List<string>(genres), oeuvre.Genre);
             Assert.Equal(type, oeuvre.Type);
             Assert.Equal(description, oeuvre.Description);
             Assert.Equal(note, oeuvre.Note);
@@ -34,17 +27,12 @@ namespace UnitTests
             Assert.Equal(affiche, oeuvre.Affiche);
         }
 
-        [Fact]
-        public void Oeuvre_Constructor_WithRequiredParameters_ShouldSetPropertiesCorrectly()
+        [Theory]
+        [InlineData("One Piece", "TV Series", "An epic adventure.", 1000, "onepiece.jpg")]
+        public void Oeuvre_Constructor_WithRequiredParameters_ShouldSetPropertiesCorrectly(
+            string nom, string type, string description, int nbEpisodes, string affiche)
         {
-            // Arrange
-            string nom = "One Piece";
-            string type = "TV Series";
-            string description = "An epic adventure.";
-            int nbEpisodes = 1000;
-            string affiche = "onepiece.jpg";
-
-            // Act
+            // Arrange & Act
             Oeuvre oeuvre = new Oeuvre(nom, type, description, nbEpisodes, affiche);
 
             // Assert
@@ -57,12 +45,14 @@ namespace UnitTests
             Assert.Equal(affiche, oeuvre.Affiche);
         }
 
-        [Fact]
-        public void AjouterEpisode_ShouldIncreaseNbEpisodesByGivenAmount()
+        [Theory]
+        [InlineData("Naruto", "TV Series", "A ninja's journey.", 220, "evangelion.jpg", 50)]
+        [InlineData("Dragon Ball", "TV Series", "A Saiyan's story.", 291, "evangelion.jpg", 20)]
+        public void AjouterEpisode_ShouldIncreaseNbEpisodesByGivenAmount(
+            string nom, string type, string description, int nbEpisodes, string affiche, int nbEpisodesToAdd)
         {
             // Arrange
-            Oeuvre oeuvre = new Oeuvre("Naruto", "TV Series", "A ninja's journey.", 220, "evangelion.jpg");
-            int nbEpisodesToAdd = 50;
+            Oeuvre oeuvre = new Oeuvre(nom, type, description, nbEpisodes, affiche);
             int expectedNbEpisodes = oeuvre.NbEpisodes + nbEpisodesToAdd;
 
             // Act
@@ -71,6 +61,5 @@ namespace UnitTests
             // Assert
             Assert.Equal(expectedNbEpisodes, oeuvre.NbEpisodes);
         }
-
     }
 }

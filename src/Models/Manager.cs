@@ -27,7 +27,7 @@ namespace Models
         /// <summary>
         /// Obtient la liste des utilisateurs de l'application.
         /// </summary>
-        public List<Utilisateur> Utilisateurs { get; private set; }
+        public List<Utilisateur> Utilisateurs { get; set; }
 
         private ObservableCollection<Oeuvre> ?oeuvres;
 
