@@ -274,6 +274,12 @@ namespace MangaMap.Views
             List<int> x = new List<int>();
             int nb = Convert.ToInt32(nombreEP.Text);
 
+            if (nb < 0 || nb > AnimeModel.NbEpisodes)
+            {
+                await DisplayAlert("Erreur", "Nombre d'épisodes vus incorrecte.", "OK");
+                return;
+            }
+
             if (my_manager.UtilisateurActuel.notesNombres.ContainsKey(AnimeModel.Nom))
             {
                 my_manager.UtilisateurActuel.notesNombres.Remove(AnimeModel.Nom, out x);
