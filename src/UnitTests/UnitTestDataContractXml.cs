@@ -41,6 +41,24 @@ namespace UnitTests
                 // Assert
                 Assert.Equal(Path.Combine(AppDomain.CurrentDomain.BaseDirectory), dataContractXml.FilePath);
             }
+
+            /// <summary>
+            /// Vérifie que la propriété FilePath peut être assignée avec une autre valeur et que la valeur assignée est correcte.
+            /// </summary>
+            [Theory]
+            [InlineData("C:\\Data\\")]
+            [InlineData("D:\\Backup\\")]
+            public void FilePath_Should_BeAssignable(string filePath)
+            {
+                // Arrange
+                var dataContractXml = new DataContractXml();
+
+                // Act
+                dataContractXml.FilePath = filePath;
+
+                // Assert
+                Assert.Equal(filePath, dataContractXml.FilePath);
+            }
         }
     }
 }

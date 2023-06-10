@@ -49,7 +49,8 @@ namespace UnitTests
         }
 
         [Fact]
-        public void Sauvegarder_CallsConsoleWriteLine()
+        public void Sauvegarder_CallsConsoleWriteLine() //pas besoin d'utiliser les attributs [Theory] et [InlineData]
+                                                        //car il ne teste pas différentes variations de données.
         {
             // Arrange
             var stub = new Stub.Stub();
