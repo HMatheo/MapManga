@@ -279,7 +279,6 @@ namespace MangaMap.Views
                 my_manager.UtilisateurActuel.notesNombres.Remove(AnimeModel.Nom, out x);
                 x[1] = nb;
                 my_manager.UtilisateurActuel.notesNombres.Add(AnimeModel.Nom, x);
-                return;
             }
             else
             {
@@ -288,6 +287,7 @@ namespace MangaMap.Views
                 my_manager.UtilisateurActuel.notesNombres.Add(AnimeModel.Nom, x);
             }
 
+            AnimeModel.NombresEpVu = nb;
             my_manager.sauvegarder();
         }
     }

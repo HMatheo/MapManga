@@ -52,13 +52,11 @@ namespace MangaMap.Views
             int imagesParLigne = 4;
             int indice = 0;
 
-            for (int i = 0; i < my_manager.Oeuvres.Count; i++)
+            foreach (Oeuvre o in my_manager.Oeuvres)
             {
-                Oeuvre favoris = my_manager.Oeuvres[i];
-
                 ImageButton imageButton = new ImageButton
                 {
-                    Source = favoris.Affiche,
+                    Source = o.Affiche,
                     WidthRequest = 170,
                     MaximumHeightRequest = 190,
                     MinimumHeightRequest = 190,

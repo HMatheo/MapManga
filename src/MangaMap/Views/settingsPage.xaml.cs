@@ -28,6 +28,12 @@ public partial class settingsPage : ContentPage
     {
         my_manager.UtilisateurActuel = new Utilisateur();
         my_manager.isAdmin = false;
+
+        foreach (Oeuvre o in my_manager.Oeuvres)
+        {
+            o.NombresEpVu = 999;
+        }
+
         await Shell.Current.GoToAsync("//page/secondaire/connexionPage");
     }
 

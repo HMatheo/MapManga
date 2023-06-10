@@ -3,6 +3,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Stub;
 using Models;
+using System.Diagnostics;
 
 /// <summary>
 /// Classe représentant la page de connexion de l'application.
@@ -67,6 +68,15 @@ public partial class loginPage : ContentPage
 
         // On garde l'utilisateur qui vient de se connecter pour accéder à ses informations
         my_manager.UtilisateurActuel = utilisateur;
+
+        List<int> x;
+        foreach (Oeuvre o in my_manager.Oeuvres)
+        {
+            if (my_manager.UtilisateurActuel.notesNombres.TryGetValue(o.Nom, out x))
+                o.NombresEpVu = x[1];
+            else
+                o.NombresEpVu = 0;
+        }
 
         // Rediriger l'utilisateur vers la page principale
         await Shell.Current.GoToAsync("//page/homePage");

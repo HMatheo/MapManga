@@ -74,6 +74,9 @@ namespace Models
         [DataMember]
         public string Affiche { get; private set; }
 
+        [DataMember]
+        public int NombresEpVu { get; set; }
+
         /// <summary>
         /// Initialise une nouvelle instance de la classe Oeuvre avec les informations spécifiées.
         /// </summary>
