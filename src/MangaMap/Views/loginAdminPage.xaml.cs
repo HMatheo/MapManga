@@ -1,3 +1,7 @@
+///// \brief Fichier pour la classe loginAdminPage
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file loginAdminPage.xaml.cs
+
 namespace MangaMap.Views;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;

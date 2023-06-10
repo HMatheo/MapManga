@@ -1,4 +1,8 @@
-﻿using DataContractPersistance;
+﻿///// \brief Fichier de test pour la classe DataToPersist.
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file UnitTestDataToPersist.cs
+
+using DataContractPersistance;
 using Models;
 using System;
 using System.Collections.Generic;

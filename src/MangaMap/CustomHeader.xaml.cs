@@ -1,3 +1,7 @@
+///// \brief Fichier pour la classe CustomHeader
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file CustomHeader.xaml.cs
+
 using MangaMap.Views;
 namespace MangaMap;
 using Models;

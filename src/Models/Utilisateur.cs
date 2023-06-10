@@ -1,4 +1,8 @@
-﻿using System;
+﻿///// \brief Fichier pour la classe Utilisateur
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file Utilisateur.cs
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;

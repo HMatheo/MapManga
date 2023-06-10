@@ -1,4 +1,8 @@
-﻿using System;
+﻿///// \brief Fichier pour la classe Manager
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file Manager.cs
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;

@@ -1,4 +1,8 @@
-﻿using Models;
+﻿///// \brief Fichier de test pour la classe Manager.
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file UnitTestManager.cs
+
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

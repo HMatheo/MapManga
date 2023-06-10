@@ -1,4 +1,8 @@
-﻿using DataContractPersistance;
+﻿///// \brief Fichier de test pour la classe DataContractJson.
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file UnitTestDataContractJson.cs
+
+using DataContractPersistance;
 using System;
 using System.Collections.Generic;
 using System.Linq;

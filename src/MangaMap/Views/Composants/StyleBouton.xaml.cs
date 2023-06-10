@@ -1,3 +1,7 @@
+///// \brief Fichier pour la classe StyleBouton
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file StyleBouton.xaml.cs
+
 using Models;
 
 namespace MangaMap.Views.Composants

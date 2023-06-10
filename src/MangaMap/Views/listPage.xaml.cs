@@ -1,3 +1,7 @@
+///// \brief Fichier pour la classe listPage
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file listPage.xaml.cs
+
 namespace MangaMap.Views;
 using Models;
 using static System.Net.Mime.MediaTypeNames;

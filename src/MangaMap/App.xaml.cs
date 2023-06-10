@@ -1,4 +1,8 @@
-﻿using Models;
+﻿///// \brief Fichier pour la classe App
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file App.xaml.cs
+
+using Models;
 using Stub;
 using MangaMap.Views;
 using System.Diagnostics;

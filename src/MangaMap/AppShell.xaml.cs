@@ -1,4 +1,8 @@
-﻿using MangaMap.Views;
+﻿///// \brief Fichier pour la classe AppShell
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file AppShell.xaml.cs
+
+using MangaMap.Views;
 
 namespace MangaMap;
 

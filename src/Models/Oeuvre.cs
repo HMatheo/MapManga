@@ -1,4 +1,8 @@
-﻿using System;
+﻿///// \brief Fichier pour la classe Oeuvre
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file Oeuvre.cs
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;

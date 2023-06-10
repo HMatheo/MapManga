@@ -1,4 +1,8 @@
-﻿using System;
+﻿///// \brief Fichier pour l'interface IPersistanceManager
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file IPersistanceManager.cs
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;

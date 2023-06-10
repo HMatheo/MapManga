@@ -1,4 +1,8 @@
-﻿using System;
+﻿///// \brief Fichier pour la classe Admin
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file Admin.cs
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

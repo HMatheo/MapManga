@@ -1,4 +1,8 @@
-﻿using Models;
+﻿///// \brief Fichier de test pour la classe Oeuvre.
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file UnitTestOeuvre.cs
+
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

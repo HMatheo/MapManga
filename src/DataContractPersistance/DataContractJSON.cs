@@ -1,4 +1,8 @@
-﻿using Models;
+﻿///// \brief Fichier pour la classe DataContractJson
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file DataContractJSON.cs
+
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

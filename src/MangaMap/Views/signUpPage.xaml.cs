@@ -1,3 +1,7 @@
+///// \brief Fichier pour la classe signUpPage
+///// \author HERSAN Mathéo, JOURDY Vianney
+/// \file signUpPage.xaml.cs
+
 namespace MangaMap.Views;
 
 using Models;
